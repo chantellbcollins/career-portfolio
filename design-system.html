@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Design System: Chantell Collins, MBA</title>
+<meta name="description" content="Type, color, spacing, and component rules behind the career-portfolio site, mirrored from the live build.">
+<meta name="theme-color" content="#8C6121">
+<meta name="robots" content="noindex, nofollow">
+
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Merriweather:wght@700&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  --bg:#F8F4F2;
+  --ink:#2F241D;
+  --border:#92725C;
+  --gold:#8C6121;
+  --terracotta:#96482C;
+  --border-8: rgba(146,114,92,0.08);
+  --gold-10: rgba(140,97,33,0.10);
+  --max: 1024px;
+}
+*{box-sizing:border-box}
+body{
+  margin:0;
+  background:var(--bg);
+  color:var(--ink);
+  font-family:Inter,system-ui,-apple-system,'Segoe UI',sans-serif;
+  -webkit-font-smoothing:antialiased;
+  line-height:1.5;
+}
+.font-serif{font-family:Merriweather,Georgia,Cambria,'Times New Roman',serif}
+::selection{background:var(--gold-10)}
+a{color:var(--gold);text-decoration:underline;text-decoration-thickness:1.5px;text-underline-offset:2px}
+a:hover{color:var(--terracotta)}
+a:focus-visible,button:focus-visible{outline:2px solid var(--gold);outline-offset:2px}
+h1,h2,h3{font-weight:700;text-wrap:balance;margin:0}
+p{margin:0}
+img,svg{max-width:100%}
+
+.wrap{max-width:var(--max);margin:0 auto;padding:0 24px}
+
+/* --- top nav (always allowed to carry a full-width line) --- */
+.topnav{position:sticky;top:0;z-index:20;background:rgba(248,244,242,0.9);backdrop-filter:blur(6px);border-bottom:1px solid var(--border)}
+.topnav .wrap{display:flex;align-items:center;justify-content:space-between;height:56px;gap:16px}
+.topnav .name{font-size:16px;white-space:nowrap;font-family:Inter,sans-serif}
+.topnav .name a{color:var(--gold);text-decoration:none}
+.topnav .name a:hover{color:var(--terracotta)}
+.topnav nav{display:flex;gap:4px;overflow-x:auto}
+.topnav nav a{font-size:14px;color:var(--gold);text-decoration:none;padding:6px 12px;border-radius:8px;white-space:nowrap}
+.topnav nav a:hover{color:var(--terracotta);background:var(--gold-10)}
+
+/* --- hero --- */
+.hero{padding:48px 0 40px;text-align:center}
+@media (min-width:641px){.hero{padding:64px 0 40px}}
+.eyebrow{font-size:13px;line-height:20px;letter-spacing:0.06em;text-transform:uppercase;color:var(--ink);font-weight:500}
+.hero h1{font-size:40px;line-height:48px;margin-top:8px}
+@media (min-width:641px){.hero h1{font-size:64px;line-height:72px}}
+.hero p.lede{font-size:16px;line-height:24px;margin-top:16px;max-width:60ch;margin-left:auto;margin-right:auto}
+.meta-row{display:flex;flex-wrap:wrap;justify-content:center;gap:8px;margin-top:24px}
+.meta-pill{font-size:13px;line-height:20px;letter-spacing:0.06em;text-transform:uppercase;font-weight:500;padding:4px 8px;border-radius:999px;border:1px solid var(--border)}
+
+/* --- section shell (no full-width lines outside nav/footer: sections separate by tint, not rule) --- */
+section.doc{padding:48px 0}
+@media (min-width:641px){section.doc{padding:64px 0}}
+section.doc.tint{background:var(--border-8)}
+section.doc .kicker{font-size:13px;line-height:16px;letter-spacing:0.06em;text-transform:uppercase;color:var(--terracotta);font-weight:700}
+section.doc h2{font-size:24px;line-height:32px;margin-top:8px}
+section.doc .intro{font-size:16px;line-height:24px;margin-top:12px;max-width:68ch}
+
+/* --- type specimen --- */
+.specimen{margin-top:32px;border:1px solid var(--border);border-radius:8px;overflow:hidden}
+.specimen-row{padding:20px 24px;border-bottom:1px solid var(--border)}
+.specimen-row:last-child{border-bottom:none}
+.specimen-row .label{display:flex;justify-content:space-between;align-items:baseline;flex-wrap:wrap;gap:4px;font-size:13px;letter-spacing:0.06em;text-transform:uppercase;font-weight:500;color:var(--ink);margin-bottom:8px}
+.specimen-row .label b{font-weight:700;text-transform:none;letter-spacing:0}
+.s-h1{font-size:36px;line-height:44px}
+.s-h2{font-size:24px;line-height:32px}
+.s-body{font-size:16px;line-height:24px;max-width:60ch}
+.s-eyebrow{font-size:13px;line-height:20px;letter-spacing:0.06em;text-transform:uppercase;font-weight:500}
+.font-stack{margin-top:16px;font-size:14px;background:var(--border-8);border:1px solid var(--border);border-radius:8px;padding:12px 16px;display:flex;flex-direction:column;gap:8px}
+.font-stack code{font-weight:700}
+.font-stack .s code{font-family:Merriweather,Georgia,serif}
+.font-stack .b code{font-family:Inter,sans-serif}
+
+/* --- color grid --- */
+.color-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:16px;margin-top:32px}
+.swatch{border:1px solid var(--border);border-radius:8px;overflow:hidden}
+.swatch-fill{height:96px}
+.swatch-info{padding:12px 16px;background:var(--bg)}
+.swatch-info .name{font-size:16px}
+.swatch-info .hex{font-size:14px;color:var(--ink);margin-top:2px}
+.swatch-info .role{font-size:14px;margin-top:8px}
+.swatch-info .contrast{font-size:14px;margin-top:8px;padding-top:8px;border-top:1px solid var(--border)}
+
+/* --- spacing scale --- */
+.spacing-scale{margin-top:32px;display:flex;flex-direction:column;gap:12px}
+.spacing-row{display:grid;grid-template-columns:110px 1fr 1fr;align-items:center;gap:16px}
+.spacing-row .name{font-size:16px}
+.spacing-row .name .px{display:block;font-size:13px;color:var(--terracotta);font-variant-numeric:tabular-nums}
+.spacing-row .bar-track{background:var(--border-8);border-radius:4px;height:16px}
+.spacing-row .bar{background:var(--gold);height:16px;border-radius:4px}
+.spacing-row .role{font-size:14px}
+
+/* --- shape row --- */
+.shape-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px;margin-top:32px}
+.shape-card{border:1px solid var(--border);border-radius:8px;padding:20px;background:var(--bg)}
+.shape-card .demo{display:flex;align-items:center;justify-content:center;height:64px}
+.shape-card .cap{font-size:14px;margin-top:12px;text-align:center}
+.box-square{width:64px;height:64px;border:1px solid var(--gold)}
+.box-round{width:64px;height:64px;border:1px solid var(--gold);border-radius:8px}
+.box-pill{padding:4px 8px;border:1px solid var(--gold);border-radius:999px;font-size:13px;letter-spacing:0.06em;text-transform:uppercase;font-weight:500}
+
+/* --- components --- */
+.component-block{margin-top:32px;display:flex;flex-direction:column;gap:24px}
+.component-row{display:flex;flex-wrap:wrap;align-items:center;gap:12px}
+.component-row .caption{width:100%;font-size:14px;margin-bottom:4px}
+.btn{display:inline-flex;align-items:center;gap:8px;font-size:16px;padding:8px 16px;border-radius:8px;border:1px solid;text-decoration:none;transition:background .15s,color .15s;cursor:pointer}
+.btn-primary{background:var(--gold);border-color:var(--gold);color:#fff}
+.btn-primary:hover{background:var(--bg);color:var(--gold)}
+.btn-secondary{background:var(--terracotta);border-color:var(--terracotta);color:#fff}
+.btn-secondary:hover{background:var(--bg);color:var(--terracotta)}
+.tab{font-size:16px;padding:8px 16px;border-radius:8px 8px 0 0;border:1px solid;cursor:pointer;font-family:inherit;transition:background .15s;position:relative;margin-bottom:-1px;z-index:1}
+.tab-selected{background:var(--border-8);border-color:var(--border);border-bottom-color:var(--border-8);color:var(--ink);font-weight:700}
+.tab-available{border-color:var(--border);color:var(--gold)}
+.tab-available:hover{background:var(--gold-10)}
+.folder-body{border:1px solid var(--border);border-radius:0 8px 8px 8px;padding:16px 20px;font-size:14px;color:var(--ink)}
+.folder-tabs{display:flex;flex-wrap:wrap;gap:4px;position:relative;z-index:1}
+.pill{font-size:16px;line-height:24px;padding:4px 8px;border-radius:999px;border:1px solid var(--border);color:var(--ink)}
+.dot{width:6px;height:6px;border-radius:999px;background:var(--terracotta);display:inline-block}
+.tint-demo{border:1px solid var(--border);border-radius:8px;overflow:hidden;font-size:14px}
+.tint-demo .half{padding:16px}
+.tint-demo .a{background:var(--bg)}
+.tint-demo .b{background:var(--border-8)}
+.center-demo{border:1px solid var(--border);border-radius:8px;padding:24px;text-align:center;font-size:14px}
+.center-demo .line{height:8px;background:var(--border-8);border-radius:4px;margin:0 auto 8px}
+
+/* --- rules list --- */
+.rules{margin-top:32px;display:flex;flex-direction:column;gap:0}
+.rule{display:grid;grid-template-columns:28px 1fr;gap:16px;padding:16px 0;border-top:1px solid var(--border)}
+.rule:first-child{border-top:none}
+.rule .n{font-size:14px;color:var(--terracotta);font-weight:700;padding-top:2px}
+.rule .t{font-size:16px}
+.rule .t b{font-weight:700}
+
+footer.doc{padding:32px 0 96px;color:var(--ink);border-top:1px solid var(--border)}
+footer.doc .row{display:flex;flex-direction:column;gap:8px}
+@media (min-width:641px){footer.doc .row-top{flex-direction:row;align-items:center;justify-content:space-between}}
+
+@media (max-width:640px){
+  .hero h1{font-size:32px;line-height:40px}
+  .spacing-row{grid-template-columns:90px 1fr}
+  .spacing-row .role{grid-column:1/-1}
+}
+</style>
+</head>
+<body>
+
+<div class="topnav">
+  <div class="wrap">
+    <span class="name"><a href="index.html">&larr; Chantell Collins, MBA</a></span>
+    <nav>
+      <a href="#type">Type</a>
+      <a href="#color">Color</a>
+      <a href="#spacing">Spacing</a>
+      <a href="#shape">Shape</a>
+      <a href="#components">Components</a>
+      <a href="#rules">Rules</a>
+    </nav>
+  </div>
+</div>
+
+<div class="hero wrap">
+  <div class="eyebrow">Design system &middot; career-portfolio</div>
+  <h1 class="font-serif">Balanced Architect</h1>
+  <p class="lede">Type, color, spacing, and component rules, mirrored from <code>outputs/index.html</code> as it stands today, not a separate aspiration.</p>
+  <div class="meta-row">
+    <span class="meta-pill">5 colors</span>
+    <span class="meta-pill">2 typefaces</span>
+    <span class="meta-pill">4 type sizes</span>
+    <span class="meta-pill">No dark mode</span>
+  </div>
+</div>
+
+<section class="doc" id="type">
+  <div class="wrap">
+    <div class="kicker">Type</div>
+    <h2 class="font-serif">Merriweather for headers, Inter for everything else</h2>
+    <p class="intro">A serif carries both heading tiers; a clean sans carries body copy and the eyebrow tier. Two families, each with one job, never mixed within a tier.</p>
+
+    <div class="font-stack">
+      <div class="s">headers (H1, H2): <code>Merriweather, Georgia, Cambria, "Times New Roman", serif</code></div>
+      <div class="b">body, eyebrow, nav: <code>Inter, system-ui, -apple-system, "Segoe UI", sans-serif</code></div>
+    </div>
+
+    <div class="specimen">
+      <div class="specimen-row">
+        <div class="label"><span>H1 &middot; hero name</span><b>Merriweather Bold (700) &middot; 36px / 44px</b></div>
+        <div class="s-h1 font-serif">Chantell Collins, MBA</div>
+      </div>
+      <div class="specimen-row">
+        <div class="label"><span>H2 &middot; section headers</span><b>Merriweather Bold (700) &middot; 24px / 32px</b></div>
+        <div class="s-h2 font-serif">Where the value gets delivered</div>
+      </div>
+      <div class="specimen-row">
+        <div class="label"><span>Eyebrow &middot; captions, labels, badges</span><b>Inter Medium (500) &middot; 13px / 16px, uppercase, +0.06em</b></div>
+        <div class="s-eyebrow">Vienna-based &middot; No sponsorship required &middot; Available now</div>
+      </div>
+      <div class="specimen-row">
+        <div class="label"><span>Body &middot; copy, links, nav</span><b>Inter Regular (400) &middot; 16px / 24px, bold reserved for named phrases only</b></div>
+        <div class="s-body">Thirteen years of high-stakes execution and multi-country delivery across FinTech, MedTech, enterprise SaaS, and autonomous systems.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="doc tint" id="color">
+  <div class="wrap">
+    <div class="kicker">Color</div>
+    <h2 class="font-serif">Five tokens, sourced from Chantell's own photos</h2>
+    <p class="intro">No coolors.co palette. Each hex was sampled from a real photo (Trieste, Malta, Della, a Vienna caf&eacute;), no sixth color added since. Gold is the only clickable signal on the page, never on a bullet, a stat, or plain body text.</p>
+
+    <div class="color-grid">
+      <div class="swatch">
+        <div class="swatch-fill" style="background:var(--bg);border-bottom:1px solid var(--border)"></div>
+        <div class="swatch-info">
+          <div class="name">bg</div>
+          <div class="hex">#F8F4F2</div>
+          <div class="role">Page background and card fill. Every surface, no second fill color.</div>
+        </div>
+      </div>
+      <div class="swatch">
+        <div class="swatch-fill" style="background:var(--ink)"></div>
+        <div class="swatch-info">
+          <div class="name">ink</div>
+          <div class="hex">#2F241D</div>
+          <div class="role">All headings and body copy. One text color, no opacity variants.</div>
+          <div class="contrast">13.81:1 on bg</div>
+        </div>
+      </div>
+      <div class="swatch">
+        <div class="swatch-fill" style="background:var(--border)"></div>
+        <div class="swatch-info">
+          <div class="name">border</div>
+          <div class="hex">#92725C</div>
+          <div class="role">Borders, dividers, pill outlines, section background tints.</div>
+          <div class="contrast">4.02:1 on bg</div>
+        </div>
+      </div>
+      <div class="swatch">
+        <div class="swatch-fill" style="background:var(--gold)"></div>
+        <div class="swatch-info">
+          <div class="name">gold</div>
+          <div class="hex">#8C6121</div>
+          <div class="role">Clickable elements only: links, the primary CTA, available (not selected) tabs.</div>
+          <div class="contrast">4.99:1 on bg</div>
+        </div>
+      </div>
+      <div class="swatch">
+        <div class="swatch-fill" style="background:var(--terracotta)"></div>
+        <div class="swatch-info">
+          <div class="name">terracotta</div>
+          <div class="hex">#96482C</div>
+          <div class="role">Hover color for clickable text, the secondary button, decorative dots.</div>
+          <div class="contrast">5.89:1 on bg</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="doc" id="spacing">
+  <div class="wrap">
+    <div class="kicker">Spacing</div>
+    <h2 class="font-serif">Seven steps, each with a named job</h2>
+    <p class="intro">A short scale on purpose: seven values, each tied to specific components, not a long ladder of near-duplicates. New spacing reaches for the step whose job matches, not the nearest number.</p>
+
+    <div class="spacing-scale">
+      <div class="spacing-row"><span class="name">Micro<span class="px">4px</span></span><div class="bar-track"><div class="bar" style="width:5%"></div></div><span class="role">Hairline offsets, icon-to-label gaps, badge vertical padding</span></div>
+      <div class="spacing-row"><span class="name">Tight<span class="px">8px</span></span><div class="bar-track"><div class="bar" style="width:10%"></div></div><span class="role">Badge horizontal padding, list item gaps, pill container gaps</span></div>
+      <div class="spacing-row"><span class="name">Base<span class="px">16px</span></span><div class="bar-track"><div class="bar" style="width:20%"></div></div><span class="role">Button horizontal padding, card content gaps, standard component margins</span></div>
+      <div class="spacing-row"><span class="name">Medium<span class="px">24px</span></span><div class="bar-track"><div class="bar" style="width:30%"></div></div><span class="role">Stat card internal padding, mobile page gutters, heading-to-body margin</span></div>
+      <div class="spacing-row"><span class="name">Large<span class="px">32px</span></span><div class="bar-track"><div class="bar" style="width:40%"></div></div><span class="role">Card grid gaps, desktop footer padding, block-to-block margin</span></div>
+      <div class="spacing-row"><span class="name">Section<span class="px">48px</span></span><div class="bar-track"><div class="bar" style="width:60%"></div></div><span class="role">Section top and bottom padding, tablet/mobile</span></div>
+      <div class="spacing-row"><span class="name">Macro<span class="px">64px</span></span><div class="bar-track"><div class="bar" style="width:100%"></div></div><span class="role">Desktop section top/bottom padding, sitewide</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="doc tint" id="shape">
+  <div class="wrap">
+    <div class="kicker">Shape &amp; line</div>
+    <h2 class="font-serif">One line weight, one corner, one pill</h2>
+    <p class="intro">No variants. A border is always 1px, a rectangle is always 8px-rounded, a pill is always fully rounded, including on hover, so nothing resizes when it's touched. And a full-width rule across the page is reserved for the nav and footer only: everywhere else, a section change reads through a background tint, not a line.</p>
+
+    <div class="shape-grid">
+      <div class="shape-card">
+        <div class="demo"><div class="box-square"></div></div>
+        <div class="cap">Line thickness: 1px, everywhere a border appears</div>
+      </div>
+      <div class="shape-card">
+        <div class="demo"><div class="box-round"></div></div>
+        <div class="cap">Corner radius: 8px on every rectangle</div>
+      </div>
+      <div class="shape-card">
+        <div class="demo"><div class="box-pill">Available now</div></div>
+        <div class="cap">Pill: fully rounded, border only, no fill</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="doc" id="components">
+  <div class="wrap">
+    <div class="kicker">Components</div>
+    <h2 class="font-serif">Live states, not screenshots</h2>
+    <p class="intro">Hover the elements below: these are the actual CSS rules from the site, not a static picture of them.</p>
+
+    <div class="component-block">
+      <div class="component-row">
+        <span class="caption">Buttons: fill inverts on hover, border stays the same color, nothing resizes. Padding is Base (16px) horizontal, Tight (8px) vertical, a 40px tap target at `text-base`. Keyboard focus gets its own 2px gold outline (`:focus-visible`), separate from hover.</span>
+        <a class="btn btn-primary" href="#">Book 15-min intro</a>
+        <a class="btn btn-secondary" href="#">Connect on LinkedIn</a>
+      </div>
+
+      <div class="component-row">
+        <span class="caption">Text link: permanent gold and underline, terracotta on hover.</span>
+        <a href="#">chantell.collins@gmail.com</a>
+      </div>
+
+      <div class="component-row" style="display:block">
+        <span class="caption">Nav: hidden at page load, slides in once the page has scrolled 100px, then stays fixed. Built as `position:fixed`, not `sticky`, since a sticky header would already be visible with no scroll needed. A `translate-y` toggle on a scroll listener drives the slide (`transition-transform duration-300`). Two section anchors, `#capability` and `#trajectory`, carry `scroll-mt-16` so a nav click doesn't land a heading underneath the fixed bar.</span>
+      </div>
+
+      <div class="component-row" style="display:block">
+        <span class="caption">Capability tabs: folder style. Selected carries the card tint and dark bold ink, matched exactly to the tinted panel below it, no seam line. Unselected sits on the plain page background in gold text, signaling "still clickable." Implementation note for `outputs/index.html` (a Tailwind CDN build, unlike this plain-CSS reference): the selected tab's bottom border color is set as an inline `style` attribute, not a class. Tailwind's CDN script injects its own stylesheet at runtime, and when that lands after this page's own `&lt;style&gt;` block, a same-specificity class override can lose the cascade unpredictably. An inline style always wins regardless of injection order, so that's what keeps the seam hidden on a CDN build.</span>
+        <div class="folder-tabs">
+          <button class="tab tab-selected">Commercial delivery</button>
+          <button class="tab tab-available">Responsible AI &amp; governance</button>
+          <button class="tab tab-available">Remote global operations</button>
+        </div>
+        <div class="folder-body">Selected panel content sits flush against the selected tab. Both carry the exact same tint fill, so the border between them disappears, no plain-bg card breaking the surface.</div>
+      </div>
+
+      <div class="component-row">
+        <span class="caption">Pill / badge: border-only stroke, never on the text. Text stays full-strength ink, set in plain Body type (16px regular), not the eyebrow tier.</span>
+        <span class="pill">Vienna-based</span>
+        <span class="pill">ClickUp Expert</span>
+      </div>
+
+      <div class="component-row">
+        <span class="caption">Decorative dot: terracotta, used for bullet points and tab-progress only, never text.</span>
+        <span class="dot"></span><span class="dot"></span><span class="dot"></span>
+      </div>
+
+      <div class="component-row" style="display:block">
+        <span class="caption">Separator glyph: one mark, one color, everywhere. Every divider on the page, hero credential phrases, job title to company, credential to institution, the two contact links, is the same terracotta middot (`&amp;middot;`). Superseded: an earlier pass used a literal `|` pipe for the hero credential line specifically, and kept most inline middots at plain ink color, reserving terracotta for standalone dividers only. Collapsed to one rule: no pipes anywhere, every middot terracotta, matching the decorative dot so all small marks on the page read as one family.</span>
+        <div style="font-size:16px;color:var(--ink)">Head of Operations &amp; Delivery <span style="color:var(--terracotta)">&middot;</span> FinTech, SaaS &amp; AI Transformation <span style="color:var(--terracotta)">&middot;</span> Responsible AI &amp; Human-Centric Leader</div>
+      </div>
+
+      <div class="component-row" style="display:block">
+        <span class="caption">Card background tint: a flat, opaque `#F0EAE6` (border #92725C at 8% opacity, pre-computed against the page background and baked in as a solid color, not a translucent overlay). Applied to cards only, stat cells, proof cells, the capability panel, never to the section wrapper, which stays plain `#F8F4F2`. Kept opaque rather than translucent as standing practice: the stat and proof grids no longer need opacity for their old divider-line trick, each cell is its own rounded card now, but an opaque fill stays the safer default for any card that might sit on a non-page-color surface someday.</span>
+        <div class="tint-demo">
+          <div class="half a">Plain `#F8F4F2`: every section wrapper</div>
+          <div class="half b">Tinted `#F0EAE6`: cards only</div>
+        </div>
+      </div>
+
+      <div class="component-row" style="display:block">
+        <span class="caption">Proof/stat grids: each cell is its own individually-rounded card, not one shared container with square inner cells. The gap between cards matches the gap between folder tabs (Micro/Tight, 4px), the same rhythm used for "buttons in a row" elsewhere on the page. No icons or logo marks, company names are plain bold body text. On `outputs/index.html`, all eight cards (four stat cells, four proof cells) carry a `.match-h` hook: a small script measures the tallest card's natural height on load, on font-load, and on resize, then locks every card to that height, so short proof captions and longer stat captions line up at every breakpoint. A CSS-only `min-height` floor isn't enough here: the two grids are separate CSS Grid instances with no shared row, and stat captions can run taller than any single fixed value across viewport widths.</span>
+        <div class="tint-demo" style="display:flex;gap:12px;text-align:center;border:none">
+          <div class="half b" style="flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;border-radius:8px;min-height:144px">
+            <div style="font-size:16px;font-weight:700;color:var(--ink)">&euro;5M+</div>
+            <div style="font-size:14px;color:var(--ink)">Annual portfolio governed, across five Project Managers and 30+ concurrent multi-country platforms.</div>
+          </div>
+          <div class="half b" style="flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;border-radius:8px;min-height:144px">
+            <div style="font-size:16px;font-weight:700;color:var(--ink)">Serve Robotics</div>
+            <div style="font-size:14px"><a href="#">Won the Awwwards site of the day.</a></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="component-row" style="display:block">
+        <span class="caption">Hero layout: everything above the first CTA is centered, matching the contact section's already-centered treatment.</span>
+        <div class="center-demo">
+          <div class="line" style="width:40%"></div>
+          <div class="line" style="width:70%"></div>
+          <div class="line" style="width:55%"></div>
+          centered badges &middot; H1 &middot; credential line &middot; tagline &middot; stat grid &middot; CTA row
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="doc tint" id="rules">
+  <div class="wrap">
+    <div class="kicker">Governing rules</div>
+    <h2 class="font-serif">What keeps this one system instead of five</h2>
+    <div class="rules">
+      <div class="rule"><span class="n">01</span><span class="t"><b>Gold means an action is still available</b>, not "this is currently selected." A tab you're already viewing is dark brown ink and bold, not gold, even though selecting a different one is itself a click.</span></div>
+      <div class="rule"><span class="n">02</span><span class="t"><b>Body text is one flat color, no opacity tiers.</b> Ink at reduced opacity reads as grey against this background even when it clears contrast on paper. Hierarchy comes from the type scale alone.</span></div>
+      <div class="rule"><span class="n">03</span><span class="t"><b>Bold is selective, not systemic.</b> Body defaults to regular weight; bold is reserved for job titles only, applied without changing color.</span></div>
+      <div class="rule"><span class="n">04</span><span class="t"><b>The page background is plain `#F8F4F2`; cards carry the tint, not the sections around them.</b> Section wrappers (Hero/Stats/CTA, Capability, Trajectory, Credentials/Systems, Contact) sit on the plain page color with no tint of their own. Cards inside them (stat cells, proof-table cells, the capability panel) carry the tint as a baked-in opaque color (`#F0EAE6`), giving the card real contrast against the page rather than blending into it.</span></div>
+      <div class="rule"><span class="n">05</span><span class="t"><b>Pills carry a border, never a fill.</b> Badges and chips are outline-only tags set in plain Body type (not the eyebrow tier), so they read clearly against either a plain or a tinted section background without needing a matching fill value.</span></div>
+      <div class="rule"><span class="n">06</span><span class="t"><b>Hover never resizes anything.</b> Buttons keep their border in the base state, so the fill-inversion hover swap never shifts layout.</span></div>
+      <div class="rule"><span class="n">07</span><span class="t"><b>No sixth color.</b> Every decorative or informational use draws from these five tokens; a new hue is never the fix for "this needs more visual interest."</span></div>
+      <div class="rule"><span class="n">08</span><span class="t"><b>No dark mode.</b> Confirmed unnecessary and dropped outright, not deferred: no toggle, no <code>prefers-color-scheme</code> branch, no shade scale kept around to support one.</span></div>
+      <div class="rule"><span class="n">09</span><span class="t"><b>No off-scale spacing.</b> Every margin, padding, and gap on the page maps to one of the seven named steps. Adjacent sections never stack independent top/bottom padding into a doubled gap either, each visual block is one section with one symmetric padding pair.</span></div>
+      <div class="rule"><span class="n">10</span><span class="t"><b>Keyboard focus always gets its own visible state.</b> Every link, button, and tab carries a 2px gold `:focus-visible` outline, distinct from mouse hover and never suppressed, so keyboard navigation never goes invisible.</span></div>
+      <div class="rule"><span class="n">11</span><span class="t"><b>One separator glyph, one color.</b> No pipes (`|`) anywhere on the page; every divider, hero credential phrases, job title to company, credential to institution, the Languages line, contact links, is the same terracotta middot (`&amp;middot;`). Decorative and inline separators no longer get different treatment.</span></div>
+    </div>
+  </div>
+</section>
+
+<footer class="doc eyebrow wrap">
+  <div class="row">
+    <div class="row row-top">
+      <span>&copy; 2026 Chantell Collins <span style="color:var(--terracotta)">&middot;</span> <a href="design-system.html">Design system</a></span>
+      <span><a href="mailto:chantell.collins@gmail.com">chantell.collins@gmail.com</a> <span style="color:var(--terracotta)">&middot;</span> <a href="tel:+436765473254">+43 676 547 3254</a></span>
+    </div>
+    <span>This page counts a few specific clicks after you accept cookies. See <a href="privacy.html">Privacy</a> for details.</span>
+  </div>
+</footer>
+
+</body>
+</html>
