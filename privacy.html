@@ -21,7 +21,7 @@
 
 <div class="max-w-5xl mx-auto px-6 py-12 sm:py-16">
   <h1 class="font-serif font-bold text-3xl text-ink">Privacy</h1>
-  <p class="mt-4 text-base leading-relaxed text-ink">Last updated 27 August 2026.</p>
+  <p class="mt-4 text-base leading-relaxed text-ink">Last updated <span id="lastUpdated">31 August 2026</span>.</p>
 
   <p class="mt-8 text-base leading-relaxed text-ink">This site is a personal portfolio and CV for Chantell Collins (contact:
   <a href="mailto:chantell.collins@gmail.com" class="text-gold underline hover:text-terracotta">chantell.collins@gmail.com</a>). It doesn't sell products, offer paid services, or run
@@ -153,6 +153,20 @@ var GA_MEASUREMENT_ID='G-Y9PWLV04RR';
     banner.classList.add('hidden')});
   if(settingsBtn)settingsBtn.addEventListener('click',function(){
     if(banner)banner.classList.remove('hidden')});
+})();
+</script>
+
+<script>
+/* "Last updated" is read from this file's own Last-Modified header (GitHub Pages sets
+   this per-file, from the last commit that touched it), so it can't drift out of sync
+   with the actual content again. The static text in the span above is a no-JS fallback
+   only. */
+(function(){
+  var el=document.getElementById('lastUpdated');
+  if(!el)return;
+  var d=new Date(document.lastModified);
+  if(isNaN(d))return;
+  el.textContent=d.toLocaleDateString('en-GB',{day:'numeric',month:'long',year:'numeric'});
 })();
 </script>
 
