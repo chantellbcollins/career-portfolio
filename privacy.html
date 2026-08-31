@@ -78,10 +78,58 @@
 <footer class="max-w-5xl mx-auto px-6 py-8 pb-24 eyebrow font-medium text-ink flex flex-col gap-2">
   <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2">
     <span>&copy; 2026 Chantell Collins<span class="mx-2 text-terracotta">&middot;</span><a href="design-system.html" class="text-gold underline hover:text-terracotta">Design system</a></span>
-    <p><a href="mailto:chantell.collins@gmail.com" class="text-gold underline hover:text-terracotta">chantell.collins@gmail.com</a><span class="mx-2 text-terracotta">&middot;</span><a href="tel:+436765473254" class="text-gold underline hover:text-terracotta">+43 676 547 3254</a></p>
   </div>
-  <span>This page counts a few specific clicks after you accept cookies. See <a href="privacy.html" class="text-gold underline hover:text-terracotta">Privacy</a> for details.</span>
+  <span>This page counts a few specific clicks after you accept cookies. See <a href="privacy.html" class="text-gold underline hover:text-terracotta">Privacy</a> or <button type="button" id="cookieSettingsBtn" class="text-gold underline hover:text-terracotta">Cookie settings</button> for details.</span>
 </footer>
+
+<div id="consentBanner" class="fixed inset-x-0 bottom-0 z-50 hidden border-t border-border tint-bg">
+  <div class="max-w-5xl mx-auto px-6 py-4 flex flex-col sm:flex-row sm:items-center gap-3 sm:gap-6">
+    <p class="text-sm text-ink flex-1">This site uses cookies to count a few specific clicks (email, booking, LinkedIn). See the <a href="privacy.html" class="text-gold underline hover:text-terracotta">Privacy page</a> for details.</p>
+    <div class="flex gap-2 shrink-0">
+      <button id="consentReject" class="px-4 py-2 rounded-lg border border-border text-ink hover:bg-border/40 transition text-sm">Reject</button>
+      <button id="consentAccept" class="px-4 py-2 rounded-lg bg-gold text-white border border-gold hover:bg-bg hover:text-gold transition text-sm">Accept</button>
+    </div>
+  </div>
+</div>
+
+<script>
+/* Google Analytics 4 (stream: chantellcollins.com, G-Y9PWLV04RR), gated by consent.
+   Nothing loads or fires until a visitor clicks Accept on the banner. This page fires no
+   events of its own; the script exists here only so Cookie settings can read/write the
+   same consent choice used on index.html. */
+var GA_MEASUREMENT_ID='G-Y9PWLV04RR';
+(function(){
+  var CONSENT_KEY='cc-consent';
+  function loadGA(){
+    if(window.gaLoaded)return;
+    window.gaLoaded=true;
+    window.dataLayer=window.dataLayer||[];
+    window.gtag=function(){dataLayer.push(arguments)};
+    gtag('consent','default',{analytics_storage:'granted'});
+    gtag('js',new Date());
+    gtag('config',GA_MEASUREMENT_ID);
+    var s=document.createElement('script');
+    s.async=true;s.src='https://www.googletagmanager.com/gtag/js?id='+GA_MEASUREMENT_ID;
+    document.head.appendChild(s);
+  }
+  var banner=document.getElementById('consentBanner'),
+      accept=document.getElementById('consentAccept'),
+      reject=document.getElementById('consentReject'),
+      settingsBtn=document.getElementById('cookieSettingsBtn');
+  var choice=null;
+  try{choice=localStorage.getItem(CONSENT_KEY)}catch(e){}
+  if(choice==='granted'){loadGA()}
+  else if(choice!=='denied'&&banner){banner.classList.remove('hidden')}
+  if(accept)accept.addEventListener('click',function(){
+    try{localStorage.setItem(CONSENT_KEY,'granted')}catch(e){}
+    loadGA();banner.classList.add('hidden')});
+  if(reject)reject.addEventListener('click',function(){
+    try{localStorage.setItem(CONSENT_KEY,'denied')}catch(e){}
+    banner.classList.add('hidden')});
+  if(settingsBtn)settingsBtn.addEventListener('click',function(){
+    if(banner)banner.classList.remove('hidden')});
+})();
+</script>
 
 </body>
 </html>
