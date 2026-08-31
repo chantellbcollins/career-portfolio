@@ -26,18 +26,17 @@
 </header>
 
 <section><div class="max-w-5xl mx-auto px-6 py-12 sm:py-16 text-center">
-  <div class="flex flex-wrap items-center justify-center gap-2 mb-6">
-    <span class="text-base px-2 py-1 rounded-full border border-border text-ink">Vienna-based</span>
-    <span class="text-base px-2 py-1 rounded-full border border-border text-ink">Available now</span>
-  </div>
+  <div class="eyebrow text-ink mb-6">Vienna-based <span class="text-terracotta">&middot;</span> Available now</div>
 
   <h1 class="font-serif font-bold text-[40px] leading-[48px] sm:text-[64px] sm:leading-[72px] text-ink">Chantell Collins<span class="text-ink">, MBA</span></h1>
 
-  <p class="mt-6 flex flex-wrap items-center justify-center gap-x-2 gap-y-1 text-base leading-relaxed text-ink">
-    <span class="whitespace-nowrap">Head of Operations &amp; Delivery</span><span class="text-terracotta" aria-hidden="true">&middot;</span><span class="whitespace-nowrap">Global Platforms &amp; Fintech</span><span class="text-terracotta" aria-hidden="true">&middot;</span><span class="whitespace-nowrap">Responsible AI &amp; Human-Centric Leader</span>
-  </p>
+  <div class="mt-6 flex flex-wrap items-center justify-center gap-2">
+    <span class="text-base px-2 py-1 rounded-full border border-border text-ink whitespace-nowrap">Head of Operations &amp; Delivery</span>
+    <span class="text-base px-2 py-1 rounded-full border border-border text-ink whitespace-nowrap">Global Platforms &amp; Fintech</span>
+    <span class="text-base px-2 py-1 rounded-full border border-border text-ink whitespace-nowrap">Responsible AI &amp; Human-Centric Leader</span>
+  </div>
 
-  <div class="mt-12 grid grid-cols-2 lg:grid-cols-4 gap-1">
+  <div class="mt-12 hidden sm:grid grid-cols-2 lg:grid-cols-4 gap-1">
     <div class="tint-bg border border-border rounded-lg p-6 text-center min-h-[144px] flex flex-col justify-center match-h"><div class="text-base font-bold text-ink">&euro;5M+ portfolio</div>
       <p class="mt-2 text-base text-ink">Annual portfolio governed, across five Project Managers and 30+ concurrent multi-country platforms.</p></div>
     <div class="tint-bg border border-border rounded-lg p-6 text-center min-h-[144px] flex flex-col justify-center match-h"><div class="text-base font-bold text-ink">85.2% margin health</div>
@@ -46,6 +45,29 @@
       <p class="mt-2 text-base text-ink">Two online businesses founded and exited. Nine years of direct P&amp;L, product pricing, operational strategy.</p></div>
     <div class="tint-bg border border-border rounded-lg p-6 text-center min-h-[144px] flex flex-col justify-center match-h"><div class="text-base font-bold text-ink">100% completion rate</div>
       <p class="mt-2 text-base text-ink">Five PMs, 30+ concurrent projects and digital platform rollouts, Q1 2026 team KPIs achieved.</p></div>
+  </div>
+
+  <div class="mt-12 relative sm:hidden" id="statCarousel">
+    <div class="tint-bg border border-border rounded-lg p-6 text-center min-h-[144px] flex flex-col justify-center" id="statPanel">
+      <div data-stat-slide="0" class="on"><div class="text-base font-bold text-ink">&euro;5M+ portfolio</div>
+        <p class="mt-2 text-base text-ink">Annual portfolio governed, across five Project Managers and 30+ concurrent multi-country platforms.</p></div>
+      <div data-stat-slide="1"><div class="text-base font-bold text-ink">85.2% margin health</div>
+        <p class="mt-2 text-base text-ink">Budgets exceeded or met their target profit margin as part of portfolio ownership and governance.</p></div>
+      <div data-stat-slide="2"><div class="text-base font-bold text-ink">Built &amp; sold</div>
+        <p class="mt-2 text-base text-ink">Two online businesses founded and exited. Nine years of direct P&amp;L, product pricing, operational strategy.</p></div>
+      <div data-stat-slide="3"><div class="text-base font-bold text-ink">100% completion rate</div>
+        <p class="mt-2 text-base text-ink">Five PMs, 30+ concurrent projects and digital platform rollouts, Q1 2026 team KPIs achieved.</p></div>
+    </div>
+    <div class="mt-4 flex items-center justify-center gap-4">
+      <button id="statPrev" aria-label="Previous stat" class="text-gold hover:text-terracotta px-2 py-2">&larr;</button>
+      <div class="flex gap-2" id="statDots">
+        <span class="h-1.5 w-1.5 rounded-full bg-ink" data-stat-dot="0"></span>
+        <span class="h-1.5 w-1.5 rounded-full bg-border" data-stat-dot="1"></span>
+        <span class="h-1.5 w-1.5 rounded-full bg-border" data-stat-dot="2"></span>
+        <span class="h-1.5 w-1.5 rounded-full bg-border" data-stat-dot="3"></span>
+      </div>
+      <button id="statNext" aria-label="Next stat" class="text-gold hover:text-terracotta px-2 py-2">&rarr;</button>
+    </div>
   </div>
 
   <div class="mt-12 flex flex-col sm:flex-row items-center justify-center gap-4">
@@ -57,13 +79,13 @@
 <section id="capability" class="scroll-mt-16"><div class="max-w-5xl mx-auto px-6 py-12 sm:py-16">
   <h2 class="font-serif font-bold text-2xl text-ink">Capabilities</h2>
   <p class="mt-6 text-base leading-relaxed text-ink">Building the operational scaffolding that scales organisations without burning margin or people.</p>
-  <div class="mt-8 flex flex-wrap gap-1 relative z-10" role="tablist">
+  <div class="mt-8 hidden sm:flex flex-wrap gap-1 relative z-10" role="tablist">
     <button data-tab="commercial" class="tab text-base px-4 py-2 rounded-t-lg border transition -mb-px tint-bg text-ink font-bold border-border" style="border-bottom-color:#F0EAE6" aria-selected="true">Commercial delivery</button>
     <button data-tab="ai" class="tab text-base px-4 py-2 rounded-t-lg border transition -mb-px text-gold border-border hover:bg-gold/10" aria-selected="false">Responsible AI &amp; governance</button>
     <button data-tab="focus" class="tab text-base px-4 py-2 rounded-t-lg border transition -mb-px text-gold border-border hover:bg-gold/10" aria-selected="false">Remote global operations</button>
     <button data-tab="ownership" class="tab text-base px-4 py-2 rounded-t-lg border transition -mb-px text-gold border-border hover:bg-gold/10" aria-selected="false">Human-centric leadership</button>
   </div>
-  <div class="min-h-[230px] border border-border rounded-b-lg rounded-tr-lg tint-bg p-6 sm:p-8" id="capabilityPanels">
+  <div class="min-h-[230px] border border-border max-sm:rounded-lg sm:rounded-b-lg sm:rounded-tr-lg mt-8 sm:mt-0 tint-bg p-6 sm:p-8" id="capabilityPanels">
     <div data-panel="commercial" class="on"><ul class="space-y-4">
       <li class="flex gap-2"><span class="mt-2 h-1.5 w-1.5 rounded-full bg-terracotta shrink-0"></span><p>Built the company-wide <span>Estimation Guide</span> and pricing model that became the standard for every proposal, closing <span>69 new B2B agreements</span> on terms set from day one.</p></li>
       <li class="flex gap-2"><span class="mt-2 h-1.5 w-1.5 rounded-full bg-terracotta shrink-0"></span><p>Owned portfolio health against an &euro;5M+ margin target, mentoring PMs to meet or exceed it on <span>85.2%</span> of projects and products. Monthly financial health reporting to leadership.</p></li>
@@ -87,30 +109,34 @@
       <li class="flex gap-2"><span class="mt-2 h-1.5 w-1.5 rounded-full bg-terracotta shrink-0"></span><p>Directed <span>five Project Managers</span> across 30 multi-country platforms and service rollouts concurrently, securing a 100% completion rate across team KPIs in Q1, 2026.</p></li>
       <li class="flex gap-2"><span class="mt-2 h-1.5 w-1.5 rounded-full bg-terracotta shrink-0"></span><p>Co-mentored six mentees through a six-week Residence programme.</p></li></ul></div>
   </div>
-  <div class="mt-4 flex justify-center gap-2 sm:hidden" id="capabilityDots" aria-hidden="true">
-    <span class="h-1.5 w-1.5 rounded-full bg-ink" data-dot="commercial"></span>
-    <span class="h-1.5 w-1.5 rounded-full bg-border" data-dot="ai"></span>
-    <span class="h-1.5 w-1.5 rounded-full bg-border" data-dot="focus"></span>
-    <span class="h-1.5 w-1.5 rounded-full bg-border" data-dot="ownership"></span>
+  <div class="mt-4 flex items-center justify-center gap-4 sm:hidden">
+    <button id="capabilityPrev" aria-label="Previous capability" class="text-gold hover:text-terracotta px-2 py-2">&larr;</button>
+    <div class="flex gap-2" id="capabilityDots" aria-hidden="true">
+      <span class="h-1.5 w-1.5 rounded-full bg-ink" data-dot="commercial"></span>
+      <span class="h-1.5 w-1.5 rounded-full bg-border" data-dot="ai"></span>
+      <span class="h-1.5 w-1.5 rounded-full bg-border" data-dot="focus"></span>
+      <span class="h-1.5 w-1.5 rounded-full bg-border" data-dot="ownership"></span>
+    </div>
+    <button id="capabilityNext" aria-label="Next capability" class="text-gold hover:text-terracotta px-2 py-2">&rarr;</button>
   </div>
 </div></section>
 
 <section id="trajectory" class="scroll-mt-16"><div class="max-w-5xl mx-auto px-6 py-12 sm:py-16">
   <h2 class="font-serif font-bold text-2xl text-ink">Trajectory</h2>
-  <p class="mt-6 text-base leading-relaxed text-ink">Thirteen years of high-stakes execution and multi-country delivery across global platforms, FinTech, MedTech, and autonomous systems.</p>
+  <p class="mt-6 text-base leading-relaxed text-ink">Thirteen years of high-stakes execution and multi-country delivery across global platforms, fintech, and autonomous systems.</p>
   <div class="mt-8 space-y-8">
     <article class="grid sm:grid-cols-[160px_1fr] gap-4 sm:gap-8">
-      <div class="eyebrow font-medium text-ink pt-1">Aug 2024 to Jun 2026<br><span class="text-ink">Austria, Hybrid</span></div>
+      <div class="eyebrow font-medium text-ink pt-1">Aug 2024 to Jun 2026 <span class="text-terracotta">&middot;</span> Austria, Hybrid</div>
       <div><h3 class="text-base text-ink"><span class="font-bold">Project Management Lead</span>, promoted from <span class="font-bold">Senior Project Manager</span> <span class="text-terracotta">&middot;</span> <a href="https://wild.as/" target="_blank" rel="noopener" class="text-gold underline hover:text-terracotta">wild</a></h3>
       <p class="mt-4 leading-relaxed">Owned operations and delivery for a distributed team of 30, governing a &euro;5M+ annual portfolio at 85.2% margin health. Five PMs across 30+ concurrent multi-country platforms. AI transformation across CEE markets, aligning C-level, legal, compliance, and tech stakeholders.</p></div>
     </article>
     <article class="grid sm:grid-cols-[160px_1fr] gap-4 sm:gap-8">
-      <div class="eyebrow font-medium text-ink pt-1">Aug 2015 to Dec 2024<br><span class="text-ink">Global, Remote</span></div>
+      <div class="eyebrow font-medium text-ink pt-1">Aug 2015 to Dec 2024 <span class="text-terracotta">&middot;</span> Global, Remote</div>
       <div><h3 class="text-base text-ink"><span class="font-bold">Founder &amp; Head of Operations</span> <span class="text-terracotta">&middot;</span> <a href="https://www.pinadvertising.com/" target="_blank" rel="noopener" class="text-gold underline hover:text-terracotta">Pin Advertising</a></h3>
       <p class="mt-4 leading-relaxed">Founded, scaled, and exited two P&amp;L-owned businesses in marketing and tourism, carrying full accountability for strategy, pricing, and delivery. Five AI-focused digital products from discovery to international rollout. Remote team of seven, async-first.</p></div>
     </article>
     <article class="grid sm:grid-cols-[160px_1fr] gap-4 sm:gap-8">
-      <div class="eyebrow font-medium text-ink pt-1">2004 to 2021<br><span class="text-ink">AU &amp; US, Foundations</span></div>
+      <div class="eyebrow font-medium text-ink pt-1">2004 to 2021 <span class="text-terracotta">&middot;</span> AU &amp; US, Foundations</div>
       <div>
       <ul class="mt-4 space-y-2 text-base leading-relaxed">
         <li><span class="font-bold">Head of Digital Marketing</span> <span class="text-terracotta">&middot;</span> <a href="https://forumbiosciences.com/" target="_blank" rel="noopener" class="text-gold underline hover:text-terracotta">Forum Bio</a>. 15 contractors, eight six-figure US enterprise accounts.</li>
@@ -182,7 +208,7 @@
 
 <section id="wins" class="scroll-mt-16"><div class="max-w-5xl mx-auto px-6 py-12 sm:py-16 text-center">
   <h2 class="font-serif font-bold text-2xl text-ink mb-8">High-value rollouts &amp; wins</h2>
-  <div class="grid grid-cols-2 lg:grid-cols-4 gap-1">
+  <div class="hidden sm:grid grid-cols-2 lg:grid-cols-4 gap-1">
     <div class="tint-bg border border-border rounded-lg p-6 text-center min-h-[144px] flex flex-col justify-center match-h">
       <div class="text-base font-bold text-ink">Serve Robotics</div>
       <p class="mt-2 text-base"><a href="https://www.awwwards.com/sites/serve-robotics" target="_blank" rel="noopener" class="text-gold underline hover:text-terracotta">Won the Awwwards Site of the Day.</a></p></div>
@@ -197,6 +223,29 @@
       <p class="mt-2 text-base"><a href="https://lnkd.in/p/dVn_Bn8Z" target="_blank" rel="noopener" class="text-gold underline hover:text-terracotta">Rethinking the product demo for THINK 2025.</a></p></div>
   </div>
 
+  <div class="relative sm:hidden" id="winsCarousel">
+    <div class="tint-bg border border-border rounded-lg p-6 text-center min-h-[144px] flex flex-col justify-center" id="winsPanel">
+      <div data-wins-slide="0" class="on"><div class="text-base font-bold text-ink">Serve Robotics</div>
+        <p class="mt-2 text-base"><a href="https://www.awwwards.com/sites/serve-robotics" target="_blank" rel="noopener" class="text-gold underline hover:text-terracotta">Won the Awwwards Site of the Day.</a></p></div>
+      <div data-wins-slide="1"><div class="text-base font-bold text-ink">Comfy Visual AI</div>
+        <p class="mt-2 text-base"><a href="https://comfy.org/" target="_blank" rel="noopener" class="text-gold underline hover:text-terracotta">Site redesign delivered within 3 weeks.</a></p></div>
+      <div data-wins-slide="2"><div class="text-base font-bold text-ink">Unstructured</div>
+        <p class="mt-2 text-base"><a href="https://thefwa.com/cases/unstructured-p2" target="_blank" rel="noopener" class="text-gold underline hover:text-terracotta">Won the FWA Site of the Day.</a></p></div>
+      <div data-wins-slide="3"><div class="text-base font-bold text-ink">IBM watsonx.data</div>
+        <p class="mt-2 text-base"><a href="https://lnkd.in/p/dVn_Bn8Z" target="_blank" rel="noopener" class="text-gold underline hover:text-terracotta">Rethinking the product demo for THINK 2025.</a></p></div>
+    </div>
+    <div class="mt-4 flex items-center justify-center gap-4">
+      <button id="winsPrev" aria-label="Previous win" class="text-gold hover:text-terracotta px-2 py-2">&larr;</button>
+      <div class="flex gap-2" id="winsDots">
+        <span class="h-1.5 w-1.5 rounded-full bg-ink" data-wins-dot="0"></span>
+        <span class="h-1.5 w-1.5 rounded-full bg-border" data-wins-dot="1"></span>
+        <span class="h-1.5 w-1.5 rounded-full bg-border" data-wins-dot="2"></span>
+        <span class="h-1.5 w-1.5 rounded-full bg-border" data-wins-dot="3"></span>
+      </div>
+      <button id="winsNext" aria-label="Next win" class="text-gold hover:text-terracotta px-2 py-2">&rarr;</button>
+    </div>
+  </div>
+
   <div class="mt-12 flex flex-col sm:flex-row items-center justify-center gap-4">
     <a data-t="cta_schedule_call_clicked" href="https://calendar.app.google/xoCv8Lis9yX5v6n68" target="_blank" rel="noopener" class="w-full sm:w-auto px-4 py-2 rounded-lg bg-gold text-white border border-gold hover:bg-bg hover:text-gold transition">Book 15-min intro</a>
     <a data-t="cta_linkedin_clicked" href="https://www.linkedin.com/in/chantellcollinsmba/" target="_blank" rel="noopener" class="w-full sm:w-auto px-4 py-2 rounded-lg bg-terracotta text-white border border-terracotta hover:bg-bg hover:text-terracotta transition inline-flex items-center justify-center gap-2"><span>Connect on</span><svg class="h-4 w-4" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05a3.74 3.74 0 013.37-1.85c3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.07 2.07 0 110-4.13 2.07 2.07 0 010 4.13zM7.12 20.45H3.55V9h3.57v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.72v20.56C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.72V1.72C24 .77 23.2 0 22.22 0z"/></svg></a>
@@ -207,7 +256,7 @@
   <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2">
     <span>&copy; 2026 Chantell Collins<span class="mx-2 text-terracotta">&middot;</span><a href="design-system.html" class="text-gold underline hover:text-terracotta">Design system</a></span>
   </div>
-  <span>This page counts a few specific clicks after you accept cookies. See <a href="privacy.html" class="text-gold underline hover:text-terracotta">Privacy</a> or <button type="button" id="cookieSettingsBtn" class="text-gold underline hover:text-terracotta">Cookie settings</button>.</span>
+  <span>This page counts a few specific clicks after you accept cookies. See <a href="privacy.html" class="text-gold underline hover:text-terracotta">Privacy</a> or <button type="button" id="cookieSettingsBtn" class="uppercase text-gold underline hover:text-terracotta">Cookie settings</button>.</span>
 </footer>
 
 <!-- Della -->
@@ -353,6 +402,16 @@ var GA_MEASUREMENT_ID='G-Y9PWLV04RR';
   tabs.forEach(function(b){b.onclick=function(){select(b.dataset.tab,true)}});
   select('commercial',false);
 
+  // Mobile capability carousel: same prev/next pattern as the Praise carousel below,
+  // driving the same select() used by the desktop tabs and touch-swipe.
+  var capPrev=document.getElementById('capabilityPrev'),capNext=document.getElementById('capabilityNext');
+  function capStep(dir){
+    var i=TAB_ORDER.indexOf(activeTab);
+    select(TAB_ORDER[(i+dir+TAB_ORDER.length)%TAB_ORDER.length],true);
+  }
+  if(capPrev)capPrev.onclick=function(){capStep(-1)};
+  if(capNext)capNext.onclick=function(){capStep(1)};
+
   // Nav stays off-screen until the page has scrolled 100px, then slides in and stays fixed.
   var headerEl=document.getElementById('siteHeader');
   if(headerEl){
@@ -414,6 +473,39 @@ var GA_MEASUREMENT_ID='G-Y9PWLV04RR';
       },{passive:true});
     }
   }
+
+  // Generic single-slide carousel (mobile stat cards, mobile wins cards): same
+  // prev/next/dot/swipe interaction pattern as the Praise carousel above.
+  function makeCarousel(opts){
+    var slides=[].slice.call(document.querySelectorAll('['+opts.slideAttr+']'));
+    if(!slides.length)return;
+    var dots=[].slice.call(document.querySelectorAll('['+opts.dotAttr+']'));
+    var index=0;
+    function go(i){
+      index=(i+slides.length)%slides.length;
+      slides.forEach(function(s){s.classList.toggle('on',s.getAttribute(opts.slideAttr)===String(index))});
+      dots.forEach(function(d){d.className='h-1.5 w-1.5 rounded-full '+(d.getAttribute(opts.dotAttr)===String(index)?'bg-ink':'bg-border')});
+    }
+    var prev=document.getElementById(opts.prevId),next=document.getElementById(opts.nextId);
+    if(prev)prev.onclick=function(){go(index-1)};
+    if(next)next.onclick=function(){go(index+1)};
+    dots.forEach(function(d){d.onclick=function(){go(parseInt(d.getAttribute(opts.dotAttr),10))}});
+    var panel=document.getElementById(opts.panelId);
+    if(panel){
+      var startX=null,startY=null;
+      panel.addEventListener('touchstart',function(e){
+        startX=e.touches[0].clientX;startY=e.touches[0].clientY;},{passive:true});
+      panel.addEventListener('touchend',function(e){
+        if(startX===null)return;
+        var dx=e.changedTouches[0].clientX-startX,dy=e.changedTouches[0].clientY-startY;
+        startX=null;
+        if(Math.abs(dx)<40||Math.abs(dx)<Math.abs(dy))return;
+        go(dx<0?index+1:index-1);
+      },{passive:true});
+    }
+  }
+  makeCarousel({slideAttr:'data-stat-slide',dotAttr:'data-stat-dot',prevId:'statPrev',nextId:'statNext',panelId:'statPanel'});
+  makeCarousel({slideAttr:'data-wins-slide',dotAttr:'data-wins-dot',prevId:'winsPrev',nextId:'winsNext',panelId:'winsPanel'});
 
   // Stat cards and proof-table cards run different copy lengths but must render at the
   // same height. Two separate CSS Grid instances never share a row height on their own,
