@@ -60,7 +60,7 @@ img,svg{max-width:100%}
 @media (min-width:641px){.hero h1{font-size:64px;line-height:72px}}
 .hero p.lede{font-size:16px;line-height:24px;margin-top:16px;max-width:60ch;margin-left:auto;margin-right:auto}
 .meta-row{display:flex;flex-wrap:wrap;justify-content:center;gap:8px;margin-top:24px}
-.meta-pill{font-size:13px;line-height:20px;letter-spacing:0.06em;text-transform:uppercase;font-weight:500;padding:4px 8px;border-radius:999px;border:1px solid var(--border)}
+.meta-pill{font-size:13px;line-height:20px;font-weight:500;padding:4px 8px;border-radius:999px;border:1px solid var(--border)}
 
 /* --- section shell (no full-width lines outside nav/footer: sections separate by tint, not rule) --- */
 section.doc{padding:48px 0}
@@ -76,8 +76,8 @@ section.doc .intro{font-size:16px;line-height:24px;margin-top:12px;max-width:68c
 .specimen-row:last-child{border-bottom:none}
 .specimen-row .label{display:flex;justify-content:space-between;align-items:baseline;flex-wrap:wrap;gap:4px;font-size:13px;letter-spacing:0.06em;text-transform:uppercase;font-weight:500;color:var(--ink);margin-bottom:8px}
 .specimen-row .label b{font-weight:700;text-transform:none;letter-spacing:0}
-.s-h1{font-size:36px;line-height:44px}
-.s-h2{font-size:24px;line-height:32px}
+.s-h1{font-size:42px;line-height:50px}
+.s-h2{font-size:26px;line-height:34px}
 .s-body{font-size:16px;line-height:24px;max-width:60ch}
 .s-eyebrow{font-size:13px;line-height:20px;letter-spacing:0.06em;text-transform:uppercase;font-weight:500}
 .font-stack{margin-top:16px;font-size:14px;background:var(--border-8);border:1px solid var(--border);border-radius:8px;padding:12px 16px;display:flex;flex-direction:column;gap:8px}
@@ -111,7 +111,7 @@ section.doc .intro{font-size:16px;line-height:24px;margin-top:12px;max-width:68c
 .shape-card .cap{font-size:14px;margin-top:12px;text-align:center}
 .box-square{width:64px;height:64px;border:1px solid var(--gold)}
 .box-round{width:64px;height:64px;border:1px solid var(--gold);border-radius:8px}
-.box-pill{padding:4px 8px;border:1px solid var(--gold);border-radius:999px;font-size:13px;letter-spacing:0.06em;text-transform:uppercase;font-weight:500}
+.box-pill{padding:4px 8px;border:1px solid var(--gold);border-radius:999px;font-size:13px;font-weight:500}
 
 /* --- components --- */
 .component-block{margin-top:32px;display:flex;flex-direction:column;gap:24px}
@@ -122,6 +122,10 @@ section.doc .intro{font-size:16px;line-height:24px;margin-top:12px;max-width:68c
 .btn-primary:hover{background:var(--bg);color:var(--gold)}
 .btn-secondary{background:var(--terracotta);border-color:var(--terracotta);color:#fff}
 .btn-secondary:hover{background:var(--bg);color:var(--terracotta)}
+.btn-outline{background:transparent;border-color:var(--border);color:var(--ink)}
+.btn-outline:hover{background:var(--border-8)}
+.link-btn{font:inherit;color:var(--gold);text-decoration:underline;text-decoration-thickness:1.5px;text-underline-offset:2px;background:none;border:none;padding:0;cursor:pointer}
+.link-btn:hover{color:var(--terracotta)}
 .tab{font-size:16px;padding:8px 16px;border-radius:8px 8px 0 0;border:1px solid;cursor:pointer;font-family:inherit;transition:background .15s;position:relative;margin-bottom:-1px;z-index:1}
 .tab-selected{background:var(--border-8);border-color:var(--border);border-bottom-color:var(--border-8);color:var(--ink);font-weight:700}
 .tab-available{border-color:var(--border);color:var(--gold)}
@@ -130,6 +134,8 @@ section.doc .intro{font-size:16px;line-height:24px;margin-top:12px;max-width:68c
 .folder-tabs{display:flex;flex-wrap:wrap;gap:4px;position:relative;z-index:1}
 .pill{font-size:16px;line-height:24px;padding:4px 8px;border-radius:999px;border:1px solid var(--border);color:var(--ink)}
 .dot{width:6px;height:6px;border-radius:999px;background:var(--terracotta);display:inline-block}
+.dot-ink{background:var(--ink)}
+.dot-border{background:var(--border)}
 .tint-demo{border:1px solid var(--border);border-radius:8px;overflow:hidden;font-size:14px}
 .tint-demo .half{padding:16px}
 .tint-demo .a{background:var(--bg)}
@@ -148,6 +154,13 @@ section.doc .intro{font-size:16px;line-height:24px;margin-top:12px;max-width:68c
 footer.doc{padding:32px 0 96px;color:var(--ink);border-top:1px solid var(--border)}
 footer.doc .row{display:flex;flex-direction:column;gap:8px}
 @media (min-width:641px){footer.doc .row-top{flex-direction:row;align-items:center;justify-content:space-between}}
+
+#consentBanner{position:fixed;left:0;right:0;bottom:0;z-index:50;background:var(--border-8);border-top:1px solid var(--border);display:none}
+#consentBanner.show{display:block}
+#consentBanner .row{padding:16px 0;display:flex;flex-direction:column;gap:12px}
+@media (min-width:641px){#consentBanner .row{flex-direction:row;align-items:center;justify-content:space-between}}
+#consentBanner p{font-size:14px;flex:1}
+#consentBanner .actions{display:flex;gap:8px;flex-shrink:0}
 
 @media (max-width:640px){
   .hero h1{font-size:32px;line-height:40px}
@@ -197,12 +210,12 @@ footer.doc .row{display:flex;flex-direction:column;gap:8px}
 
     <div class="specimen">
       <div class="specimen-row">
-        <div class="label"><span>H1 &middot; hero name</span><b>Merriweather Bold (700) &middot; 36px / 44px</b></div>
+        <div class="label"><span>H1 &middot; hero name</span><b>Merriweather Bold (700) &middot; 42px / 50px</b></div>
         <div class="s-h1 font-serif">Chantell Collins, MBA</div>
       </div>
       <div class="specimen-row">
-        <div class="label"><span>H2 &middot; section headers</span><b>Merriweather Bold (700) &middot; 24px / 32px</b></div>
-        <div class="s-h2 font-serif">Where the value gets delivered</div>
+        <div class="label"><span>H2 &middot; section headers</span><b>Merriweather Bold (700) &middot; 26px / 34px</b></div>
+        <div class="s-h2 font-serif">Capabilities</div>
       </div>
       <div class="specimen-row">
         <div class="label"><span>Eyebrow &middot; captions, labels, badges</span><b>Inter Medium (500) &middot; 13px / 16px, uppercase, +0.06em</b></div>
@@ -210,7 +223,7 @@ footer.doc .row{display:flex;flex-direction:column;gap:8px}
       </div>
       <div class="specimen-row">
         <div class="label"><span>Body &middot; copy, links, nav</span><b>Inter Regular (400) &middot; 16px / 24px, bold reserved for named phrases only</b></div>
-        <div class="s-body">Thirteen years of high-stakes execution and multi-country delivery across FinTech, MedTech, enterprise SaaS, and autonomous systems.</div>
+        <div class="s-body">Thirteen years of high-stakes execution and multi-country delivery across global platforms, FinTech, MedTech, and autonomous systems.</div>
       </div>
     </div>
   </div>
@@ -220,7 +233,7 @@ footer.doc .row{display:flex;flex-direction:column;gap:8px}
   <div class="wrap">
     <div class="kicker">Color</div>
     <h2 class="font-serif">Five tokens, sourced from Chantell's own photos</h2>
-    <p class="intro">No coolors.co palette. Each hex was sampled from a real photo (Trieste, Malta, Della, a Vienna caf&eacute;), no sixth color added since. Gold is the only clickable signal on the page, never on a bullet, a stat, or plain body text.</p>
+    <p class="intro">Each hex was sampled from a real photo (Trieste, Malta, Della, a Vienna caf&eacute;). Gold is the only clickable signal on the page, never on a bullet, a stat, or plain body text.</p>
 
     <div class="color-grid">
       <div class="swatch">
@@ -254,7 +267,7 @@ footer.doc .row{display:flex;flex-direction:column;gap:8px}
         <div class="swatch-info">
           <div class="name">gold</div>
           <div class="hex">#8C6121</div>
-          <div class="role">Clickable elements only: links, the primary CTA, available (not selected) tabs.</div>
+          <div class="role">Clickable elements only: links, the primary CTA, unselected tabs.</div>
           <div class="contrast">4.99:1 on bg</div>
         </div>
       </div>
@@ -327,15 +340,15 @@ footer.doc .row{display:flex;flex-direction:column;gap:8px}
 
       <div class="component-row">
         <span class="caption">Text link: permanent gold and underline, terracotta on hover.</span>
-        <a href="#">chantell.collins@gmail.com</a>
+        <a href="https://www.awwwards.com/sites/serve-robotics" target="_blank" rel="noopener">Won the Awwwards Site of the Day.</a>
       </div>
 
       <div class="component-row" style="display:block">
-        <span class="caption">Nav: hidden at page load, slides in once the page has scrolled 100px, then stays fixed. Built as `position:fixed`, not `sticky`, since a sticky header would already be visible with no scroll needed. A `translate-y` toggle on a scroll listener drives the slide (`transition-transform duration-300`). Three section anchors, `#capability`, `#trajectory`, and `#wins`, carry `scroll-mt-16` so a nav click doesn't land a heading underneath the fixed bar.</span>
+        <span class="caption">Nav: hidden at page load, slides in and stays fixed once the page has scrolled 100px.</span>
       </div>
 
       <div class="component-row" style="display:block">
-        <span class="caption">Capability tabs: folder style. Selected carries the card tint and dark bold ink, matched exactly to the tinted panel below it, no seam line. Unselected sits on the plain page background in gold text, signaling "still clickable." Implementation note for `outputs/index.html` (a Tailwind CDN build, unlike this plain-CSS reference): the selected tab's bottom border color is set as an inline `style` attribute, not a class. Tailwind's CDN script injects its own stylesheet at runtime, and when that lands after this page's own `&lt;style&gt;` block, a same-specificity class override can lose the cascade unpredictably. An inline style always wins regardless of injection order, so that's what keeps the seam hidden on a CDN build.</span>
+        <span class="caption">Capability tabs: folder style. Selected carries the card tint and dark bold ink, matched to the panel below it, no seam line. Unselected sits in gold, signaling still clickable.</span>
         <div class="folder-tabs">
           <button class="tab tab-selected">Commercial delivery</button>
           <button class="tab tab-available">Responsible AI &amp; governance</button>
@@ -351,17 +364,21 @@ footer.doc .row{display:flex;flex-direction:column;gap:8px}
       </div>
 
       <div class="component-row">
-        <span class="caption">Decorative dot: terracotta, used for bullet points and tab-progress only, never text.</span>
-        <span class="dot"></span><span class="dot"></span><span class="dot"></span>
+        <span class="caption">List bullet: terracotta, static, marks list items only, never text.</span>
+        <span class="dot"></span>
+      </div>
+
+      <div class="component-row">
+        <span class="caption">Carousel dot: two-state pagination for the stat, praise, and wins carousels. Selected is ink, unselected is border, never terracotta. Decorative only, never clickable; the arrows either side are the sole navigation control.</span>
+        <span class="dot dot-ink"></span><span class="dot dot-border"></span><span class="dot dot-border"></span>
       </div>
 
       <div class="component-row" style="display:block">
-        <span class="caption">Separator glyph: one mark, one color, everywhere. Every divider on the page, hero credential phrases, job title to company, credential to institution, is the same terracotta middot (`&amp;middot;`). Superseded: an earlier pass used a literal `|` pipe for the hero credential line specifically, and kept most inline middots at plain ink color, reserving terracotta for standalone dividers only. Collapsed to one rule: no pipes anywhere, every middot terracotta, matching the decorative dot so all small marks on the page read as one family.</span>
-        <div style="font-size:16px;color:var(--ink)">Head of Operations &amp; Delivery <span style="color:var(--terracotta)">&middot;</span> Global Platforms &amp; Fintech <span style="color:var(--terracotta)">&middot;</span> Responsible AI &amp; Human-Centric Leader</div>
+        <span class="caption">Separator glyph: one mark, one color, everywhere. Every divider, hero eyebrow, job title to company, credential to institution, and contact links, is the same terracotta middot. No pipes anywhere.</span>
       </div>
 
       <div class="component-row" style="display:block">
-        <span class="caption">Card background tint: a flat, opaque `#F0EAE6` (border #92725C at 8% opacity, pre-computed against the page background and baked in as a solid color, not a translucent overlay). Applied to cards only, stat cells, proof cells, the capability panel, never to the section wrapper, which stays plain `#F8F4F2`. Kept opaque rather than translucent as standing practice: the stat and proof grids no longer need opacity for their old divider-line trick, each cell is its own rounded card now, but an opaque fill stays the safer default for any card that might sit on a non-page-color surface someday.</span>
+        <span class="caption">Card background tint: a flat, opaque `#F0EAE6`. Applied to cards only, stat cells, proof cells, the capability panel, never to the section wrapper, which stays plain `#F8F4F2`.</span>
         <div class="tint-demo">
           <div class="half a">Plain `#F8F4F2`: every section wrapper</div>
           <div class="half b">Tinted `#F0EAE6`: cards only</div>
@@ -369,7 +386,7 @@ footer.doc .row{display:flex;flex-direction:column;gap:8px}
       </div>
 
       <div class="component-row" style="display:block">
-        <span class="caption">Proof/stat grids: each cell is its own individually-rounded card, not one shared container with square inner cells. The gap between cards matches the gap between folder tabs (Micro/Tight, 4px), the same rhythm used for "buttons in a row" elsewhere on the page. No icons or logo marks, company names are plain bold body text. On `outputs/index.html`, all eight cards (four stat cells, four proof cells) carry a `.match-h` hook: a small script measures the tallest card's natural height on load, on font-load, and on resize, then locks every card to that height, so short proof captions and longer stat captions line up at every breakpoint. A CSS-only `min-height` floor isn't enough here: the two grids are separate CSS Grid instances with no shared row, and stat captions can run taller than any single fixed value across viewport widths.</span>
+        <span class="caption">Proof/stat grids: each cell is its own individually-rounded card. No icons or logo marks, company names are plain bold body text. Heights matched across every card so short and long captions still line up.</span>
         <div class="tint-demo" style="display:flex;gap:12px;text-align:center;border:none">
           <div class="half b" style="flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;border-radius:8px;min-height:144px">
             <div style="font-size:16px;font-weight:700;color:var(--ink)">&euro;5M+</div>
@@ -377,7 +394,7 @@ footer.doc .row{display:flex;flex-direction:column;gap:8px}
           </div>
           <div class="half b" style="flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;border-radius:8px;min-height:144px">
             <div style="font-size:16px;font-weight:700;color:var(--ink)">Serve Robotics</div>
-            <div style="font-size:14px"><a href="#">Won the Awwwards site of the day.</a></div>
+            <div style="font-size:14px"><a href="#">Won the Awwwards Site of the Day.</a></div>
           </div>
         </div>
       </div>
@@ -410,7 +427,7 @@ footer.doc .row{display:flex;flex-direction:column;gap:8px}
       <div class="rule"><span class="n">08</span><span class="t"><b>No dark mode.</b> Confirmed unnecessary and dropped outright, not deferred: no toggle, no <code>prefers-color-scheme</code> branch, no shade scale kept around to support one.</span></div>
       <div class="rule"><span class="n">09</span><span class="t"><b>No off-scale spacing.</b> Every margin, padding, and gap on the page maps to one of the seven named steps. Adjacent sections never stack independent top/bottom padding into a doubled gap either, each visual block is one section with one symmetric padding pair.</span></div>
       <div class="rule"><span class="n">10</span><span class="t"><b>Keyboard focus always gets its own visible state.</b> Every link, button, and tab carries a 2px gold `:focus-visible` outline, distinct from mouse hover and never suppressed, so keyboard navigation never goes invisible.</span></div>
-      <div class="rule"><span class="n">11</span><span class="t"><b>One separator glyph, one color.</b> No pipes (`|`) anywhere on the page; every divider, hero credential phrases, job title to company, credential to institution, the Languages line, contact links, is the same terracotta middot (`&amp;middot;`). Decorative and inline separators no longer get different treatment.</span></div>
+      <div class="rule"><span class="n">11</span><span class="t"><b>One separator glyph, one color.</b> No pipes (`|`) anywhere on the page; every divider, hero credential phrases, job title to company, credential to institution, the Languages line, and contact links, is the same terracotta middot (`&amp;middot;`). Decorative and inline separators no longer get different treatment.</span></div>
     </div>
   </div>
 </section>
@@ -420,9 +437,57 @@ footer.doc .row{display:flex;flex-direction:column;gap:8px}
     <div class="row row-top">
       <span>&copy; 2026 Chantell Collins <span style="color:var(--terracotta)">&middot;</span> <a href="design-system.html">Design system</a></span>
     </div>
-    <span>This page counts a few specific clicks after you accept cookies. See <a href="privacy.html">Privacy</a> for details.</span>
+    <span>This page counts a few specific clicks after you accept cookies. See <a href="privacy.html">Privacy</a> or <button type="button" id="cookieSettingsBtn" class="link-btn">Cookie settings</button>.</span>
   </div>
 </footer>
+
+<div id="consentBanner">
+  <div class="wrap row">
+    <p>This site uses cookies to count a few specific clicks (email, booking, LinkedIn). See the <a href="privacy.html">Privacy page</a> for details.</p>
+    <div class="actions">
+      <button id="consentReject" class="btn btn-outline">Reject</button>
+      <button id="consentAccept" class="btn btn-primary">Accept</button>
+    </div>
+  </div>
+</div>
+
+<script>
+/* Google Analytics 4 (stream: chantellcollins.com, G-Y9PWLV04RR), gated by consent.
+   This page fires no events of its own; the script exists so Cookie settings can
+   read/write the same consent choice used on index.html. */
+var GA_MEASUREMENT_ID='G-Y9PWLV04RR';
+(function(){
+  var CONSENT_KEY='cc-consent';
+  function loadGA(){
+    if(window.gaLoaded)return;
+    window.gaLoaded=true;
+    window.dataLayer=window.dataLayer||[];
+    window.gtag=function(){dataLayer.push(arguments)};
+    gtag('consent','default',{analytics_storage:'granted'});
+    gtag('js',new Date());
+    gtag('config',GA_MEASUREMENT_ID);
+    var s=document.createElement('script');
+    s.async=true;s.src='https://www.googletagmanager.com/gtag/js?id='+GA_MEASUREMENT_ID;
+    document.head.appendChild(s);
+  }
+  var banner=document.getElementById('consentBanner'),
+      accept=document.getElementById('consentAccept'),
+      reject=document.getElementById('consentReject'),
+      settingsBtn=document.getElementById('cookieSettingsBtn');
+  var choice=null;
+  try{choice=localStorage.getItem(CONSENT_KEY)}catch(e){}
+  if(choice==='granted'){loadGA()}
+  else if(choice!=='denied'&&banner){banner.classList.add('show')}
+  if(accept)accept.addEventListener('click',function(){
+    try{localStorage.setItem(CONSENT_KEY,'granted')}catch(e){}
+    loadGA();banner.classList.remove('show')});
+  if(reject)reject.addEventListener('click',function(){
+    try{localStorage.setItem(CONSENT_KEY,'denied')}catch(e){}
+    banner.classList.remove('show')});
+  if(settingsBtn)settingsBtn.addEventListener('click',function(){
+    if(banner)banner.classList.add('show')});
+})();
+</script>
 
 </body>
 </html>
