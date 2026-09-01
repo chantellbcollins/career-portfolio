@@ -1,10 +1,10 @@
 #!/usr/bin/env bash
 # Syncs a fixed set of "should always mirror index.html" values into
 # design-system.html: type scale (H1/H2 size+line-height), the eyebrow
-# tier's line-height, two specimen copy snippets, and the capability tab
-# labels shown in the Components demo. Deliberately narrow scope - it does
-# not touch spacing-scale usage or the prose captions describing component
-# behavior, both of which need human/AI judgment, not mechanical extraction.
+# tier's line-height, and two specimen copy snippets. Deliberately narrow
+# scope - it does not touch spacing-scale usage or the prose captions
+# describing component behavior, both of which need human/AI judgment,
+# not mechanical extraction.
 #
 # Usage: scripts/sync-design-system.sh
 # Run from the repo root, or anywhere - it cd's to its own parent/.. first.
@@ -45,10 +45,6 @@ EYEBROW_TEXT_RAW=$(perl -ne 'print $1 if /<div class="eyebrow text-ink mb-6">(.*
 # design-system's specimen writes the middot as plain text, not wrapped in a span
 EYEBROW_TEXT=$(printf '%s' "$EYEBROW_TEXT_RAW" | perl -pe 's/<span class="text-terracotta">(&middot;)<\/span>/$1/g')
 
-mapfile -t TAB_LABELS < <(perl -ne 'print "$1\n" if /aria-selected="(?:true|false)">([^<]+)<\/button>/' "$SRC")
-DS_TAB_COUNT=$(grep -oP '<button class="tab tab-(?:selected|available)">' "$DS" | wc -l)
-[ "${#TAB_LABELS[@]}" -ge "$DS_TAB_COUNT" ] || fail "found ${#TAB_LABELS[@]} capability tab labels in $SRC but $DS has $DS_TAB_COUNT tab buttons to fill"
-
 # --- 2. Patch design-system.html -------------------------------------------
 
 perl -pi -e "s/\\.s-h1\\{font-size:[0-9]+px;line-height:[0-9]+px\\}/.s-h1{font-size:${H1_SIZE}px;line-height:${H1_LH}px}/" "$DS"
@@ -68,20 +64,6 @@ perl -pi -e "s/<div class=\"s-body\">.*?<\\/div>/<div class=\"s-body\">${BODY_TE
 
 EYEBROW_TEXT_ESC=$(printf '%s' "$EYEBROW_TEXT" | sed 's/[\/&]/\\&/g')
 perl -pi -e "s/<div class=\"s-eyebrow\">.*?<\\/div>/<div class=\"s-eyebrow\">${EYEBROW_TEXT_ESC}<\\/div>/" "$DS"
-
-# Capability tab demo: fills however many tab buttons design-system.html
-# currently has (its button count is human-maintained, not synced), using
-# that many labels from index.html's data-tab buttons in order. Ordered,
-# counter-based substitution so it doesn't matter which line each button is
-# on, and so buttons sharing a class aren't ambiguous with a same-line-only
-# match. TAB_LABELS_JOINED uses \x1e (ASCII record separator) since bash
-# arrays can't be exported directly.
-TAB_LABELS_JOINED=$(printf '%s\x1e' "${TAB_LABELS[@]}")
-TAB_LABELS_JOINED="$TAB_LABELS_JOINED" perl -0777 -pi -e '
-  my @labels = split /\x1e/, $ENV{TAB_LABELS_JOINED};
-  my $i = 0;
-  s/(<button class="tab tab-(?:selected|available)">).*?(<\/button>)/$1 . $labels[$i++] . $2/ge;
-' "$DS"
 
 echo "sync-design-system: done"
 git diff --stat -- "$DS" || true
