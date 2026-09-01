@@ -179,7 +179,7 @@ footer.doc .row{display:flex;flex-direction:column;gap:8px}
 <div class="hero wrap">
   <div class="eyebrow">Design system &middot; career-portfolio</div>
   <h1 class="font-serif">Balanced Architect</h1>
-  <p class="lede">Type, color, spacing, and component rules, mirrored from <code>outputs/index.html</code> as it stands today, not a separate aspiration.</p>
+  <p class="lede">Type, color, spacing, and component rules, mirrored from <code>index.html</code> as it stands today, not a separate aspiration.</p>
   <div class="meta-row">
     <span class="meta-pill">5 colors</span>
     <span class="meta-pill">2 typefaces</span>
@@ -360,7 +360,7 @@ footer.doc .row{display:flex;flex-direction:column;gap:8px}
       </div>
 
       <div class="component-row" style="display:flex;flex-direction:column;gap:16px">
-        <span class="caption">Separator glyph: one mark, one color, everywhere. Every divider, hero eyebrow, job title to company, credential to institution, and contact links, is the same terracotta middot. No pipes anywhere.</span>
+        <span class="caption">Separator glyph: one mark, one color, everywhere. Every divider, hero eyebrow, job title to company, and credential to institution, is the same terracotta middot. No pipes anywhere.</span>
       </div>
 
       <div class="component-row" style="display:flex;flex-direction:column;gap:16px">
@@ -376,7 +376,7 @@ footer.doc .row{display:flex;flex-direction:column;gap:8px}
         <div class="tint-demo" style="display:flex;gap:4px;text-align:center;border:none">
           <div class="half b" style="flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;border-radius:8px;min-height:144px">
             <div style="font-size:16px;font-weight:700;color:var(--ink)">&euro;5M+</div>
-            <div style="font-size:14px;color:var(--ink)">Annual portfolio governed, across five Project Managers and 30+ concurrent multi-country platforms.</div>
+            <div style="font-size:14px;color:var(--ink)">Annual portfolio owned, across five PMs and 30+ platform rollouts and upgrades concurrently.</div>
           </div>
           <div class="half b" style="flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;border-radius:8px;min-height:144px">
             <div style="font-size:16px;font-weight:700;color:var(--ink)">Serve Robotics</div>
@@ -386,12 +386,12 @@ footer.doc .row{display:flex;flex-direction:column;gap:8px}
       </div>
 
       <div class="component-row" style="display:flex;flex-direction:column;gap:16px">
-        <span class="caption">Hero layout: everything above the first CTA is centered, matching the contact section's already-centered treatment.</span>
+        <span class="caption">Hero layout: everything above the first CTA is centered, matching the Wins section's already-centered treatment.</span>
         <div class="center-demo">
           <div class="line" style="width:40%"></div>
           <div class="line" style="width:70%"></div>
           <div class="line" style="width:55%"></div>
-          centered badges &middot; H1 &middot; credential line &middot; tagline &middot; stat grid &middot; CTA row
+          centered badges &middot; H1 &middot; credential pills &middot; stat grid &middot; CTA row
         </div>
       </div>
     </div>
@@ -406,14 +406,14 @@ footer.doc .row{display:flex;flex-direction:column;gap:8px}
       <div class="rule"><span class="n">01</span><span class="t"><b>Gold means an action is still available</b>, not "this is currently selected." A tab you're already viewing is dark brown ink and bold, not gold, even though selecting a different one is itself a click.</span></div>
       <div class="rule"><span class="n">02</span><span class="t"><b>Body text is one flat color, no opacity tiers.</b> Ink at reduced opacity reads as grey against this background even when it clears contrast on paper. Hierarchy comes from the type scale alone.</span></div>
       <div class="rule"><span class="n">03</span><span class="t"><b>Bold is selective, not systemic.</b> Body defaults to regular weight; bold is reserved for job titles only, applied without changing color.</span></div>
-      <div class="rule"><span class="n">04</span><span class="t"><b>The page background is plain `#F8F4F2`; cards carry the tint, not the sections around them.</b> Section wrappers (Hero/Stats/CTA, Capability, Trajectory, Credentials/Systems, Contact) sit on the plain page color with no tint of their own. Cards inside them (stat cells, proof-table cells, the capability panel) carry the tint as a baked-in opaque color (`#F0EAE6`), giving the card real contrast against the page rather than blending into it.</span></div>
+      <div class="rule"><span class="n">04</span><span class="t"><b>The page background is plain `#F8F4F2`; cards carry the tint, not the sections around them.</b> Section wrappers (Hero/Stats/CTA, Capability, Trajectory, Credentials/Systems, Wins) sit on the plain page color with no tint of their own. Cards inside them (stat cells, proof-table cells, the capability panel) carry the tint as a baked-in opaque color (`#F0EAE6`), giving the card real contrast against the page rather than blending into it.</span></div>
       <div class="rule"><span class="n">05</span><span class="t"><b>Pills carry a border, never a fill.</b> Badges and chips are outline-only tags set in plain Body type (not the eyebrow tier), so they read clearly against either a plain or a tinted section background without needing a matching fill value.</span></div>
       <div class="rule"><span class="n">06</span><span class="t"><b>Hover never resizes anything.</b> Buttons keep their border in the base state, so the fill-inversion hover swap never shifts layout.</span></div>
       <div class="rule"><span class="n">07</span><span class="t"><b>No sixth color.</b> Every decorative or informational use draws from these five tokens; a new hue is never the fix for "this needs more visual interest."</span></div>
       <div class="rule"><span class="n">08</span><span class="t"><b>No dark mode.</b> Confirmed unnecessary and dropped outright, not deferred: no toggle, no <code>prefers-color-scheme</code> branch, no shade scale kept around to support one.</span></div>
       <div class="rule"><span class="n">09</span><span class="t"><b>No off-scale spacing.</b> Every margin, padding, and gap on the page maps to one of the seven named steps. Adjacent sections never stack independent top/bottom padding into a doubled gap either, each visual block is one section with one symmetric padding pair.</span></div>
       <div class="rule"><span class="n">10</span><span class="t"><b>Keyboard focus always gets its own visible state.</b> Every link, button, and tab carries a 2px gold `:focus-visible` outline, distinct from mouse hover and never suppressed, so keyboard navigation never goes invisible.</span></div>
-      <div class="rule"><span class="n">11</span><span class="t"><b>One separator glyph, one color.</b> No pipes (`|`) anywhere on the page; every divider, hero credential phrases, job title to company, credential to institution, the Languages line, and contact links, is the same terracotta middot (`&amp;middot;`). Decorative and inline separators no longer get different treatment.</span></div>
+      <div class="rule"><span class="n">11</span><span class="t"><b>One separator glyph, one color.</b> No pipes (`|`) anywhere on the page; every divider, hero eyebrow, job title to company, credential to institution, and the Languages line, is the same terracotta middot (`&amp;middot;`). Decorative and inline separators no longer get different treatment.</span></div>
     </div>
   </div>
 </section>
