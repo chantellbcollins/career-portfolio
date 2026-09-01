@@ -1,0 +1,51 @@
+name: Sync design system
+
+# Keeps design-system.html's type scale (H1/H2 size + line-height), the
+# eyebrow tier's line-height, two mirrored copy snippets (the Trajectory
+# intro used as the Type section's Body specimen, and the hero eyebrow
+# badges), and the Capabilities demo's tab labels in sync with index.html
+# and styles.css automatically. Deliberately narrow scope: spacing-scale
+# usage and the prose captions describing component behavior still need a
+# human/AI judgment call and are not touched here.
+#
+# Runs only when index.html, privacy.html, or styles.css change on main,
+# so a sync commit (which only ever touches design-system.html) can never
+# re-trigger itself.
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - index.html
+      - privacy.html
+      - styles.css
+
+permissions:
+  contents: write
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    if: github.actor != 'github-actions[bot]'
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Run sync script
+        run: bash scripts/sync-design-system.sh
+
+      - name: Commit design-system.html if it changed
+        run: |
+          if git diff --quiet -- design-system.html; then
+            echo "design-system.html already in sync, nothing to commit."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add design-system.html
+          git commit -m "Auto-sync design-system.html from ${{ github.sha }}
+
+Type scale, eyebrow line-height, mirrored specimen copy, and capability
+tab labels updated to match index.html/styles.css. See
+scripts/sync-design-system.sh for exactly what this does and doesn't
+cover."
+          git push
