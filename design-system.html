@@ -123,7 +123,7 @@ section.doc .intro{font-size:16px;line-height:24px;margin-top:12px}
 .btn-secondary:hover{background:var(--bg);color:var(--terracotta)}
 .btn-outline{background:transparent;border-color:var(--border);color:var(--ink)}
 .btn-outline:hover{background:var(--border-8)}
-.link-btn{font:inherit;color:var(--gold);text-decoration:underline;text-decoration-thickness:1.5px;text-underline-offset:2px;background:none;border:none;padding:0;cursor:pointer}
+.link-btn{font:inherit;text-transform:inherit;color:var(--gold);text-decoration:underline;background:none;border:none;padding:0;cursor:pointer}
 .link-btn:hover{color:var(--terracotta)}
 .tab{font-size:16px;padding:8px 16px;border-radius:8px 8px 0 0;border:1px solid;cursor:pointer;font-family:inherit;transition:background .15s;position:relative;margin-bottom:-1px;z-index:1}
 .tab-selected{background:var(--border-8);border-color:var(--border);border-bottom-color:var(--border-8);color:var(--ink);font-weight:700}
@@ -149,7 +149,8 @@ section.doc .intro{font-size:16px;line-height:24px;margin-top:12px}
 .rule .t{font-size:16px}
 .rule .t b{font-weight:700}
 
-footer.doc{padding:32px 0 96px;color:var(--ink)}
+footer.doc{padding-top:32px;padding-bottom:96px;color:var(--ink)}
+footer.doc a{text-decoration-thickness:auto;text-underline-offset:auto}
 footer.doc .row{display:flex;flex-direction:column;gap:8px}
 @media (min-width:641px){footer.doc .row-top{flex-direction:row;align-items:center;justify-content:space-between}}
 
