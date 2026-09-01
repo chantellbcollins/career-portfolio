@@ -42,10 +42,13 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add design-system.html
-          git commit -m "Auto-sync design-system.html from ${{ github.sha }}
-
-Type scale, eyebrow line-height, mirrored specimen copy, and capability
-tab labels updated to match index.html/styles.css. See
-scripts/sync-design-system.sh for exactly what this does and doesn't
-cover."
+          {
+            echo "Auto-sync design-system.html from ${GITHUB_SHA}"
+            echo ""
+            echo "Type scale, eyebrow line-height, mirrored specimen copy, and capability"
+            echo "tab labels updated to match index.html/styles.css. See"
+            echo "scripts/sync-design-system.sh for exactly what this does and doesn't"
+            echo "cover."
+          } > /tmp/commit-msg.txt
+          git commit -F /tmp/commit-msg.txt
           git push
