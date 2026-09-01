@@ -19,6 +19,7 @@ on:
       - index.html
       - privacy.html
       - styles.css
+  workflow_dispatch: {}
 
 permissions:
   contents: write
