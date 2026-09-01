@@ -44,12 +44,13 @@ img,svg{max-width:100%}
 
 /* --- top nav: hidden at page load, slides in and stays fixed once the page has
    scrolled 100px, same behavior as index.html and privacy.html --- */
-.topnav{position:fixed;top:0;left:0;right:0;z-index:40;background:rgba(248,244,242,0.85);backdrop-filter:blur(6px);border-bottom:1px solid var(--border);transform:translateY(-100%);transition:transform .3s}
+.topnav{position:fixed;top:0;left:0;right:0;z-index:40;background:rgba(248,244,242,0.85);backdrop-filter:blur(8px);border-bottom:1px solid var(--border);transform:translateY(-100%);transition:transform .3s}
 .topnav.show{transform:translateY(0)}
 .topnav .wrap{display:flex;align-items:center;justify-content:space-between;height:56px;gap:16px}
 .topnav .name{font-size:16px;white-space:nowrap;font-family:Inter,sans-serif}
 .topnav .name a{color:var(--gold);text-decoration:none}
 .topnav .name a:hover{color:var(--terracotta)}
+.topnav .btn{font-size:14px;line-height:20px}
 
 /* --- hero --- */
 .hero{padding:48px 0 40px;text-align:center}
@@ -148,7 +149,7 @@ section.doc .intro{font-size:16px;line-height:24px;margin-top:12px}
 .rule .t{font-size:16px}
 .rule .t b{font-weight:700}
 
-footer.doc{padding:32px 0 96px;color:var(--ink);border-top:1px solid var(--border)}
+footer.doc{padding:32px 0 96px;color:var(--ink)}
 footer.doc .row{display:flex;flex-direction:column;gap:8px}
 @media (min-width:641px){footer.doc .row-top{flex-direction:row;align-items:center;justify-content:space-between}}
 
@@ -170,7 +171,7 @@ footer.doc .row{display:flex;flex-direction:column;gap:8px}
 <div class="topnav" id="siteHeader">
   <div class="wrap">
     <span class="name"><a href="index.html">Chantell Collins, MBA</a></span>
-    <a href="https://calendar.app.google/xoCv8Lis9yX5v6n68" target="_blank" rel="noopener" class="btn btn-primary">Book 15-min intro</a>
+    <a href="https://calendar.app.google/xoCv8Lis9yX5v6n68" target="_blank" rel="noopener" data-t="cta_schedule_call_clicked" class="btn btn-primary">Book 15-min intro</a>
   </div>
 </div>
 
@@ -419,7 +420,7 @@ footer.doc .row{display:flex;flex-direction:column;gap:8px}
 <footer class="doc eyebrow wrap">
   <div class="row">
     <div class="row row-top">
-      <span>&copy; 2026 Chantell Collins <span style="color:var(--terracotta)">&middot;</span> <a href="design-system.html">Design system</a></span>
+      <span>&copy; 2026 Chantell Collins<span style="color:var(--terracotta);margin:0 8px">&middot;</span><a href="design-system.html">Design system</a></span>
     </div>
     <span>This page counts a few specific clicks after you accept cookies. See <a href="privacy.html">Privacy</a> or <button type="button" id="cookieSettingsBtn" class="link-btn">Cookie settings</button>.</span>
   </div>
@@ -437,8 +438,8 @@ footer.doc .row{display:flex;flex-direction:column;gap:8px}
 
 <script>
 /* Google Analytics 4 (stream: chantellcollins.com, G-Y9PWLV04RR), gated by consent.
-   This page fires no events of its own; the script exists so Cookie settings can
-   read/write the same consent choice used on index.html. */
+   Only the nav's Book 15-min intro link is tracked here, same event name as
+   index.html. */
 var GA_MEASUREMENT_ID='G-Y9PWLV04RR';
 (function(){
   var CONSENT_KEY='cc-consent';
@@ -454,6 +455,13 @@ var GA_MEASUREMENT_ID='G-Y9PWLV04RR';
     s.async=true;s.src='https://www.googletagmanager.com/gtag/js?id='+GA_MEASUREMENT_ID;
     document.head.appendChild(s);
   }
+  function gaEvent(n){if(window.gaLoaded&&window.gtag)gtag('event',n)}
+  window.ccGA={loadGA:loadGA,event:gaEvent};
+  var GA_MAP={cta_schedule_call_clicked:'click_book_calendar'};
+  document.querySelectorAll('[data-t]').forEach(function(el){
+    el.addEventListener('click',function(){
+      if(GA_MAP[el.dataset.t])gaEvent(GA_MAP[el.dataset.t])});
+  });
   var banner=document.getElementById('consentBanner'),
       accept=document.getElementById('consentAccept'),
       reject=document.getElementById('consentReject'),
