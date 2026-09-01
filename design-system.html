@@ -406,7 +406,7 @@ footer.doc .row{display:flex;flex-direction:column;gap:8px}
     <div class="row row-top">
       <span>&copy; 2026 Chantell Collins<span style="color:var(--terracotta);margin:0 8px">&middot;</span><a href="design-system.html">Design system</a></span>
     </div>
-    <span>This page counts a few specific clicks after you accept cookies. See <a href="privacy.html">Privacy</a> or <button type="button" id="cookieSettingsBtn" class="link-btn">Cookie settings</button>.</span>
+    <span>This page counts a few specific clicks after you accept cookies. See <a href="privacy.html" style="display:inline-block;padding:4px 0">Privacy</a> or <button type="button" id="cookieSettingsBtn" class="link-btn" style="display:inline-block;padding:4px 0">Cookie settings</button>.</span>
   </div>
 </footer>
 
@@ -450,18 +450,37 @@ var GA_MEASUREMENT_ID='G-Y9PWLV04RR';
       accept=document.getElementById('consentAccept'),
       reject=document.getElementById('consentReject'),
       settingsBtn=document.getElementById('cookieSettingsBtn');
+  // The banner is position:fixed and can be tall enough (wrapped text at
+  // some widths) to cover in-flow content behind it. Reserve exactly its
+  // rendered height as body padding while it's open so nothing sits
+  // underneath it.
+  function showBanner(){
+    if(!banner)return;
+    banner.classList.add('show');
+    document.body.style.paddingBottom=banner.offsetHeight+'px';
+  }
+  function hideBanner(){
+    if(!banner)return;
+    banner.classList.remove('show');
+    document.body.style.paddingBottom='';
+  }
   var choice=null;
   try{choice=localStorage.getItem(CONSENT_KEY)}catch(e){}
   if(choice==='granted'){loadGA()}
-  else if(choice!=='denied'&&banner){banner.classList.add('show')}
+  else if(choice!=='denied'){showBanner()}
   if(accept)accept.addEventListener('click',function(){
     try{localStorage.setItem(CONSENT_KEY,'granted')}catch(e){}
-    loadGA();banner.classList.remove('show')});
+    loadGA();hideBanner()});
   if(reject)reject.addEventListener('click',function(){
     try{localStorage.setItem(CONSENT_KEY,'denied')}catch(e){}
-    banner.classList.remove('show')});
-  if(settingsBtn)settingsBtn.addEventListener('click',function(){
-    if(banner)banner.classList.add('show')});
+    hideBanner()});
+  if(settingsBtn)settingsBtn.addEventListener('click',showBanner);
+  var bannerResizeT;
+  addEventListener('resize',function(){
+    if(!banner||!banner.classList.contains('show'))return;
+    clearTimeout(bannerResizeT);
+    bannerResizeT=setTimeout(function(){document.body.style.paddingBottom=banner.offsetHeight+'px'},150);
+  });
 })();
 </script>
 

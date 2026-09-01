@@ -105,7 +105,7 @@
   <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2">
     <span>&copy; 2026 Chantell Collins<span class="mx-2 text-terracotta">&middot;</span><a href="design-system.html" class="text-gold underline hover:text-terracotta">Design system</a></span>
   </div>
-  <span>This page counts a few specific clicks after you accept cookies. See <a href="privacy.html" class="text-gold underline hover:text-terracotta">Privacy</a> or <button type="button" id="cookieSettingsBtn" class="uppercase text-gold underline hover:text-terracotta">Cookie settings</button>.</span>
+  <span>This page counts a few specific clicks after you accept cookies. See <a href="privacy.html" class="inline-block py-1 text-gold underline hover:text-terracotta">Privacy</a> or <button type="button" id="cookieSettingsBtn" class="inline-block py-1 uppercase text-gold underline hover:text-terracotta">Cookie settings</button>.</span>
 </footer>
 
 <div id="consentBanner" class="fixed inset-x-0 bottom-0 z-50 hidden border-t border-border tint-bg">
@@ -148,18 +148,37 @@ var GA_MEASUREMENT_ID='G-Y9PWLV04RR';
       accept=document.getElementById('consentAccept'),
       reject=document.getElementById('consentReject'),
       settingsBtn=document.getElementById('cookieSettingsBtn');
+  // The banner is position:fixed and can be tall enough (wrapped text at
+  // some widths) to cover in-flow content behind it. Reserve exactly its
+  // rendered height as body padding while it's open so nothing sits
+  // underneath it.
+  function showBanner(){
+    if(!banner)return;
+    banner.classList.remove('hidden');
+    document.body.style.paddingBottom=banner.offsetHeight+'px';
+  }
+  function hideBanner(){
+    if(!banner)return;
+    banner.classList.add('hidden');
+    document.body.style.paddingBottom='';
+  }
   var choice=null;
   try{choice=localStorage.getItem(CONSENT_KEY)}catch(e){}
   if(choice==='granted'){loadGA()}
-  else if(choice!=='denied'&&banner){banner.classList.remove('hidden')}
+  else if(choice!=='denied'){showBanner()}
   if(accept)accept.addEventListener('click',function(){
     try{localStorage.setItem(CONSENT_KEY,'granted')}catch(e){}
-    loadGA();banner.classList.add('hidden')});
+    loadGA();hideBanner()});
   if(reject)reject.addEventListener('click',function(){
     try{localStorage.setItem(CONSENT_KEY,'denied')}catch(e){}
-    banner.classList.add('hidden')});
-  if(settingsBtn)settingsBtn.addEventListener('click',function(){
-    if(banner)banner.classList.remove('hidden')});
+    hideBanner()});
+  if(settingsBtn)settingsBtn.addEventListener('click',showBanner);
+  var bannerResizeT;
+  addEventListener('resize',function(){
+    if(!banner||banner.classList.contains('hidden'))return;
+    clearTimeout(bannerResizeT);
+    bannerResizeT=setTimeout(function(){document.body.style.paddingBottom=banner.offsetHeight+'px'},150);
+  });
 })();
 </script>
 
