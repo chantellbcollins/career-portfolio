@@ -73,13 +73,13 @@
 <section id="capability" class="scroll-mt-16"><div class="max-w-5xl mx-auto px-6 py-12 sm:py-16">
   <h2 class="font-serif font-bold text-[26px] leading-[34px] text-ink">Capabilities</h2>
   <p class="mt-6 text-base leading-relaxed text-ink">Building the operational scaffolding that scales organisations without burning margin or people.</p>
-  <div class="mt-8 hidden sm:flex flex-wrap gap-1 relative z-10" role="tablist">
+  <div class="mt-8 flex flex-wrap gap-1 relative z-10" role="tablist">
     <button data-tab="commercial" class="tab text-base px-4 py-2 rounded-t-lg border transition -mb-px tint-bg text-ink font-bold border-border" style="border-bottom-color:#F0EAE6" aria-selected="true">Commercial delivery</button>
     <button data-tab="ai" class="tab text-base px-4 py-2 rounded-t-lg border transition -mb-px text-gold border-border hover:bg-gold/10" aria-selected="false">AI &amp; Operational Excellence</button>
     <button data-tab="focus" class="tab text-base px-4 py-2 rounded-t-lg border transition -mb-px text-gold border-border hover:bg-gold/10" aria-selected="false">Remote global operations</button>
     <button data-tab="ownership" class="tab text-base px-4 py-2 rounded-t-lg border transition -mb-px text-gold border-border hover:bg-gold/10" aria-selected="false">Human-centric leadership</button>
   </div>
-  <div class="min-h-[230px] border border-border max-sm:rounded-lg sm:rounded-b-lg sm:rounded-tr-lg mt-8 sm:mt-0 tint-bg p-6 sm:p-8" id="capabilityPanels">
+  <div class="min-h-[230px] border border-border rounded-b-lg rounded-tr-lg mt-0 tint-bg p-6 sm:p-8" id="capabilityPanels">
     <div data-panel="commercial" class="on"><ul class="space-y-4">
       <li class="flex gap-2"><span class="mt-2 h-1.5 w-1.5 rounded-full bg-terracotta shrink-0"></span><p>Conducted an agency-wide retainer review, creating two retainer offers and transitioning existing clients to six-month minimum contracts, generating up to <span>&euro;30,000 per month</span> in predictable recurring revenue.</p></li>
       <li class="flex gap-2"><span class="mt-2 h-1.5 w-1.5 rounded-full bg-terracotta shrink-0"></span><p>Co-authored the company-wide <span>Estimation Guide</span>, commercial pricing frameworks, and contracts, then built and maintained the supporting production template and automation suite, enabling sales to secure <span>69 new agreements</span>.</p></li>
@@ -375,7 +375,7 @@ var GA_MEASUREMENT_ID='G-Y9PWLV04RR';
 <script>
 (function(){
   var ON='tint-bg text-ink font-bold border-border';
-  var OFF='text-gold border-border hover:bg-gold/10';
+  var OFF='text-gold border-border hover:bg-gold/10 max-sm:hidden';
   var tabs=[].slice.call(document.querySelectorAll('.tab'));
   var TAB_ORDER=['commercial','ai','focus','ownership'];
   var EVT={commercial:'commercial_spine_viewed',ai:'ai_governance_viewed',focus:'focus_architecture_viewed',ownership:'autonomous_ownership_viewed'};
