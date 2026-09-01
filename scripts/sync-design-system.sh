@@ -46,7 +46,8 @@ EYEBROW_TEXT_RAW=$(perl -ne 'print $1 if /<div class="eyebrow text-ink mb-6">(.*
 EYEBROW_TEXT=$(printf '%s' "$EYEBROW_TEXT_RAW" | perl -pe 's/<span class="text-terracotta">(&middot;)<\/span>/$1/g')
 
 mapfile -t TAB_LABELS < <(perl -ne 'print "$1\n" if /aria-selected="(?:true|false)">([^<]+)<\/button>/' "$SRC")
-[ "${#TAB_LABELS[@]}" -ge 3 ] || fail "expected at least 3 capability tab labels in $SRC, found ${#TAB_LABELS[@]}"
+DS_TAB_COUNT=$(grep -oP '<button class="tab tab-(?:selected|available)">' "$DS" | wc -l)
+[ "${#TAB_LABELS[@]}" -ge "$DS_TAB_COUNT" ] || fail "found ${#TAB_LABELS[@]} capability tab labels in $SRC but $DS has $DS_TAB_COUNT tab buttons to fill"
 
 # --- 2. Patch design-system.html -------------------------------------------
 
@@ -68,14 +69,16 @@ perl -pi -e "s/<div class=\"s-body\">.*?<\\/div>/<div class=\"s-body\">${BODY_TE
 EYEBROW_TEXT_ESC=$(printf '%s' "$EYEBROW_TEXT" | sed 's/[\/&]/\\&/g')
 perl -pi -e "s/<div class=\"s-eyebrow\">.*?<\\/div>/<div class=\"s-eyebrow\">${EYEBROW_TEXT_ESC}<\\/div>/" "$DS"
 
-# Capability tab demo: only the first 3 tabs are shown (matches the existing
-# demo's scope), in the same order as index.html's data-tab buttons. Ordered,
+# Capability tab demo: fills however many tab buttons design-system.html
+# currently has (its button count is human-maintained, not synced), using
+# that many labels from index.html's data-tab buttons in order. Ordered,
 # counter-based substitution so it doesn't matter which line each button is
-# on, and so button 2 and button 3 (same class) aren't ambiguous with a
-# same-line-only match.
-TAB_L0="${TAB_LABELS[0]}" TAB_L1="${TAB_LABELS[1]}" TAB_L2="${TAB_LABELS[2]}" \
-perl -0777 -pi -e '
-  my @labels = ($ENV{TAB_L0}, $ENV{TAB_L1}, $ENV{TAB_L2});
+# on, and so buttons sharing a class aren't ambiguous with a same-line-only
+# match. TAB_LABELS_JOINED uses \x1e (ASCII record separator) since bash
+# arrays can't be exported directly.
+TAB_LABELS_JOINED=$(printf '%s\x1e' "${TAB_LABELS[@]}")
+TAB_LABELS_JOINED="$TAB_LABELS_JOINED" perl -0777 -pi -e '
+  my @labels = split /\x1e/, $ENV{TAB_LABELS_JOINED};
   my $i = 0;
   s/(<button class="tab tab-(?:selected|available)">).*?(<\/button>)/$1 . $labels[$i++] . $2/ge;
 ' "$DS"
