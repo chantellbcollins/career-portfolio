@@ -164,6 +164,7 @@ footer.doc .row{display:flex;flex-direction:column;gap:8px}
 @media (max-width:640px){
   .spacing-row{grid-template-columns:90px 1fr}
   .spacing-row .role{grid-column:1/-1}
+  .folder-tabs .tab-available{display:none}
 }
 </style>
 </head>
@@ -321,7 +322,7 @@ footer.doc .row{display:flex;flex-direction:column;gap:8px}
       <div class="component-row">
         <span class="caption">Buttons: fill inverts on hover, border stays the same color, nothing resizes. Padding is Base (16px) horizontal, Tight (8px) vertical, a 40px tap target at `text-base`. Keyboard focus gets its own 2px gold outline (`:focus-visible`), separate from hover.</span>
         <a class="btn btn-primary" href="#">Book 15-min intro</a>
-        <a class="btn btn-secondary" href="#">Connect on LinkedIn</a>
+        <a class="btn btn-secondary" href="#"><span>Connect on</span><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05a3.74 3.74 0 013.37-1.85c3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.07 2.07 0 110-4.13 2.07 2.07 0 010 4.13zM7.12 20.45H3.55V9h3.57v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.72v20.56C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.72V1.72C24 .77 23.2 0 22.22 0z"/></svg></a>
       </div>
 
       <div class="component-row">
@@ -339,13 +340,13 @@ footer.doc .row{display:flex;flex-direction:column;gap:8px}
           <button class="tab tab-selected">Commercial delivery</button>
           <button class="tab tab-available">AI &amp; Operational Excellence</button>
           <button class="tab tab-available">Remote global operations</button>
+          <button class="tab tab-available">Human-centric leadership</button>
         </div>
         <div class="folder-body">Selected panel content sits flush against the selected tab. Both carry the exact same tint fill, so the border between them disappears, no plain-bg card breaking the surface.</div>
       </div>
 
       <div class="component-row">
         <span class="caption">Pill / badge: border-only stroke, never on the text. Text stays full-strength ink, set in plain Body type (16px regular), not the eyebrow tier.</span>
-        <span class="pill">Vienna-based</span>
         <span class="pill">ClickUp Expert</span>
       </div>
 
