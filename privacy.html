@@ -13,9 +13,10 @@
 </head>
 <body class="bg-bg text-ink font-sans antialiased">
 
-<header class="border-b border-border">
-  <div class="max-w-5xl mx-auto px-6 h-14 flex items-center">
-    <a href="index.html" class="text-base text-gold hover:text-terracotta">&larr; Chantell Collins, MBA</a>
+<header id="siteHeader" class="fixed top-0 left-0 right-0 z-40 backdrop-blur bg-bg/85 border-b border-border transition-transform duration-300 -translate-y-full">
+  <div class="max-w-5xl mx-auto px-6 h-14 flex items-center justify-between">
+    <a href="index.html" class="text-base text-gold hover:text-terracotta">Chantell Collins, MBA</a>
+    <a href="https://calendar.app.google/xoCv8Lis9yX5v6n68" target="_blank" rel="noopener" class="text-sm px-4 py-2 rounded-lg bg-gold text-white border border-gold hover:bg-bg hover:text-gold transition">Book 15-min intro</a>
   </div>
 </header>
 
@@ -153,6 +154,25 @@ var GA_MEASUREMENT_ID='G-Y9PWLV04RR';
     banner.classList.add('hidden')});
   if(settingsBtn)settingsBtn.addEventListener('click',function(){
     if(banner)banner.classList.remove('hidden')});
+})();
+</script>
+
+<script>
+// Nav stays off-screen until the page has scrolled 100px, then slides in and stays
+// fixed, same behavior as index.html.
+(function(){
+  var headerEl=document.getElementById('siteHeader');
+  if(!headerEl)return;
+  var navShown=false;
+  function updateNav(){
+    var show=window.scrollY>100;
+    if(show===navShown)return;
+    navShown=show;
+    headerEl.classList.toggle('-translate-y-full',!show);
+    headerEl.classList.toggle('translate-y-0',show);
+  }
+  updateNav();
+  addEventListener('scroll',updateNav,{passive:true});
 })();
 </script>
 
