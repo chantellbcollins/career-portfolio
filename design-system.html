@@ -27,11 +27,11 @@ body{
   margin:0;
   background:var(--bg);
   color:var(--ink);
-  font-family:Inter,system-ui,-apple-system,'Segoe UI',sans-serif;
+  font-family:Inter,system-ui,-apple-system,sans-serif;
   -webkit-font-smoothing:antialiased;
   line-height:1.5;
 }
-.font-serif{font-family:Merriweather,Georgia,Cambria,'Times New Roman',serif}
+.font-serif{font-family:Merriweather,Georgia,serif}
 ::selection{background:var(--gold-10)}
 a{color:var(--gold);text-decoration:underline;text-decoration-thickness:1.5px;text-underline-offset:2px}
 a:hover{color:var(--terracotta)}
@@ -59,7 +59,7 @@ img,svg{max-width:100%}
 .hero h1{font-size:42px;line-height:50px;margin-top:8px}
 .hero p.lede{font-size:16px;line-height:24px;margin-top:16px}
 .meta-row{display:flex;flex-wrap:wrap;justify-content:center;gap:8px;margin-top:24px}
-.meta-pill{font-size:13px;line-height:20px;font-weight:500;padding:4px 8px;border-radius:999px;border:1px solid var(--border)}
+.meta-pill{font-size:16px;line-height:24px;font-weight:500;padding:4px 8px;border-radius:999px;border:1px solid var(--border)}
 
 /* --- section shell (no full-width lines outside nav/footer: sections separate by tint, not rule) --- */
 section.doc{padding:48px 0}
@@ -87,7 +87,7 @@ section.doc .intro{font-size:16px;line-height:24px;margin-top:24px}
 .color-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:16px;margin-top:32px}
 .swatch{border:1px solid var(--border);border-radius:8px;overflow:hidden}
 .swatch-fill{height:96px}
-.swatch-info{padding:16px;background:var(--bg)}
+.swatch-info{padding:16px}
 .swatch-info .name-row{display:flex;align-items:baseline;gap:8px}
 .swatch-info .name{font-size:16px}
 .swatch-info .hex{font-size:14px;color:var(--ink)}
@@ -115,7 +115,7 @@ section.doc .intro{font-size:16px;line-height:24px;margin-top:24px}
 /* --- components --- */
 .component-block{margin-top:32px;display:flex;flex-direction:column;gap:24px}
 .component-row{display:flex;flex-wrap:wrap;align-items:center;gap:16px}
-.component-row .caption{width:100%;font-size:14px;margin-bottom:4px}
+.component-row .caption{width:100%;font-size:14px}
 .btn{display:inline-flex;align-items:center;gap:8px;font-size:16px;padding:8px 16px;border-radius:8px;border:1px solid;text-decoration:none;transition:background .15s,color .15s;cursor:pointer}
 .btn-primary{background:var(--gold);border-color:var(--gold);color:#fff}
 .btn-primary:hover{background:var(--bg);color:var(--gold)}
@@ -195,8 +195,8 @@ footer.doc .row{display:flex;flex-direction:column;gap:8px}
     <p class="intro">A serif carries both heading tiers; a clean sans carries body copy and the eyebrow tier. Two families, each with one job, never mixed within a tier.</p>
 
     <div class="font-stack">
-      <div class="s">headers (H1, H2): <code>Merriweather, Georgia, Cambria, "Times New Roman", serif</code></div>
-      <div class="b">body, eyebrow, nav: <code>Inter, system-ui, -apple-system, "Segoe UI", sans-serif</code></div>
+      <div class="s">headers (H1, H2): <code>Merriweather, Georgia, serif</code></div>
+      <div class="b">body, eyebrow, nav: <code>Inter, system-ui, -apple-system, sans-serif</code></div>
     </div>
 
     <div class="specimen">
@@ -329,11 +329,11 @@ footer.doc .row{display:flex;flex-direction:column;gap:8px}
         <a href="https://www.awwwards.com/sites/serve-robotics" target="_blank" rel="noopener">Won the Awwwards site of the day.</a>
       </div>
 
-      <div class="component-row" style="display:block">
+      <div class="component-row" style="display:flex;flex-direction:column;gap:16px">
         <span class="caption">Nav: hidden at page load, slides in and stays fixed once the page has scrolled 100px.</span>
       </div>
 
-      <div class="component-row" style="display:block">
+      <div class="component-row" style="display:flex;flex-direction:column;gap:16px">
         <span class="caption">Capability tabs: folder style. Selected carries the card tint and dark bold ink, matched to the panel below it, no seam line. Unselected sits in gold, signaling still clickable.</span>
         <div class="folder-tabs">
           <button class="tab tab-selected">Commercial delivery</button>
@@ -359,11 +359,11 @@ footer.doc .row{display:flex;flex-direction:column;gap:8px}
         <span class="dot dot-ink"></span><span class="dot dot-border"></span><span class="dot dot-border"></span>
       </div>
 
-      <div class="component-row" style="display:block">
+      <div class="component-row" style="display:flex;flex-direction:column;gap:16px">
         <span class="caption">Separator glyph: one mark, one color, everywhere. Every divider, hero eyebrow, job title to company, credential to institution, and contact links, is the same terracotta middot. No pipes anywhere.</span>
       </div>
 
-      <div class="component-row" style="display:block">
+      <div class="component-row" style="display:flex;flex-direction:column;gap:16px">
         <span class="caption">Card background tint: a flat, opaque `#F0EAE6`. Applied to cards only, stat cells, proof cells, the capability panel, never to the section wrapper, which stays plain `#F8F4F2`.</span>
         <div class="tint-demo">
           <div class="half a">Plain `#F8F4F2`: every section wrapper</div>
@@ -371,7 +371,7 @@ footer.doc .row{display:flex;flex-direction:column;gap:8px}
         </div>
       </div>
 
-      <div class="component-row" style="display:block">
+      <div class="component-row" style="display:flex;flex-direction:column;gap:16px">
         <span class="caption">Proof/stat grids: each cell is its own individually-rounded card. No icons or logo marks, company names are plain bold body text. Heights matched across every card so short and long captions still line up.</span>
         <div class="tint-demo" style="display:flex;gap:4px;text-align:center;border:none">
           <div class="half b" style="flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;border-radius:8px;min-height:144px">
@@ -385,7 +385,7 @@ footer.doc .row{display:flex;flex-direction:column;gap:8px}
         </div>
       </div>
 
-      <div class="component-row" style="display:block">
+      <div class="component-row" style="display:flex;flex-direction:column;gap:16px">
         <span class="caption">Hero layout: everything above the first CTA is centered, matching the contact section's already-centered treatment.</span>
         <div class="center-demo">
           <div class="line" style="width:40%"></div>
