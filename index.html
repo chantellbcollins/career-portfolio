@@ -551,7 +551,6 @@ var GA_MEASUREMENT_ID='G-Y9PWLV04RR';
   document.querySelectorAll('[data-t]').forEach(function(el){el.addEventListener('click',function(){track(el.dataset.t)})});
   function summary(){return{session_duration_seconds:S.active,max_scroll_depth_percentage:S.depth,
     pillars_explored:S.pillars,conversion_actions_taken:S.actions,milestones:S.milestones}}
-  addEventListener('beforeunload',function(){try{localStorage.setItem('cc-session-'+Date.now(),JSON.stringify(summary()))}catch(e){}});
   addEventListener('keydown',function(e){
     if((e.metaKey||e.ctrlKey)&&e.shiftKey&&e.key.toLowerCase()==='d'){e.preventDefault();
       console.table(summary());var d=document.getElementById('dbg');
