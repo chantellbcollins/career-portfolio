@@ -140,35 +140,9 @@
 
 <section id="praise" class="scroll-mt-16"><div class="max-w-5xl mx-auto px-6 py-12 sm:py-16">
   <h2 class="font-serif font-bold text-[26px] leading-[34px] text-ink">Praise</h2>
-  <div class="mt-8 relative" id="praiseCarousel">
-    <div class="tint-bg border border-border rounded-lg p-6 sm:p-8 min-h-[180px]" id="praisePanel">
-      <div data-praise-slide="0" class="on">
-        <p class="text-base leading-relaxed text-ink">&ldquo;What sets Chantell apart is not only her strategic and organisational ability, but also her leadership, collaborative instinct, and problem-solving mindset. She excels at incorporating feedback and anticipating challenges before they arise, proposing thoughtful solutions that have strengthened both our delivery and our ways of working.&rdquo;</p>
-        <p class="mt-4 eyebrow font-medium text-ink"><a href="https://www.linkedin.com/in/mment/" target="_blank" rel="noopener" class="text-gold underline hover:text-terracotta">Matthias Mentasti</a> <span class="text-terracotta">&middot;</span> Founder, Creative Direction &amp; Culture, wild</p>
-      </div>
-      <div data-praise-slide="1">
-        <p class="text-base leading-relaxed text-ink">&ldquo;I highly recommend Chantell as a marketing strategist. Chantell has a deep understanding of the marketing landscape and knows how to develop effective campaigns that achieve business goals.&rdquo;</p>
-        <p class="mt-4 eyebrow font-medium text-ink"><a href="https://www.linkedin.com/in/rach-howard/" target="_blank" rel="noopener" class="text-gold underline hover:text-terracotta">Rach Howard</a> <span class="text-terracotta">&middot;</span> Head of Real Estate Sales, Platforms &amp; Self Service, News Corp Australia</p>
-      </div>
-      <div data-praise-slide="2">
-        <p class="text-base leading-relaxed text-ink">&ldquo;She is able to get the big picture and dig quickly into key details in order to provide useful tools for quick wins. I really love her pragmatic approach and very professional outlook based on her own experience rather than text books.&rdquo;</p>
-        <p class="mt-4 eyebrow font-medium text-ink"><a href="https://www.linkedin.com/in/alisongrun/" target="_blank" rel="noopener" class="text-gold underline hover:text-terracotta">Alison Gr&uuml;n</a> <span class="text-terracotta">&middot;</span> Founder, FreeW &amp; Two Wheels to Freewill</p>
-      </div>
-      <div data-praise-slide="3">
-        <p class="text-base leading-relaxed text-ink">&ldquo;I am very happy to recommend Chantell. She shows the kind of dedication and commitment to her work that you often only dream of. She is bright, hardworking and regularly identifies more innovative and efficient ways of working.&rdquo;</p>
-        <p class="mt-4 eyebrow font-medium text-ink"><a href="https://www.linkedin.com/in/kathywheeler1606/" target="_blank" rel="noopener" class="text-gold underline hover:text-terracotta">Kathy Wheeler</a> <span class="text-terracotta">&middot;</span> General Manager, QUDIT</p>
-      </div>
-    </div>
-    <div class="mt-4 flex items-center justify-center gap-4">
-      <button id="praisePrev" aria-label="Previous testimonial" class="text-gold hover:text-terracotta px-4 py-2.5">&larr;</button>
-      <div class="flex gap-2" id="praiseDots">
-        <span class="h-1.5 w-1.5 rounded-full bg-ink" data-praise-dot="0"></span>
-        <span class="h-1.5 w-1.5 rounded-full bg-border" data-praise-dot="1"></span>
-        <span class="h-1.5 w-1.5 rounded-full bg-border" data-praise-dot="2"></span>
-        <span class="h-1.5 w-1.5 rounded-full bg-border" data-praise-dot="3"></span>
-      </div>
-      <button id="praiseNext" aria-label="Next testimonial" class="text-gold hover:text-terracotta px-4 py-2.5">&rarr;</button>
-    </div>
+  <div class="mt-8 tint-bg border border-border rounded-lg p-6 sm:p-8">
+    <p class="text-base leading-relaxed text-ink">&ldquo;What sets Chantell apart is not only her strategic and organisational ability, but also her leadership, collaborative instinct, and problem-solving mindset. She excels at incorporating feedback and anticipating challenges before they arise, proposing thoughtful solutions that have strengthened both our delivery and our ways of working.&rdquo;</p>
+    <p class="mt-4 eyebrow font-medium text-ink"><a href="https://www.linkedin.com/in/mment/" target="_blank" rel="noopener" class="text-gold underline hover:text-terracotta">Matthias Mentasti</a> <span class="text-terracotta">&middot;</span> Founder, Creative Direction &amp; Culture, wild</p>
   </div>
 </div></section>
 
@@ -412,8 +386,8 @@ var GA_MEASUREMENT_ID='G-Y9PWLV04RR';
   tabs.forEach(function(b){b.onclick=function(){select(b.dataset.tab,true)}});
   select('commercial',false);
 
-  // Mobile capability carousel: same prev/next pattern as the Praise carousel below,
-  // driving the same select() used by the desktop tabs and touch-swipe.
+  // Mobile capability carousel: same prev/next/dot/swipe pattern used by the other
+  // carousels on the page, driving the same select() used by the desktop tabs.
   var capPrev=document.getElementById('capabilityPrev'),capNext=document.getElementById('capabilityNext');
   function capStep(dir){
     var i=TAB_ORDER.indexOf(activeTab);
@@ -454,38 +428,9 @@ var GA_MEASUREMENT_ID='G-Y9PWLV04RR';
     },{passive:true});
   }
 
-  // Praise carousel: prev/next buttons, clickable dots, and touch swipe, one testimonial
-  // visible at a time, same interaction pattern as the capability tabs above.
-  var praiseSlides=[].slice.call(document.querySelectorAll('[data-praise-slide]'));
-  if(praiseSlides.length){
-    var praiseDots=[].slice.call(document.querySelectorAll('[data-praise-dot]'));
-    var praiseIndex=0;
-    function selectPraise(i){
-      praiseIndex=(i+praiseSlides.length)%praiseSlides.length;
-      praiseSlides.forEach(function(s){s.classList.toggle('on',s.dataset.praiseSlide==String(praiseIndex))});
-      praiseDots.forEach(function(d){d.className='h-1.5 w-1.5 rounded-full '+(d.dataset.praiseDot==String(praiseIndex)?'bg-ink':'bg-border')});
-    }
-    var praisePrev=document.getElementById('praisePrev'),praiseNext=document.getElementById('praiseNext');
-    if(praisePrev)praisePrev.onclick=function(){selectPraise(praiseIndex-1)};
-    if(praiseNext)praiseNext.onclick=function(){selectPraise(praiseIndex+1)};
-    praiseDots.forEach(function(d){d.onclick=function(){selectPraise(parseInt(d.dataset.praiseDot,10))}});
-    var praisePanel=document.getElementById('praisePanel');
-    if(praisePanel){
-      var pStartX=null,pStartY=null;
-      praisePanel.addEventListener('touchstart',function(e){
-        pStartX=e.touches[0].clientX;pStartY=e.touches[0].clientY;},{passive:true});
-      praisePanel.addEventListener('touchend',function(e){
-        if(pStartX===null)return;
-        var dx=e.changedTouches[0].clientX-pStartX,dy=e.changedTouches[0].clientY-pStartY;
-        pStartX=null;
-        if(Math.abs(dx)<40||Math.abs(dx)<Math.abs(dy))return;
-        selectPraise(dx<0?praiseIndex+1:praiseIndex-1);
-      },{passive:true});
-    }
-  }
-
   // Generic single-slide carousel (mobile stat cards, mobile wins cards): same
-  // prev/next/dot/swipe interaction pattern as the Praise carousel above.
+  // prev/next/dot/swipe interaction pattern as the capability tabs above. Praise is a
+  // single static testimonial now, not a carousel, so it no longer needs this pattern.
   function makeCarousel(opts){
     var slides=[].slice.call(document.querySelectorAll('['+opts.slideAttr+']'));
     if(!slides.length)return;
