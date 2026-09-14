@@ -230,6 +230,8 @@
 #della{width:104px;height:auto;pointer-events:auto;cursor:pointer;overflow:visible;transform-origin:50% 92%}
 #dellaHide{position:fixed;bottom:10px;left:10px;z-index:31;opacity:0;transition:opacity .2s;font-size:10px;line-height:1;padding:4px 6px;border-radius:4px;border:1px solid currentColor;background:transparent;cursor:pointer}
 #dellaWrap:hover ~ #dellaHide,#dellaHide:hover{opacity:.6}
+#dellaHide:focus-visible{opacity:1;outline:2px solid #8C6121;outline-offset:2px}
+#della:focus-visible{outline:3px solid #8C6121;outline-offset:4px;border-radius:12px}
 .dLeg{transform-origin:50% 6%}.dTail{transform-origin:18% 86%}.dEar{transform-origin:72% 14%}.dHead{transform-origin:34% 88%}
 .walking #della{animation:dBob .52s ease-in-out infinite}
 .walking .lbn{animation:dA .52s ease-in-out infinite}.walking .lfn{animation:dB .52s ease-in-out infinite}
@@ -243,11 +245,11 @@
 @keyframes dShk{0%,100%{transform:rotate(0)}25%{transform:rotate(-5deg) translateX(-2px)}75%{transform:rotate(5deg) translateX(2px)}}
 @keyframes dFlp{0%,100%{transform:rotate(0)}25%{transform:rotate(-26deg)}75%{transform:rotate(24deg)}}
 .sitting #della{transform:rotate(-8deg);transition:transform .5s cubic-bezier(.34,1.3,.64,1)}
-.sitting .lbn,.sitting .lbf{transform:rotate(78deg) translateY(-4px);transition:transform .5s ease}
+.sitting .lbn,.sitting .lbf{transform:rotate(52deg);transition:transform .5s ease}
 .sitting .dTail{animation:dWag .48s ease-in-out infinite}
 .lying #della{transform:translateY(13px);transition:transform .55s ease}
-.lying .lbn,.lying .lbf{transform:rotate(98deg) translate(-4px,-7px);transition:transform .55s ease}
-.lying .lfn,.lying .lff{transform:rotate(-84deg) translate(5px,-6px);transition:transform .55s ease}
+.lying .lbn,.lying .lbf{transform:rotate(70deg);transition:transform .55s ease}
+.lying .lfn,.lying .lff{transform:rotate(-62deg);transition:transform .55s ease}
 .lying .dHead{transform:translateY(5px) rotate(3deg);transition:transform .55s ease}
 .lying .dBreath{animation:dBr 3.6s ease-in-out infinite}
 .lying .dEyeOpen{opacity:0}.lying .dEyeShut{opacity:1}.lying .dTongue{opacity:0}
@@ -258,8 +260,8 @@
 @media (prefers-reduced-motion:reduce){#della,#della *,#dellaWrap{animation:none!important;transition:none!important}}
 </style>
 
-<div id="dellaWrap" aria-hidden="true">
-<svg id="della" viewBox="0 0 158 108" role="img" aria-label="Della, a Shar Pei">
+<div id="dellaWrap">
+<svg id="della" viewBox="0 0 158 108" role="button" tabindex="0" aria-label="Della, a Shar Pei. Activate to make her walk, sit, and lie down.">
 <title>Della</title>
 <g class="dTail"><path d="M116 46c12-9 22-3 21 6-1 8-9 11-14 6" fill="none" stroke="#A98B63" stroke-width="9" stroke-linecap="round"/></g>
 <g class="dLeg lbf"><rect x="104" y="64" width="11" height="31" rx="5.5" fill="#A98B63"/><rect x="103" y="88" width="13" height="8" rx="4" fill="#977C58"/></g>
@@ -269,6 +271,7 @@
   <path d="M120 32c6 3 9 9 9 15" fill="none" stroke="#D6BC98" stroke-width="4" stroke-linecap="round" opacity=".7"/>
   <path d="M60 36c7-3 15-4 23-3M58 45c8-2 17-3 26-2" fill="none" stroke="#A98B63" stroke-width="2" stroke-linecap="round" opacity=".75"/>
 </g>
+<circle cx="103" cy="68" r="15" fill="#C6A87F"/><circle cx="69" cy="68" r="15" fill="#C6A87F"/>
 <g class="dLeg lbn"><rect x="94" y="65" width="12" height="33" rx="6" fill="#C6A87F"/><rect x="93" y="90" width="14" height="8" rx="4" fill="#B0946C"/>
   <path d="M94 96.5h13" stroke="#E8DCC8" stroke-width="2" stroke-linecap="round"/></g>
 <g class="dLeg lfn"><rect x="64" y="65" width="12" height="33" rx="6" fill="#C6A87F"/><rect x="63" y="90" width="14" height="8" rx="4" fill="#B0946C"/>
@@ -525,10 +528,14 @@ var GA_MEASUREMENT_ID='G-Y9PWLV04RR';
         later(function(){set('lying');busy=false},2700)},reduced?0:950)},dur);
   }
   function spot(){var w=Math.min(innerWidth,1100);return Math.round(w*0.08+Math.random()*w*0.34)}
-  dog.addEventListener('click',function(){
+  function activate(){
     if(window.ccTrackDella)window.ccTrackDella();
     if(busy){clear();stop();set('sitting');later(function(){set('lying');busy=false},1800);return}
     routine(spot());
+  }
+  dog.addEventListener('click',activate);
+  dog.addEventListener('keydown',function(e){
+    if(e.key==='Enter'||e.key===' '||e.key==='Spacebar'){e.preventDefault();activate()}
   });
   hide.addEventListener('click',function(){localStorage.setItem('cc-della','off');wrap.remove();hide.remove()});
   later(function(){routine(spot())},reduced?400:2600);
