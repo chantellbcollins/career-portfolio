@@ -11,26 +11,26 @@
 // real run says otherwise.
 //
 // Thresholds sit a meaningful margin below the measured scores. Performance
-// is 'warn' rather than 'error': the run with the 0.85 error-level
-// performance gate above failed on GitHub's shared runners, and Lighthouse
-// performance scores are well known to be noisy on shared CI hardware (CPU
-// contention in ephemeral containers can swing scores 10-20 points run to
-// run) in a way accessibility/best-practices/SEO aren't. Keeping it a
-// warning still surfaces real numbers on every run without blocking the
-// build on infrastructure noise rather than an actual regression.
+// is back to 'error' (was 'warn' after a single-run 0.85 gate failed on
+// shared-runner noise): numberOfRuns is now 3, so LHCI asserts against the
+// median of three runs per URL instead of one, which is the standard fix
+// for shared-CI-hardware noise (CPU contention in ephemeral containers can
+// swing a single Lighthouse performance run 10-20 points, but rarely skews
+// a median of three the same way). Revisit back to 'warn' if it still
+// proves flaky after this.
 module.exports = {
   ci: {
     collect: {
       staticDistDir: '.',
       url: ['/index.html', '/privacy.html', '/design-system.html'],
-      numberOfRuns: 1,
+      numberOfRuns: 3,
     },
     assert: {
       assertMatrix: [
         {
           matchingUrlPattern: 'design-system\\.html',
           assertions: {
-            'categories:performance': ['warn', { minScore: 0.85 }],
+            'categories:performance': ['error', { minScore: 0.85 }],
             'categories:accessibility': ['error', { minScore: 0.95 }],
             'categories:best-practices': ['error', { minScore: 0.9 }],
             'categories:seo': ['off'],
@@ -39,7 +39,7 @@ module.exports = {
         {
           matchingUrlPattern: '(index|privacy)\\.html',
           assertions: {
-            'categories:performance': ['warn', { minScore: 0.85 }],
+            'categories:performance': ['error', { minScore: 0.85 }],
             'categories:accessibility': ['error', { minScore: 0.95 }],
             'categories:best-practices': ['error', { minScore: 0.9 }],
             'categories:seo': ['error', { minScore: 0.9 }],
