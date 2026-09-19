@@ -1,5 +1,9 @@
 // Lighthouse CI thresholds for .github/workflows/lighthouse.yml.
 //
+// Every run's real scores are written to the workflow's Job Summary panel
+// (see lighthouse.yml's "Write score summary" step) - check there for
+// privacy.html's numbers, which weren't in the original calibration sample.
+//
 // Calibrated from a real run's reports (2026-09), not guessed: index.html
 // scored perf 0.93 / a11y 1.00 / best-practices 0.96 / seo 1.00, and
 // design-system.html scored perf 1.00 / a11y 1.00 / best-practices 0.96 /
