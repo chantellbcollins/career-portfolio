@@ -42,7 +42,7 @@ EYEBROW_LH=$(grep -oP '\.eyebrow\{[^}]*line-height:\K[0-9]+(?=px)' "$CSS" | head
 BODY_TEXT=$(perl -0777 -ne 'print $1 if /<section id="trajectory"[^>]*>.*?<h2[^>]*>Trajectory<\/h2>\s*<p[^>]*>(.*?)<\/p>/s' "$SRC")
 [ -n "${BODY_TEXT:-}" ] || fail "could not find Trajectory intro paragraph in $SRC"
 
-EYEBROW_TEXT_RAW=$(perl -ne 'print $1 if /<div class="eyebrow text-ink mb-6">(.*?)<\/div>/' "$SRC")
+EYEBROW_TEXT_RAW=$(perl -0777 -ne 'print $1 if /<section><div class="max-w-5xl mx-auto px-6 py-12 sm:py-16 text-center">\s*<div class="eyebrow[^"]*">(.*?)<\/div>/s' "$SRC")
 [ -n "${EYEBROW_TEXT_RAW:-}" ] || fail "could not find hero eyebrow div in $SRC"
 # design-system's specimen writes the middot as plain text, not wrapped in a span
 EYEBROW_TEXT=$(printf '%s' "$EYEBROW_TEXT_RAW" | perl -pe 's/<span class="text-terracotta">(&middot;)<\/span>/$1/g')
