@@ -185,7 +185,7 @@ footer.doc .row{display:flex;flex-direction:column;gap:8px}
   <div class="wrap">
     <div class="kicker">Type</div>
     <h2 class="font-serif">Merriweather for headers, Inter for everything else</h2>
-    <p class="intro">A serif carries both heading tiers; a clean sans carries body copy and the eyebrow tier. Two families, each with one job, never mixed within a tier.</p>
+    <p class="intro">Merriweather carries both heading tiers; Inter carries body, eyebrow, and nav. Never mixed within a tier.</p>
 
     <div class="font-stack">
       <div class="s">headers (H1, H2): <code>Merriweather, Georgia, serif</code></div>
@@ -217,7 +217,7 @@ footer.doc .row{display:flex;flex-direction:column;gap:8px}
   <div class="wrap">
     <div class="kicker">Color</div>
     <h2 class="font-serif">Five tokens, sourced from Chantell's own photos</h2>
-    <p class="intro">Each hex was sampled from a real photo (Trieste, Malta, Della, a Vienna caf&eacute;). Gold is the only clickable signal on the page, never on a bullet, a stat, or plain body text.</p>
+    <p class="intro">Gold is the only clickable signal on the page, never on a bullet, a stat, or plain body text.</p>
 
     <div class="color-grid">
       <div class="swatch">
@@ -285,7 +285,7 @@ footer.doc .row{display:flex;flex-direction:column;gap:8px}
   <div class="wrap">
     <div class="kicker">Shape &amp; line</div>
     <h2 class="font-serif">One line weight, one corner, one pill</h2>
-    <p class="intro">No variants. A border is always 1px, a rectangle is always 8px-rounded, a pill is always fully rounded, including on hover, so nothing resizes when it's touched. And a full-width rule across the page is reserved for the nav and footer only: everywhere else, a section change reads through a background tint, not a line.</p>
+    <p class="intro">No variants: border 1px, rectangle corners 8px, pills fully rounded, including on hover, so nothing resizes on touch. Full-width rules are reserved for nav and footer; elsewhere, sections separate by background tint, not a line.</p>
 
     <div class="shape-grid">
       <div class="shape-card">
@@ -312,7 +312,7 @@ footer.doc .row{display:flex;flex-direction:column;gap:8px}
 
     <div class="component-block">
       <div class="component-row">
-        <span class="caption">Buttons: fill inverts on hover, border stays the same color, nothing resizes. Horizontal padding is Base (16px); vertical padding is 10px at Body text and 12px at the smaller nav/footer text, sized precisely to clear a 44px tap target rather than sitting on a scale step, the one deliberate exception to the 7-step spacing scale. Keyboard focus gets its own 2px gold outline (`:focus-visible`), separate from hover.</span>
+        <span class="caption">Buttons: fill inverts on hover, border unchanged, nothing resizes. Padding: 16px horizontal, 10-12px vertical, sized to clear a 44px tap target (the one exception to the 7-step spacing scale). Focus gets its own 2px gold outline, separate from hover.</span>
         <a class="btn btn-primary" href="#">Book 15-min intro</a>
         <a class="btn btn-secondary" href="#"><span>Connect on</span><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05a3.74 3.74 0 013.37-1.85c3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.07 2.07 0 110-4.13 2.07 2.07 0 010 4.13zM7.12 20.45H3.55V9h3.57v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.72v20.56C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.72V1.72C24 .77 23.2 0 22.22 0z"/></svg></a>
       </div>
@@ -337,16 +337,16 @@ footer.doc .row{display:flex;flex-direction:column;gap:8px}
       </div>
 
       <div class="component-row">
-        <span class="caption">Carousel dot: two-state pagination for the stat and wins carousels. Selected is ink, unselected is border, never terracotta. Decorative only, never clickable; the arrows either side are the sole navigation control.</span>
+        <span class="caption">Carousel dot: selected is ink, unselected is border, never terracotta. Decorative only; the side arrows are the sole navigation control.</span>
         <span class="dot dot-ink"></span><span class="dot dot-border"></span><span class="dot dot-border"></span>
       </div>
 
       <div class="component-row" style="display:flex;flex-direction:column;gap:16px">
-        <span class="caption">Separator glyph: one mark, one color, everywhere. Every divider, hero eyebrow, job title to company, and credential to institution, is the same terracotta middot. No pipes anywhere.</span>
+        <span class="caption">One separator glyph, one color (see Rule 11).</span>
       </div>
 
       <div class="component-row" style="display:flex;flex-direction:column;gap:16px">
-        <span class="caption">Card background tint: a flat, opaque `#F0EAE6`. Applied to cards only, stat cells, proof cells, the capability panel, never to the section wrapper, which stays plain `#F8F4F2`.</span>
+        <span class="caption">Card fill: opaque `#F0EAE6`, cards only (see Rule 04).</span>
         <div class="tint-demo">
           <div class="half a">Plain `#F8F4F2`: every section wrapper</div>
           <div class="half b">Tinted `#F0EAE6`: cards only</div>
@@ -388,7 +388,7 @@ footer.doc .row{display:flex;flex-direction:column;gap:8px}
       <div class="rule"><span class="n">01</span><span class="t"><b>Gold means an action is still available</b>, not "this is currently selected." A tab you're already viewing is dark brown ink and bold, not gold, even though selecting a different one is itself a click.</span></div>
       <div class="rule"><span class="n">02</span><span class="t"><b>Body text is one flat color, no opacity tiers.</b> Ink at reduced opacity reads as grey against this background even when it clears contrast on paper. Hierarchy comes from the type scale alone.</span></div>
       <div class="rule"><span class="n">03</span><span class="t"><b>Bold is selective, not systemic.</b> Body defaults to regular weight; bold is reserved for job titles only, applied without changing color.</span></div>
-      <div class="rule"><span class="n">04</span><span class="t"><b>The page background is plain `#F8F4F2`; cards carry the tint, not the sections around them.</b> Section wrappers (Hero/Stats/CTA, Capability, Trajectory, Credentials/Systems, Wins) sit on the plain page color with no tint of their own. Cards inside them (stat cells, proof-table cells, the capability panel) carry the tint as a baked-in opaque color (`#F0EAE6`), giving the card real contrast against the page rather than blending into it.</span></div>
+      <div class="rule"><span class="n">04</span><span class="t"><b>Page background is plain `#F8F4F2`; cards carry the tint, not the sections around them.</b> Every section wrapper (Hero, Capability, Trajectory, Credentials/Systems, Wins) stays plain; only cards inside them (stat cells, proof cells, the capability panel) get the tint (`#F0EAE6`), for contrast against the page.</span></div>
       <div class="rule"><span class="n">05</span><span class="t"><b>Pills carry a border, never a fill.</b> Badges and chips are outline-only tags set in plain Body type (not the eyebrow tier), so they read clearly against either a plain or a tinted section background without needing a matching fill value.</span></div>
       <div class="rule"><span class="n">06</span><span class="t"><b>Hover never resizes anything.</b> Buttons keep their border in the base state, so the fill-inversion hover swap never shifts layout.</span></div>
       <div class="rule"><span class="n">07</span><span class="t"><b>No sixth color.</b> Every decorative or informational use draws from these five tokens; a new hue is never the fix for "this needs more visual interest."</span></div>
