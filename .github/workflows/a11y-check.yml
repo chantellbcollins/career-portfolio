@@ -17,6 +17,14 @@ on:
       - design-system.html
       - styles.css
       - scripts/a11y-check.js
+  pull_request:
+    branches: [main]
+    paths:
+      - index.html
+      - privacy.html
+      - design-system.html
+      - styles.css
+      - scripts/a11y-check.js
   workflow_dispatch: {}
 
 jobs:

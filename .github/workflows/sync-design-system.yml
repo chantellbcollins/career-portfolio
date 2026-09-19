@@ -19,6 +19,12 @@ on:
       - index.html
       - privacy.html
       - styles.css
+  pull_request:
+    branches: [main]
+    paths:
+      - index.html
+      - privacy.html
+      - styles.css
   workflow_dispatch: {}
 
 permissions:
@@ -34,11 +40,20 @@ jobs:
       - name: Run sync script
         run: bash scripts/sync-design-system.sh
 
-      - name: Commit design-system.html if it changed
+      - name: Fail on drift (PR) or commit the fix (push to main)
+        # On a pull_request, auto-committing would push to someone's PR
+        # branch mid-review, so this fails the check instead and prints the
+        # diff, requiring the sync to be run and committed before merge. On
+        # a direct push to main, keep the existing auto-fix-commit behavior.
         run: |
           if git diff --quiet -- design-system.html; then
-            echo "design-system.html already in sync, nothing to commit."
+            echo "design-system.html already in sync, nothing to do."
             exit 0
+          fi
+          if [ "${{ github.event_name }}" = "pull_request" ]; then
+            echo "::error::design-system.html is out of sync with index.html/styles.css. Run scripts/sync-design-system.sh locally and commit the result."
+            git diff -- design-system.html
+            exit 1
           fi
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
