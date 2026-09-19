@@ -2,10 +2,10 @@ name: Lighthouse
 
 # Runs Lighthouse CI (performance, accessibility, best-practices, SEO)
 # against index.html, privacy.html, and design-system.html on every push
-# that could affect them. Currently informational only (see
-# lighthouserc.js): thresholds are un-calibrated guesses, not a measured
-# baseline, so they warn rather than fail the build until real scores are
-# available to set genuine gates.
+# that could affect them, and fails the build if a score drops below its
+# threshold in lighthouserc.js. Thresholds are calibrated from a real run,
+# not guessed - see lighthouserc.js for the measured baseline and the
+# reasoning (including why design-system.html's SEO gate is off).
 
 on:
   push:
