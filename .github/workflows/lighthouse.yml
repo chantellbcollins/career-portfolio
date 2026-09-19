@@ -1,0 +1,35 @@
+name: Lighthouse
+
+# Runs Lighthouse CI (performance, accessibility, best-practices, SEO)
+# against index.html, privacy.html, and design-system.html on every push
+# that could affect them, and fails the build if any category drops below
+# its threshold in lighthouserc.js. Those thresholds are a conservative
+# starting floor, not a measured baseline (see lighthouserc.js) - revisit
+# them once real CI runs establish where the site actually scores.
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - index.html
+      - privacy.html
+      - design-system.html
+      - styles.css
+      - lighthouserc.js
+  workflow_dispatch: {}
+
+jobs:
+  lighthouse:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Install Lighthouse CI
+        run: npm install -g @lhci/cli@0.14.x
+
+      - name: Run Lighthouse CI
+        run: lhci autorun
