@@ -1,0 +1,47 @@
+name: Accessibility check
+
+# Runs axe-core (WCAG 2.0/2.1/2.2 A+AA rules) against index.html, privacy.html,
+# and design-system.html on every push that could affect them, and fails the
+# build if any violation is found. This covers color contrast, ARIA/screen
+# reader issues, and a good chunk of keyboard/focus problems (focus order,
+# focusable-but-hidden elements) automatically. It cannot judge whether tab
+# order actually feels right in practice, or whether error/feedback messaging
+# makes sense, those still need an occasional manual pass.
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - index.html
+      - privacy.html
+      - design-system.html
+      - styles.css
+      - scripts/a11y-check.js
+  workflow_dispatch: {}
+
+jobs:
+  a11y:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Install Playwright browser
+        run: npx playwright install --with-deps chromium
+
+      - name: Serve site
+        run: |
+          python3 -m http.server 8080 &
+          for i in $(seq 1 20); do
+            curl -sf http://localhost:8080/ > /dev/null && break
+            sleep 0.5
+          done
+
+      - name: Run accessibility check
+        run: node scripts/a11y-check.js

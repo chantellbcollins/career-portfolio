@@ -1,0 +1,9 @@
+{
+  "name": "career-portfolio-ci-tooling",
+  "private": true,
+  "description": "CI-only devDependencies for the automated accessibility check (scripts/a11y-check.js). Not part of the deployed static site.",
+  "devDependencies": {
+    "axe-core": "^4.10.2",
+    "playwright": "^1.47.0"
+  }
+}
