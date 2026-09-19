@@ -109,13 +109,14 @@
 </footer>
 
 <div id="consentBanner" class="fixed inset-x-0 bottom-0 z-50 hidden border-t border-border tint-bg">
-  <div class="max-w-5xl mx-auto px-6 py-4 flex flex-col sm:flex-row sm:items-center gap-3 sm:gap-6">
+  <div class="max-w-5xl mx-auto px-6 py-4 flex flex-col sm:flex-row sm:items-center gap-3 sm:gap-6" id="consentMain">
     <p class="text-sm text-ink flex-1">This site uses cookies to count a few specific clicks (booking, LinkedIn). See the <a href="privacy.html" class="text-gold underline hover:text-terracotta">Privacy page</a> for details.</p>
     <div class="flex gap-2 shrink-0">
       <button id="consentReject" class="px-4 py-3 rounded-lg border border-border text-ink hover:bg-border/40 transition text-sm">Reject</button>
       <button id="consentAccept" class="px-4 py-3 rounded-lg bg-gold text-white border border-gold hover:bg-bg hover:text-gold transition text-sm">Accept</button>
     </div>
   </div>
+  <p id="consentConfirm" class="hidden max-w-5xl mx-auto px-6 py-4 text-sm text-ink" role="status"></p>
 </div>
 
 <script>
@@ -145,6 +146,8 @@ var GA_MEASUREMENT_ID='G-Y9PWLV04RR';
       if(GA_MAP[el.dataset.t])gaEvent(GA_MAP[el.dataset.t])});
   });
   var banner=document.getElementById('consentBanner'),
+      main=document.getElementById('consentMain'),
+      confirmMsg=document.getElementById('consentConfirm'),
       accept=document.getElementById('consentAccept'),
       reject=document.getElementById('consentReject'),
       settingsBtn=document.getElementById('cookieSettingsBtn');
@@ -154,6 +157,8 @@ var GA_MEASUREMENT_ID='G-Y9PWLV04RR';
   // underneath it.
   function showBanner(){
     if(!banner)return;
+    if(main)main.classList.remove('hidden');
+    if(confirmMsg)confirmMsg.classList.add('hidden');
     banner.classList.remove('hidden');
     document.body.style.paddingBottom=banner.offsetHeight+'px';
   }
@@ -162,16 +167,27 @@ var GA_MEASUREMENT_ID='G-Y9PWLV04RR';
     banner.classList.add('hidden');
     document.body.style.paddingBottom='';
   }
+  // Reject/Accept swap the prompt for a brief confirmation (role="status"
+  // announces it to screen readers too) before the banner closes, so the
+  // choice is visibly acknowledged instead of the banner just vanishing.
+  function confirmChoice(msg){
+    if(!banner||!main||!confirmMsg)return;
+    main.classList.add('hidden');
+    confirmMsg.textContent=msg;
+    confirmMsg.classList.remove('hidden');
+    document.body.style.paddingBottom=banner.offsetHeight+'px';
+    setTimeout(hideBanner,1100);
+  }
   var choice=null;
   try{choice=localStorage.getItem(CONSENT_KEY)}catch(e){}
   if(choice==='granted'){loadGA()}
   else if(choice!=='denied'){showBanner()}
   if(accept)accept.addEventListener('click',function(){
     try{localStorage.setItem(CONSENT_KEY,'granted')}catch(e){}
-    loadGA();hideBanner()});
+    loadGA();confirmChoice('Cookies accepted.')});
   if(reject)reject.addEventListener('click',function(){
     try{localStorage.setItem(CONSENT_KEY,'denied')}catch(e){}
-    hideBanner()});
+    confirmChoice('Cookies rejected.')});
   if(settingsBtn)settingsBtn.addEventListener('click',showBanner);
   var bannerResizeT;
   addEventListener('resize',function(){

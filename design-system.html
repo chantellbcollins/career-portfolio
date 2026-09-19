@@ -411,13 +411,14 @@ footer.doc .row{display:flex;flex-direction:column;gap:8px}
 </footer>
 
 <div id="consentBanner">
-  <div class="wrap row">
+  <div class="wrap row" id="consentMain">
     <p>This site uses cookies to count a few specific clicks (booking, LinkedIn). See the <a href="privacy.html">Privacy page</a> for details.</p>
     <div class="actions">
       <button id="consentReject" class="btn btn-outline">Reject</button>
       <button id="consentAccept" class="btn btn-primary">Accept</button>
     </div>
   </div>
+  <p id="consentConfirm" class="wrap" style="display:none;padding-top:16px;padding-bottom:16px" role="status"></p>
 </div>
 
 <script>
@@ -447,6 +448,8 @@ var GA_MEASUREMENT_ID='G-Y9PWLV04RR';
       if(GA_MAP[el.dataset.t])gaEvent(GA_MAP[el.dataset.t])});
   });
   var banner=document.getElementById('consentBanner'),
+      main=document.getElementById('consentMain'),
+      confirmMsg=document.getElementById('consentConfirm'),
       accept=document.getElementById('consentAccept'),
       reject=document.getElementById('consentReject'),
       settingsBtn=document.getElementById('cookieSettingsBtn');
@@ -456,6 +459,8 @@ var GA_MEASUREMENT_ID='G-Y9PWLV04RR';
   // underneath it.
   function showBanner(){
     if(!banner)return;
+    if(main)main.style.display='';
+    if(confirmMsg)confirmMsg.style.display='none';
     banner.classList.add('show');
     document.body.style.paddingBottom=banner.offsetHeight+'px';
   }
@@ -464,16 +469,27 @@ var GA_MEASUREMENT_ID='G-Y9PWLV04RR';
     banner.classList.remove('show');
     document.body.style.paddingBottom='';
   }
+  // Reject/Accept swap the prompt for a brief confirmation (role="status"
+  // announces it to screen readers too) before the banner closes, so the
+  // choice is visibly acknowledged instead of the banner just vanishing.
+  function confirmChoice(msg){
+    if(!banner||!main||!confirmMsg)return;
+    main.style.display='none';
+    confirmMsg.textContent=msg;
+    confirmMsg.style.display='block';
+    document.body.style.paddingBottom=banner.offsetHeight+'px';
+    setTimeout(hideBanner,1100);
+  }
   var choice=null;
   try{choice=localStorage.getItem(CONSENT_KEY)}catch(e){}
   if(choice==='granted'){loadGA()}
   else if(choice!=='denied'){showBanner()}
   if(accept)accept.addEventListener('click',function(){
     try{localStorage.setItem(CONSENT_KEY,'granted')}catch(e){}
-    loadGA();hideBanner()});
+    loadGA();confirmChoice('Cookies accepted.')});
   if(reject)reject.addEventListener('click',function(){
     try{localStorage.setItem(CONSENT_KEY,'denied')}catch(e){}
-    hideBanner()});
+    confirmChoice('Cookies rejected.')});
   if(settingsBtn)settingsBtn.addEventListener('click',showBanner);
   var bannerResizeT;
   addEventListener('resize',function(){
