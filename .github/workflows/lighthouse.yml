@@ -16,6 +16,7 @@ on:
       - design-system.html
       - styles.css
       - lighthouserc.js
+      - scripts/lighthouse-summary.js
   pull_request:
     branches: [main]
     paths:
@@ -24,6 +25,7 @@ on:
       - design-system.html
       - styles.css
       - lighthouserc.js
+      - scripts/lighthouse-summary.js
   workflow_dispatch: {}
 
 jobs:
@@ -49,15 +51,4 @@ jobs:
         # render outside an authenticated browser session), so this is the
         # dependable way to read actual Lighthouse scores for this repo.
         if: always()
-        run: |
-          node -e "
-            const fs = require('fs');
-            const manifest = JSON.parse(fs.readFileSync('.lighthouseci/manifest.json', 'utf8'));
-            let md = '| URL | Performance | Accessibility | Best Practices | SEO |\n|---|---|---|---|---|\n';
-            for (const entry of manifest) {
-              const s = entry.summary || {};
-              const pct = (n) => (typeof n === 'number' ? Math.round(n * 100) : 'n/a');
-              md += \`| \${entry.url} | \${pct(s.performance)} | \${pct(s.accessibility)} | \${pct(s['best-practices'])} | \${pct(s.seo)} |\n\`;
-            }
-            fs.appendFileSync(process.env.GITHUB_STEP_SUMMARY, md);
-          "
+        run: node scripts/lighthouse-summary.js
