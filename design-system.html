@@ -61,10 +61,9 @@ img,svg{max-width:100%}
 .hero p.lede{font-size:16px;line-height:24px;margin-top:16px}
 .meta-row{display:flex;flex-wrap:wrap;justify-content:center;gap:8px;margin-top:24px}
 
-/* --- section shell (no full-width lines outside nav/footer: sections separate by tint, not rule) --- */
+/* --- section shell (plain page background throughout; only cards carry the tint, per Rule 03) --- */
 section.doc{padding-top:48px}
 @media (min-width:641px){section.doc{padding-top:64px}}
-section.doc.tint{background:var(--border-8)}
 section.doc .kicker{font-size:13px;line-height:16px;letter-spacing:0.06em;text-transform:uppercase;color:var(--terracotta);font-weight:700}
 section.doc h2{font-size:26px;line-height:34px;margin-top:8px}
 section.doc .intro{font-size:16px;line-height:24px;margin-top:24px}
@@ -214,7 +213,7 @@ footer.doc .row{display:flex;flex-direction:column;gap:8px}
   </div>
 </section>
 
-<section class="doc tint" id="color">
+<section class="doc" id="color">
   <div class="wrap">
     <div class="kicker">Color</div>
     <h2 class="font-serif">Five tokens, sourced from Chantell's own photos</h2>
@@ -282,7 +281,7 @@ footer.doc .row{display:flex;flex-direction:column;gap:8px}
   </div>
 </section>
 
-<section class="doc tint" id="shape">
+<section class="doc" id="shape">
   <div class="wrap">
     <div class="kicker">Shape &amp; line</div>
     <h2 class="font-serif">One line weight, one corner, one pill</h2>
@@ -381,7 +380,7 @@ footer.doc .row{display:flex;flex-direction:column;gap:8px}
   </div>
 </section>
 
-<section class="doc tint" id="rules">
+<section class="doc" id="rules">
   <div class="wrap">
     <div class="kicker">Governing rules</div>
     <h2 class="font-serif">What keeps this one system instead of five</h2>
