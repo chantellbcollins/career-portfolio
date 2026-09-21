@@ -51,26 +51,26 @@ img,svg{max-width:100%}
 .topnav .name{font-size:16px;white-space:nowrap;font-family:Inter,sans-serif}
 .topnav .name a{color:var(--gold);text-decoration:none}
 .topnav .name a:hover{color:var(--terracotta)}
-.topnav .btn{font-size:14px;line-height:20px;padding-top:12px;padding-bottom:12px}
+.topnav .btn{font-size:14px;line-height:20px;padding-top:16px;padding-bottom:16px}
 
 /* --- hero --- */
-.hero{padding:48px 0 0;text-align:center}
-@media (min-width:641px){.hero{padding:64px 0 0}}
+.hero{padding:64px 0 0;text-align:center}
+@media (min-width:641px){.hero{padding:96px 0 0}}
 .eyebrow{font-size:14px;line-height:20px;letter-spacing:0.06em;text-transform:uppercase;color:var(--ink);font-weight:500}
 .hero h1{font-size:42px;line-height:50px;margin-top:24px}
 .hero p.lede{font-size:16px;line-height:24px;margin-top:16px}
 .meta-row{display:flex;flex-wrap:wrap;justify-content:center;gap:8px;margin-top:24px}
 
 /* --- section shell (plain page background throughout; only cards carry the tint, per Rule 03) --- */
-section.doc{padding-top:48px}
-@media (min-width:641px){section.doc{padding-top:64px}}
+section.doc{padding-top:64px}
+@media (min-width:641px){section.doc{padding-top:96px}}
 section.doc h2{font-size:26px;line-height:34px}
 section.doc .intro{font-size:16px;line-height:24px;margin-top:24px}
 
 /* --- type specimen --- */
 .specimen{margin-top:32px;border:1px solid var(--border);border-radius:8px;overflow:hidden}
 .specimen-row{padding:16px 24px}
-.specimen-row .label{display:flex;justify-content:space-between;align-items:baseline;flex-wrap:wrap;gap:4px;font-size:13px;letter-spacing:0.06em;text-transform:uppercase;font-weight:500;color:var(--ink);margin-bottom:8px}
+.specimen-row .label{display:flex;justify-content:space-between;align-items:baseline;flex-wrap:wrap;gap:8px;font-size:13px;letter-spacing:0.06em;text-transform:uppercase;font-weight:500;color:var(--ink);margin-bottom:8px}
 .specimen-row .label b{font-weight:700;text-transform:none;letter-spacing:0}
 .s-h1{font-size:42px;line-height:50px}
 .s-h2{font-size:26px;line-height:34px}
@@ -108,13 +108,13 @@ section.doc .intro{font-size:16px;line-height:24px;margin-top:24px}
 .shape-card .cap{font-size:14px;margin-top:8px;text-align:center}
 .box-square{width:64px;height:64px;border:1px solid var(--gold)}
 .box-round{width:64px;height:64px;border:1px solid var(--gold);border-radius:8px}
-.box-pill{padding:4px 8px;border:1px solid var(--gold);border-radius:999px;font-size:13px;font-weight:500}
+.box-pill{padding:8px;border:1px solid var(--gold);border-radius:999px;font-size:13px;font-weight:500}
 
 /* --- components --- */
 .component-block{margin-top:32px;display:flex;flex-direction:column;gap:24px}
 .component-row{display:flex;flex-wrap:wrap;align-items:center;gap:16px}
 .component-row .caption{width:100%;font-size:16px}
-.btn{display:inline-flex;align-items:center;gap:8px;font-size:16px;line-height:24px;padding:10px 16px;border-radius:8px;border:1px solid;text-decoration:none;transition:background .15s,color .15s;cursor:pointer}
+.btn{display:inline-flex;align-items:center;gap:8px;font-size:16px;line-height:24px;padding:16px;border-radius:8px;border:1px solid;text-decoration:none;transition:background .15s,color .15s;cursor:pointer}
 .btn-primary{background:var(--gold);border-color:var(--gold);color:#fff}
 .btn-primary:hover{background:var(--bg);color:var(--gold)}
 .btn-secondary{background:var(--terracotta);border-color:var(--terracotta);color:#fff}
@@ -123,8 +123,8 @@ section.doc .intro{font-size:16px;line-height:24px;margin-top:24px}
 .btn-outline:hover{background:var(--border-8)}
 .link-btn{font:inherit;text-transform:inherit;color:var(--gold);text-decoration:underline;background:none;border:none;padding:0;cursor:pointer}
 .link-btn:hover{color:var(--terracotta)}
-.pill{font-size:16px;line-height:24px;padding:4px 8px;border-radius:999px;border:1px solid var(--border);color:var(--ink)}
-.dot{width:6px;height:6px;border-radius:999px;background:var(--terracotta);display:inline-block}
+.pill{font-size:16px;line-height:24px;padding:8px;border-radius:999px;border:1px solid var(--border);color:var(--ink)}
+.dot{width:8px;height:8px;border-radius:999px;background:var(--terracotta);display:inline-block}
 .dot-ink{background:var(--ink)}
 .dot-border{background:var(--border)}
 .tint-demo{border:1px solid var(--border);border-radius:8px;overflow:hidden;font-size:14px}
@@ -137,19 +137,19 @@ section.doc .intro{font-size:16px;line-height:24px;margin-top:24px}
 /* --- rules list --- */
 .rules{margin-top:32px;display:flex;flex-direction:column;gap:16px}
 .rule{display:grid;grid-template-columns:28px 1fr;gap:16px}
-.rule .n{font-size:14px;color:var(--terracotta);font-weight:700;padding-top:4px}
+.rule .n{font-size:14px;color:var(--terracotta);font-weight:700;padding-top:8px}
 .rule .t{font-size:16px}
 .rule .t b{font-weight:700}
 
-footer.doc{padding-top:48px;padding-bottom:96px;color:var(--ink)}
-@media (min-width:641px){footer.doc{padding-top:64px}}
+footer.doc{padding-top:64px;padding-bottom:64px;color:var(--ink)}
+@media (min-width:641px){footer.doc{padding-top:96px;padding-bottom:96px}}
 footer.doc a{text-decoration-thickness:auto;text-underline-offset:auto}
 footer.doc .row{display:flex;flex-direction:column;gap:8px}
 @media (min-width:641px){footer.doc .row-top{flex-direction:row;align-items:center;justify-content:space-between}}
 
 #consentBanner{position:fixed;left:0;right:0;bottom:0;z-index:50;background:var(--border-8);border-top:1px solid var(--border);display:none}
 #consentBanner.show{display:block}
-#consentBanner .row{padding:16px 0;display:flex;flex-direction:column;gap:12px}
+#consentBanner .row{padding:16px 0;display:flex;flex-direction:column;gap:16px}
 @media (min-width:641px){#consentBanner .row{flex-direction:row;align-items:center;justify-content:space-between}}
 #consentBanner p{font-size:14px;flex:1}
 #consentBanner .actions{display:flex;gap:8px;flex-shrink:0}
@@ -265,16 +265,14 @@ footer.doc .row{display:flex;flex-direction:column;gap:8px}
 <section class="doc" id="spacing">
   <div class="wrap">
     <h2 class="font-serif">Spacing scale</h2>
-    <p class="intro">A short scale on purpose: seven values, each tied to specific components, not a long ladder of near-duplicates. New spacing reaches for the step whose job matches, not the nearest number.</p>
+    <p class="intro">A short scale on purpose: five values, each tied to specific components, not a long ladder of near-duplicates. New spacing reaches for the step whose job matches, not the nearest number.</p>
 
     <div class="spacing-scale">
-      <div class="spacing-row"><span class="name">Micro<span class="px">4px</span></span><div class="bar-track"><div class="bar" style="width:5%"></div></div><span class="role">Hairline offsets, icon-to-label gaps, badge vertical padding</span></div>
-      <div class="spacing-row"><span class="name">Tight<span class="px">8px</span></span><div class="bar-track"><div class="bar" style="width:10%"></div></div><span class="role">Badge horizontal padding, list item gaps, pill container gaps</span></div>
-      <div class="spacing-row"><span class="name">Base<span class="px">16px</span></span><div class="bar-track"><div class="bar" style="width:20%"></div></div><span class="role">Button horizontal padding, card content gaps, standard component margins</span></div>
-      <div class="spacing-row"><span class="name">Medium<span class="px">24px</span></span><div class="bar-track"><div class="bar" style="width:30%"></div></div><span class="role">Stat card internal padding, mobile page gutters, heading-to-body margin</span></div>
-      <div class="spacing-row"><span class="name">Large<span class="px">32px</span></span><div class="bar-track"><div class="bar" style="width:40%"></div></div><span class="role">Card grid gaps, block-to-block margin</span></div>
-      <div class="spacing-row"><span class="name">Section<span class="px">48px</span></span><div class="bar-track"><div class="bar" style="width:60%"></div></div><span class="role">Section top padding and footer top padding, tablet/mobile</span></div>
-      <div class="spacing-row"><span class="name">Macro<span class="px">64px</span></span><div class="bar-track"><div class="bar" style="width:100%"></div></div><span class="role">Section top padding and footer top padding, desktop</span></div>
+      <div class="spacing-row"><span class="name">Tight<span class="px">8px</span></span><div class="bar-track"><div class="bar" style="width:8.3%"></div></div><span class="role">Hairline offsets, dots, badge padding, small gaps</span></div>
+      <div class="spacing-row"><span class="name">Base<span class="px">16px</span></span><div class="bar-track"><div class="bar" style="width:16.7%"></div></div><span class="role">Button padding, card content gaps, standard component margins</span></div>
+      <div class="spacing-row"><span class="name">Medium<span class="px">24px</span></span><div class="bar-track"><div class="bar" style="width:25%"></div></div><span class="role">Stat card internal padding, mobile page gutters, heading-to-body margin</span></div>
+      <div class="spacing-row"><span class="name">Large<span class="px">32px</span></span><div class="bar-track"><div class="bar" style="width:33.3%"></div></div><span class="role">Card grid gaps, block-to-block margin</span></div>
+      <div class="spacing-row"><span class="name">Section<span class="px">64px / 96px</span></span><div class="bar-track"><div class="bar" style="width:100%"></div></div><span class="role">Section top padding and footer padding, mobile / desktop</span></div>
     </div>
   </div>
 </section>
@@ -308,7 +306,7 @@ footer.doc .row{display:flex;flex-direction:column;gap:8px}
 
     <div class="component-block">
       <div class="component-row">
-        <span class="caption">Buttons: fill inverts on hover, border unchanged, nothing resizes. Padding: 16px horizontal, 10-12px vertical, sized to clear a 44px tap target (the one exception to the 7-step spacing scale). Focus gets its own 2px gold outline, separate from hover.</span>
+        <span class="caption">Buttons: fill inverts on hover, border unchanged, nothing resizes. Padding: 16px on every side (Base), well clear of a 44px tap target. Focus gets its own 2px gold outline, separate from hover.</span>
         <a class="btn btn-primary" href="#">Book 15-min intro</a>
         <a class="btn btn-secondary" href="#"><span>Connect on</span><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05a3.74 3.74 0 013.37-1.85c3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.07 2.07 0 110-4.13 2.07 2.07 0 010 4.13zM7.12 20.45H3.55V9h3.57v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.72v20.56C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.72V1.72C24 .77 23.2 0 22.22 0z"/></svg></a>
       </div>
@@ -351,7 +349,7 @@ footer.doc .row{display:flex;flex-direction:column;gap:8px}
 
       <div class="component-row" style="display:flex;flex-direction:column;gap:16px">
         <span class="caption">Proof/stat grids: each cell is its own individually-rounded card. No icons or logo marks, company names are plain bold body text. Heights matched across every card so short and long captions still line up.</span>
-        <div class="tint-demo" style="display:flex;gap:4px;text-align:center;border:none">
+        <div class="tint-demo" style="display:flex;gap:8px;text-align:center;border:none">
           <div class="half b" style="flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;border-radius:8px;min-height:144px">
             <div style="font-size:16px;font-weight:700;color:var(--ink)">&euro;5M+</div>
             <div style="font-size:14px;color:var(--ink)">Annual portfolio owned, across five PMs and 30+ platform rollouts and upgrades concurrently.</div>
@@ -387,7 +385,7 @@ footer.doc .row{display:flex;flex-direction:column;gap:8px}
       <div class="rule"><span class="n">05</span><span class="t"><b>Hover never resizes anything.</b> Buttons keep their border in the base state, so the fill-inversion hover swap never shifts layout.</span></div>
       <div class="rule"><span class="n">06</span><span class="t"><b>No sixth color.</b> Every decorative or informational use draws from these five tokens; a new hue is never the fix for "this needs more visual interest."</span></div>
       <div class="rule"><span class="n">07</span><span class="t"><b>No dark mode.</b> Confirmed unnecessary and dropped outright: no toggle, no <code>prefers-color-scheme</code> branch.</span></div>
-      <div class="rule"><span class="n">08</span><span class="t"><b>No off-scale spacing.</b> Every margin, padding, and gap on the page maps to one of the seven named steps. Adjacent sections never stack independent top/bottom padding into a doubled gap either, each visual block is one section with one symmetric padding pair.</span></div>
+      <div class="rule"><span class="n">08</span><span class="t"><b>No off-scale spacing.</b> Every margin, padding, and gap on the page maps to one of the five named steps. Adjacent sections never stack independent top/bottom padding into a doubled gap either, each visual block is one section with one symmetric padding pair.</span></div>
       <div class="rule"><span class="n">09</span><span class="t"><b>Keyboard focus always gets its own visible state.</b> Every link, button, and tab carries a 2px gold `:focus-visible` outline, distinct from mouse hover and never suppressed, so keyboard navigation never goes invisible.</span></div>
       <div class="rule"><span class="n">10</span><span class="t"><b>One separator glyph, one color.</b> No pipes (`|`) anywhere on the page; every divider, hero eyebrow, job title to company, credential to institution, and the Languages line, is the same terracotta middot (`&amp;middot;`). Decorative and inline separators no longer get different treatment.</span></div>
       <div class="rule"><span class="n">11</span><span class="t"><b>Sentence case, not Title Case.</b> Capitalise only the first word of a label or heading and genuine proper nouns: people (Chantell), places (Vienna), companies (IBM, LinkedIn), and named credentials (PMI-CPMAI). Applies to the hero's role pills, every H2 section header, and body copy, not just headings. "AI &amp; operational excellence" and "Global platforms &amp; fintech" are correct; "AI &amp; Operational Excellence" and "Global Platforms &amp; Fintech" are not.</span></div>
@@ -400,7 +398,7 @@ footer.doc .row{display:flex;flex-direction:column;gap:8px}
     <div class="row row-top">
       <span>&copy; 2026 Chantell Collins<span style="color:var(--terracotta);margin:0 8px">&middot;</span><a href="design-system.html">Design system</a></span>
     </div>
-    <span>This page counts a few specific clicks after you accept cookies. See <a href="privacy.html" style="display:inline-block;padding:4px 0">Privacy</a> or <button type="button" id="cookieSettingsBtn" class="link-btn" style="display:inline-block;padding:4px 0">Cookie settings</button>.</span>
+    <span>This page counts a few specific clicks after you accept cookies. See <a href="privacy.html" style="display:inline-block;padding:8px 0">Privacy</a> or <button type="button" id="cookieSettingsBtn" class="link-btn" style="display:inline-block;padding:8px 0">Cookie settings</button>.</span>
   </div>
 </footer>
 
