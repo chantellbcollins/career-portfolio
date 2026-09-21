@@ -4,13 +4,17 @@ name: Design system sync
 # eyebrow tier's line-height, two mirrored copy snippets (the Trajectory
 # intro used as the Type section's Body specimen, and the hero eyebrow
 # badges), and the Capabilities demo's tab labels in sync with index.html
-# and styles.css automatically. Deliberately narrow scope: spacing-scale
-# usage and the prose captions describing component behavior still need a
-# human/AI judgment call and are not touched here.
+# and styles.css automatically. Also cache-busts the styles.css link on
+# index.html/privacy.html with a content hash, so a CSS change doesn't get
+# silently ignored by returning visitors' cached copies. Deliberately
+# narrow scope beyond that: spacing-scale usage and the prose captions
+# describing component behavior still need a human/AI judgment call and
+# are not touched here.
 #
 # Runs only when index.html, privacy.html, or styles.css change on main,
-# so a sync commit (which only ever touches design-system.html) can never
-# re-trigger itself.
+# so a sync commit (which only ever touches design-system.html plus the
+# styles.css?v= hash on index.html/privacy.html) can never re-trigger
+# itself.
 
 on:
   push:
@@ -46,25 +50,26 @@ jobs:
         # diff, requiring the sync to be run and committed before merge. On
         # a direct push to main, keep the existing auto-fix-commit behavior.
         run: |
-          if git diff --quiet -- design-system.html; then
-            echo "design-system.html already in sync, nothing to do."
+          if git diff --quiet -- design-system.html index.html privacy.html; then
+            echo "Nothing out of sync, nothing to do."
             exit 0
           fi
           if [ "${{ github.event_name }}" = "pull_request" ]; then
-            echo "::error::design-system.html is out of sync with index.html/styles.css. Run scripts/sync-design-system.sh locally and commit the result."
-            git diff -- design-system.html
+            echo "::error::design-system.html and/or the styles.css cache-bust hash on index.html/privacy.html are out of sync. Run scripts/sync-design-system.sh locally and commit the result."
+            git diff -- design-system.html index.html privacy.html
             exit 1
           fi
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add design-system.html
+          git add design-system.html index.html privacy.html
           {
-            echo "Auto-sync design-system.html from ${GITHUB_SHA}"
+            echo "Auto-sync design-system.html and styles.css cache-bust hash from ${GITHUB_SHA}"
             echo ""
             echo "Type scale, eyebrow line-height, mirrored specimen copy, and capability"
-            echo "tab labels updated to match index.html/styles.css. See"
-            echo "scripts/sync-design-system.sh for exactly what this does and doesn't"
-            echo "cover."
+            echo "tab labels updated to match index.html/styles.css; the styles.css?v="
+            echo "hash on index.html/privacy.html updated to match styles.css's current"
+            echo "content. See scripts/sync-design-system.sh for exactly what this does"
+            echo "and doesn't cover."
           } > /tmp/commit-msg.txt
           git commit -F /tmp/commit-msg.txt
           git push

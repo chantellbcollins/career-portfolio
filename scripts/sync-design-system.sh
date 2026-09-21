@@ -67,5 +67,14 @@ perl -pi -e "s/<div class=\"s-body\">.*?<\\/div>/<div class=\"s-body\">${BODY_TE
 EYEBROW_TEXT_ESC=$(printf '%s' "$EYEBROW_TEXT" | sed 's/[\/&]/\\&/g')
 perl -pi -e "s/<div class=\"s-eyebrow\">.*?<\\/div>/<div class=\"s-eyebrow\">${EYEBROW_TEXT_ESC}<\\/div>/" "$DS"
 
+# --- 3. Cache-bust styles.css on every page that links it -------------------
+# design-system.html has its own inline <style>, so only index.html and
+# privacy.html need this. Re-run whenever styles.css changes so returning
+# visitors' browsers fetch the new file instead of serving a stale cached copy.
+CSS_HASH=$(sha256sum "$CSS" | cut -c1-8)
+for f in "$SRC" "privacy.html"; do
+  perl -pi -e "s/href=\"styles\.css(\\?v=[0-9a-f]+)?\"/href=\"styles.css?v=${CSS_HASH}\"/" "$f"
+done
+
 echo "sync-design-system: done"
-git diff --stat -- "$DS" || true
+git diff --stat -- "$DS" "$SRC" privacy.html || true
