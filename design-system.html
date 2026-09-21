@@ -64,8 +64,7 @@ img,svg{max-width:100%}
 /* --- section shell (plain page background throughout; only cards carry the tint, per Rule 03) --- */
 section.doc{padding-top:48px}
 @media (min-width:641px){section.doc{padding-top:64px}}
-section.doc .kicker{font-size:13px;line-height:16px;letter-spacing:0.06em;text-transform:uppercase;color:var(--terracotta);font-weight:700}
-section.doc h2{font-size:26px;line-height:34px;margin-top:8px}
+section.doc h2{font-size:26px;line-height:34px}
 section.doc .intro{font-size:16px;line-height:24px;margin-top:24px}
 
 /* --- type specimen --- */
@@ -171,21 +170,21 @@ footer.doc .row{display:flex;flex-direction:column;gap:8px}
 </div>
 
 <div class="hero wrap">
-  <div class="eyebrow">Design system &middot; career-portfolio</div>
+  <div class="eyebrow">Design system &middot; CAREER PORTFOLIO</div>
   <h1 class="font-serif">Balanced Architect</h1>
-  <p class="lede">Type, color, spacing, and component rules, mirrored from <code>index.html</code> as it stands today, not a separate aspiration.</p>
+  <p class="lede">Type, color, spacing, and component rules.</p>
   <div class="meta-row">
-    <span class="pill">5 colors</span>
-    <span class="pill">2 typefaces</span>
-    <span class="pill">4 type sizes</span>
-    <span class="pill">No dark mode</span>
+    <img src="https://img.shields.io/badge/Built_with-Claude-D97757?logo=claude&amp;logoColor=fff" alt="Built with Claude" height="20">
+    <a href="https://github.com/chantellbcollins/career-portfolio" target="_blank" rel="noopener" style="display:inline-flex"><img src="https://img.shields.io/badge/Open_source-GitHub-181717?logo=github&amp;logoColor=fff" alt="Open source on GitHub" height="20"></a>
+    <a href="https://github.com/chantellbcollins/career-portfolio/actions/workflows/a11y-check.yml" target="_blank" rel="noopener" style="display:inline-flex"><img src="https://github.com/chantellbcollins/career-portfolio/actions/workflows/a11y-check.yml/badge.svg" alt="Accessibility check workflow status" height="20"></a>
+    <a href="https://github.com/chantellbcollins/career-portfolio/actions/workflows/lighthouse.yml" target="_blank" rel="noopener" style="display:inline-flex"><img src="https://github.com/chantellbcollins/career-portfolio/actions/workflows/lighthouse.yml/badge.svg" alt="Lighthouse workflow status" height="20"></a>
+    <a href="https://github.com/chantellbcollins/career-portfolio/actions/workflows/sync-design-system.yml" target="_blank" rel="noopener" style="display:inline-flex"><img src="https://github.com/chantellbcollins/career-portfolio/actions/workflows/sync-design-system.yml/badge.svg" alt="Design system sync workflow status" height="20"></a>
   </div>
 </div>
 
 <section class="doc" id="type">
   <div class="wrap">
-    <div class="kicker">Type</div>
-    <h2 class="font-serif">Merriweather for headers, Inter for everything else</h2>
+    <h2 class="font-serif">Font types</h2>
     <p class="intro">Merriweather carries both heading tiers; Inter carries body, eyebrow, and nav. Never mixed within a tier.</p>
 
     <div class="font-stack">
@@ -216,8 +215,7 @@ footer.doc .row{display:flex;flex-direction:column;gap:8px}
 
 <section class="doc" id="color">
   <div class="wrap">
-    <div class="kicker">Color</div>
-    <h2 class="font-serif">Five tokens, sourced from Chantell's own photos</h2>
+    <h2 class="font-serif">Color tokens</h2>
     <p class="intro">Gold is the only clickable signal on the page, never on a bullet, a stat, or plain body text.</p>
 
     <div class="color-grid">
@@ -266,8 +264,7 @@ footer.doc .row{display:flex;flex-direction:column;gap:8px}
 
 <section class="doc" id="spacing">
   <div class="wrap">
-    <div class="kicker">Spacing</div>
-    <h2 class="font-serif">Seven steps, each with a named job</h2>
+    <h2 class="font-serif">Spacing scale</h2>
     <p class="intro">A short scale on purpose: seven values, each tied to specific components, not a long ladder of near-duplicates. New spacing reaches for the step whose job matches, not the nearest number.</p>
 
     <div class="spacing-scale">
@@ -284,8 +281,7 @@ footer.doc .row{display:flex;flex-direction:column;gap:8px}
 
 <section class="doc" id="shape">
   <div class="wrap">
-    <div class="kicker">Shape &amp; line</div>
-    <h2 class="font-serif">One line weight, one corner, one pill</h2>
+    <h2 class="font-serif">Shape and style</h2>
     <p class="intro">No variants: border 1px, rectangle corners 8px, pills fully rounded, including on hover, so nothing resizes on touch. Full-width rules are reserved for nav and footer; elsewhere, sections separate by background tint, not a line.</p>
 
     <div class="shape-grid">
@@ -307,8 +303,7 @@ footer.doc .row{display:flex;flex-direction:column;gap:8px}
 
 <section class="doc" id="components">
   <div class="wrap">
-    <div class="kicker">Components</div>
-    <h2 class="font-serif">Live states, not screenshots</h2>
+    <h2 class="font-serif">Components and hover states</h2>
     <p class="intro">Hover the elements below: these are the actual CSS rules from the site, not a static picture of them.</p>
 
     <div class="component-block">
@@ -383,8 +378,7 @@ footer.doc .row{display:flex;flex-direction:column;gap:8px}
 
 <section class="doc" id="rules">
   <div class="wrap">
-    <div class="kicker">Governing rules</div>
-    <h2 class="font-serif">What keeps this one system instead of five</h2>
+    <h2 class="font-serif">System rules</h2>
     <div class="rules">
       <div class="rule"><span class="n">01</span><span class="t"><b>Gold means an action is still available</b>, not "this is currently selected." A tab you're already viewing is dark brown ink and bold, not gold, even though selecting a different one is itself a click.</span></div>
       <div class="rule"><span class="n">02</span><span class="t"><b>Text is flat color, selective weight.</b> Ink stays full-strength everywhere, reduced opacity reads as grey even when it clears contrast on paper, so hierarchy comes from the type scale alone. Bold is reserved for job titles only, applied without changing color.</span></div>
@@ -407,13 +401,6 @@ footer.doc .row{display:flex;flex-direction:column;gap:8px}
       <span>&copy; 2026 Chantell Collins<span style="color:var(--terracotta);margin:0 8px">&middot;</span><a href="design-system.html">Design system</a></span>
     </div>
     <span>This page counts a few specific clicks after you accept cookies. See <a href="privacy.html" style="display:inline-block;padding:4px 0">Privacy</a> or <button type="button" id="cookieSettingsBtn" class="link-btn" style="display:inline-block;padding:4px 0">Cookie settings</button>.</span>
-    <div style="display:flex;flex-wrap:wrap;align-items:center;gap:8px">
-      <img src="https://img.shields.io/badge/Built_with-Claude-D97757?logo=claude&amp;logoColor=fff" alt="Built with Claude" height="20">
-      <a href="https://github.com/chantellbcollins/career-portfolio" target="_blank" rel="noopener" style="display:inline-flex"><img src="https://img.shields.io/badge/Open_source-GitHub-181717?logo=github&amp;logoColor=fff" alt="Open source on GitHub" height="20"></a>
-      <a href="https://github.com/chantellbcollins/career-portfolio/actions/workflows/a11y-check.yml" target="_blank" rel="noopener" style="display:inline-flex"><img src="https://github.com/chantellbcollins/career-portfolio/actions/workflows/a11y-check.yml/badge.svg" alt="Accessibility check workflow status" height="20"></a>
-      <a href="https://github.com/chantellbcollins/career-portfolio/actions/workflows/lighthouse.yml" target="_blank" rel="noopener" style="display:inline-flex"><img src="https://github.com/chantellbcollins/career-portfolio/actions/workflows/lighthouse.yml/badge.svg" alt="Lighthouse workflow status" height="20"></a>
-      <a href="https://github.com/chantellbcollins/career-portfolio/actions/workflows/sync-design-system.yml" target="_blank" rel="noopener" style="display:inline-flex"><img src="https://github.com/chantellbcollins/career-portfolio/actions/workflows/sync-design-system.yml/badge.svg" alt="Design system sync workflow status" height="20"></a>
-    </div>
   </div>
 </footer>
 
