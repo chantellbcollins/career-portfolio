@@ -54,7 +54,7 @@ perl -pi -e "s/\\.hero h1\\{font-size:[0-9]+px;line-height:[0-9]+px;margin-top:8
 perl -pi -e "s/(H1 &middot; hero name<\\/span><b>Merriweather Bold \\(700\\) &middot; )[0-9]+px \\/ [0-9]+px/\${1}${H1_SIZE}px \\/ ${H1_LH}px/" "$DS"
 
 perl -pi -e "s/\\.s-h2\\{font-size:[0-9]+px;line-height:[0-9]+px\\}/.s-h2{font-size:${H2_SIZE}px;line-height:${H2_LH}px}/" "$DS"
-perl -pi -e "s/section\\.doc h2\\{font-size:[0-9]+px;line-height:[0-9]+px;margin-top:8px\\}/section.doc h2{font-size:${H2_SIZE}px;line-height:${H2_LH}px;margin-top:8px}/" "$DS"
+perl -pi -e "s/section\\.doc h2\\{font-size:[0-9]+px;line-height:[0-9]+px\\}/section.doc h2{font-size:${H2_SIZE}px;line-height:${H2_LH}px}/" "$DS"
 perl -pi -e "s/(H2 &middot; section headers<\\/span><b>Merriweather Bold \\(700\\) &middot; )[0-9]+px \\/ [0-9]+px/\${1}${H2_SIZE}px \\/ ${H2_LH}px/" "$DS"
 
 perl -pi -e "s/\\.eyebrow\\{font-size:[0-9]+px;line-height:[0-9]+px;/.eyebrow{font-size:${EYEBROW_SIZE}px;line-height:${EYEBROW_LH}px;/" "$DS"
