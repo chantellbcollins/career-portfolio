@@ -264,10 +264,10 @@ footer.doc .row{display:flex;flex-direction:column;gap:8px}
     <p class="intro">A short scale on purpose: five values, each tied to specific components, not a long ladder of near-duplicates. New spacing reaches for the step whose job matches, not the nearest number.</p>
 
     <div class="spacing-scale">
-      <div class="spacing-row"><span class="name">Tight<span class="px">8px</span></span><div class="bar-track"><div class="bar" style="width:8.3%"></div></div><span class="role">Hairline offsets, dots, badge padding, small gaps</span></div>
+      <div class="spacing-row"><span class="name">Tight<span class="px">8px</span></span><div class="bar-track"><div class="bar" style="width:8.3%"></div></div><span class="role">Hairline offsets, dots, badge padding, card grid gaps</span></div>
       <div class="spacing-row"><span class="name">Base<span class="px">16px</span></span><div class="bar-track"><div class="bar" style="width:16.7%"></div></div><span class="role">Button padding, card content gaps, standard component margins</span></div>
       <div class="spacing-row"><span class="name">Medium<span class="px">24px</span></span><div class="bar-track"><div class="bar" style="width:25%"></div></div><span class="role">Stat card internal padding, mobile page gutters, heading-to-body margin</span></div>
-      <div class="spacing-row"><span class="name">Large<span class="px">32px</span></span><div class="bar-track"><div class="bar" style="width:33.3%"></div></div><span class="role">Card grid gaps, block-to-block margin</span></div>
+      <div class="spacing-row"><span class="name">Large<span class="px">32px</span></span><div class="bar-track"><div class="bar" style="width:33.3%"></div></div><span class="role">Block-to-block margin, column gaps</span></div>
       <div class="spacing-row"><span class="name">Section<span class="px">96px</span></span><div class="bar-track"><div class="bar" style="width:100%"></div></div><span class="role">Section top padding and footer padding, all screen sizes</span></div>
     </div>
   </div>
@@ -318,7 +318,7 @@ footer.doc .row{display:flex;flex-direction:column;gap:8px}
 
       <div class="component-row">
         <span class="caption">Pill / badge: border-only stroke, never on the text. Text stays full-strength ink, set in plain Body type (16px regular), not the eyebrow tier.</span>
-        <span class="pill">ClickUp Expert</span>
+        <span class="pill">PMO Governance</span>
       </div>
 
       <div class="component-row">
@@ -327,7 +327,7 @@ footer.doc .row{display:flex;flex-direction:column;gap:8px}
       </div>
 
       <div class="component-row">
-        <span class="caption">Carousel dot: selected is ink, unselected is border, never terracotta. Decorative only; the side arrows are the sole navigation control.</span>
+        <span class="caption">Carousel dot: selected is ink, unselected is border, never terracotta. Also a direct navigation control, clickable to jump straight to that slide, alongside the prev/next arrows.</span>
         <span class="dot dot-ink"></span><span class="dot dot-border"></span><span class="dot dot-border"></span>
       </div>
 
@@ -384,7 +384,7 @@ footer.doc .row{display:flex;flex-direction:column;gap:8px}
       <div class="rule"><span class="n">08</span><span class="t"><b>No off-scale spacing.</b> Every margin, padding, and gap on the page maps to one of the five named steps. Adjacent sections never stack independent top/bottom padding into a doubled gap either, each visual block is one section with one symmetric padding pair.</span></div>
       <div class="rule"><span class="n">09</span><span class="t"><b>Keyboard focus always gets its own visible state.</b> Every link, button, and tab carries a 2px gold `:focus-visible` outline, distinct from mouse hover and never suppressed, so keyboard navigation never goes invisible.</span></div>
       <div class="rule"><span class="n">10</span><span class="t"><b>One separator glyph, one color.</b> No pipes (`|`) anywhere on the page; every divider, hero eyebrow, job title to company, credential to institution, and the Languages line, is the same terracotta middot (`&amp;middot;`). Decorative and inline separators no longer get different treatment.</span></div>
-      <div class="rule"><span class="n">11</span><span class="t"><b>Sentence case, not Title Case.</b> Capitalise only the first word of a label or heading and genuine proper nouns: people (Chantell), places (Vienna), companies (IBM, LinkedIn), and named credentials (PMI-CPMAI). Applies to the hero's role pills, every H2 section header, and body copy, not just headings. "AI &amp; operational excellence" and "Global platforms &amp; fintech" are correct; "AI &amp; Operational Excellence" and "Global Platforms &amp; Fintech" are not.</span></div>
+      <div class="rule"><span class="n">11</span><span class="t"><b>Sentence case, not Title Case.</b> Capitalise only the first word of a label or heading and genuine proper nouns: people (Chantell), places (Vienna), companies (IBM, LinkedIn), and named credentials (PMI-CPMAI). Applies to the hero's role pills, every H2 section header, and body copy, not just headings. "AI &amp; operational excellence" and "Global platforms, professional services, &amp; fintech" are correct; "AI &amp; Operational Excellence" and "Global Platforms, Professional Services, &amp; Fintech" are not.</span></div>
     </div>
   </div>
 </section>
