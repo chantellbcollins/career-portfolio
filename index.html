@@ -8,7 +8,7 @@
 <link rel="canonical" href="https://chantellcollins.com/">
 <meta name="theme-color" content="#8C6121"><link rel="icon" type="image/svg+xml" href="favicon.svg"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Merriweather:wght@700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="styles.css?v=48ad0b8f">
+<link rel="stylesheet" href="styles.css?v=dad52401">
 </head>
 <body class="bg-bg text-ink font-sans antialiased">
 
@@ -184,7 +184,39 @@
 
 <section id="wins" class="scroll-mt-[86px]"><div class="max-w-5xl mx-auto px-6 pt-24 text-center">
   <h2 class="font-serif font-bold text-[26px] leading-[34px] text-ink mb-8">High-value rollouts &amp; wins</h2>
-  <div class="relative" id="winsCarousel">
+  <div class="hidden sm:block relative" id="winsDesktop">
+    <div id="winsDesktopPanel">
+      <div data-wins-page="0" class="on grid grid-cols-4 gap-2">
+        <div class="tint-bg border border-border rounded-lg p-6 text-center min-h-[144px] flex flex-col justify-center">
+          <div class="text-base font-bold text-ink">Serve Robotics</div>
+          <p class="mt-2 text-base"><a href="https://www.awwwards.com/sites/serve-robotics" target="_blank" rel="noopener" class="text-gold underline hover:text-terracotta">Won the Awwwards site of the day.</a></p></div>
+        <div class="tint-bg border border-border rounded-lg p-6 text-center min-h-[144px] flex flex-col justify-center">
+          <div class="text-base font-bold text-ink">Comfy Visual AI</div>
+          <p class="mt-2 text-base"><a href="https://comfy.org/" target="_blank" rel="noopener" class="text-gold underline hover:text-terracotta">Site redesign delivered within 3 weeks.</a></p></div>
+        <div class="tint-bg border border-border rounded-lg p-6 text-center min-h-[144px] flex flex-col justify-center">
+          <div class="text-base font-bold text-ink">Unstructured</div>
+          <p class="mt-2 text-base"><a href="https://thefwa.com/cases/unstructured-p2" target="_blank" rel="noopener" class="text-gold underline hover:text-terracotta">Won the FWA site of the day.</a></p></div>
+        <div class="tint-bg border border-border rounded-lg p-6 text-center min-h-[144px] flex flex-col justify-center">
+          <div class="text-base font-bold text-ink">IBM watsonx.data</div>
+          <p class="mt-2 text-base"><a href="https://lnkd.in/p/dVn_Bn8Z" target="_blank" rel="noopener" class="text-gold underline hover:text-terracotta">Rethinking the product demo for THINK 2025.</a></p></div>
+      </div>
+      <div data-wins-page="1" class="grid grid-cols-4 gap-2">
+        <div class="tint-bg border border-border rounded-lg p-6 text-center min-h-[144px] flex flex-col justify-center">
+          <div class="text-base font-bold text-ink">AI pre-boarding companion</div>
+          <p class="mt-2 text-base"><a href="https://lnkd.in/p/dGAqqEVP" target="_blank" rel="noopener" class="text-gold underline hover:text-terracotta">Shortlisted for an HR Inside Award.</a></p></div>
+      </div>
+    </div>
+    <div class="mt-4 flex items-center justify-center gap-4">
+      <button id="winsDesktopPrev" aria-label="Previous wins" class="text-gold hover:text-terracotta px-4 py-4">&larr;</button>
+      <div class="flex gap-2" id="winsDesktopDots">
+        <span class="h-2 w-2 rounded-full bg-ink" data-winsd-dot="0"></span>
+        <span class="h-2 w-2 rounded-full bg-border" data-winsd-dot="1"></span>
+      </div>
+      <button id="winsDesktopNext" aria-label="Next wins" class="text-gold hover:text-terracotta px-4 py-4">&rarr;</button>
+    </div>
+  </div>
+
+  <div class="relative sm:hidden" id="winsCarousel">
     <div class="tint-bg border border-border rounded-lg p-6 text-center min-h-[144px] flex flex-col justify-center" id="winsPanel">
       <div data-wins-slide="0" class="on"><div class="text-base font-bold text-ink">Serve Robotics</div>
         <p class="mt-2 text-base"><a href="https://www.awwwards.com/sites/serve-robotics" target="_blank" rel="noopener" class="text-gold underline hover:text-terracotta">Won the Awwwards site of the day.</a></p></div>
@@ -415,6 +447,7 @@ var GA_MEASUREMENT_ID='G-Y9PWLV04RR';
   }
   makeCarousel({slideAttr:'data-stat-slide',dotAttr:'data-stat-dot',prevId:'statPrev',nextId:'statNext',panelId:'statPanel'});
   makeCarousel({slideAttr:'data-wins-slide',dotAttr:'data-wins-dot',prevId:'winsPrev',nextId:'winsNext',panelId:'winsPanel'});
+  makeCarousel({slideAttr:'data-wins-page',dotAttr:'data-winsd-dot',prevId:'winsDesktopPrev',nextId:'winsDesktopNext',panelId:'winsDesktopPanel'});
 
   // Stat cards and proof-table cards run different copy lengths but must render at the
   // same height. Two separate CSS Grid instances never share a row height on their own,
