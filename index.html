@@ -8,7 +8,7 @@
 <link rel="canonical" href="https://chantellcollins.com/">
 <meta name="theme-color" content="#8C6121"><link rel="icon" type="image/svg+xml" href="favicon.svg"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Merriweather:wght@700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="styles.css?v=5e1608a5">
+<link rel="stylesheet" href="styles.css?v=5dfc442e">
 </head>
 <body class="bg-bg text-ink font-sans antialiased">
 
@@ -54,10 +54,10 @@
     <div class="mt-4 flex items-center justify-center gap-4">
       <button id="statPrev" aria-label="Previous stat" class="text-gold hover:text-terracotta px-4 py-4">&larr;</button>
       <div class="flex gap-2" id="statDots">
-        <span class="h-2 w-2 rounded-full bg-ink" data-stat-dot="0"></span>
-        <span class="h-2 w-2 rounded-full bg-border" data-stat-dot="1"></span>
-        <span class="h-2 w-2 rounded-full bg-border" data-stat-dot="2"></span>
-        <span class="h-2 w-2 rounded-full bg-border" data-stat-dot="3"></span>
+        <span class="h-1.5 w-1.5 rounded-full bg-ink" data-stat-dot="0"></span>
+        <span class="h-1.5 w-1.5 rounded-full bg-border" data-stat-dot="1"></span>
+        <span class="h-1.5 w-1.5 rounded-full bg-border" data-stat-dot="2"></span>
+        <span class="h-1.5 w-1.5 rounded-full bg-border" data-stat-dot="3"></span>
       </div>
       <button id="statNext" aria-label="Next stat" class="text-gold hover:text-terracotta px-4 py-4">&rarr;</button>
     </div>
@@ -260,11 +260,11 @@
     <div class="mt-4 flex items-center justify-center gap-4">
       <button id="winsDesktopPrev" aria-label="Previous wins" class="text-gold hover:text-terracotta px-4 py-4">&larr;</button>
       <div class="flex gap-2" id="winsDesktopDots">
-        <span class="h-2 w-2 rounded-full bg-ink" data-winsd-dot="0"></span>
-        <span class="h-2 w-2 rounded-full bg-border" data-winsd-dot="1"></span>
-        <span class="h-2 w-2 rounded-full bg-border" data-winsd-dot="2"></span>
-        <span class="h-2 w-2 rounded-full bg-border" data-winsd-dot="3"></span>
-        <span class="h-2 w-2 rounded-full bg-border" data-winsd-dot="4"></span>
+        <span class="h-1.5 w-1.5 rounded-full bg-ink" data-winsd-dot="0"></span>
+        <span class="h-1.5 w-1.5 rounded-full bg-border" data-winsd-dot="1"></span>
+        <span class="h-1.5 w-1.5 rounded-full bg-border" data-winsd-dot="2"></span>
+        <span class="h-1.5 w-1.5 rounded-full bg-border" data-winsd-dot="3"></span>
+        <span class="h-1.5 w-1.5 rounded-full bg-border" data-winsd-dot="4"></span>
       </div>
       <button id="winsDesktopNext" aria-label="Next wins" class="text-gold hover:text-terracotta px-4 py-4">&rarr;</button>
     </div>
@@ -286,11 +286,11 @@
     <div class="mt-4 flex items-center justify-center gap-4">
       <button id="winsPrev" aria-label="Previous win" class="text-gold hover:text-terracotta px-4 py-4">&larr;</button>
       <div class="flex gap-2" id="winsDots">
-        <span class="h-2 w-2 rounded-full bg-ink" data-wins-dot="0"></span>
-        <span class="h-2 w-2 rounded-full bg-border" data-wins-dot="1"></span>
-        <span class="h-2 w-2 rounded-full bg-border" data-wins-dot="2"></span>
-        <span class="h-2 w-2 rounded-full bg-border" data-wins-dot="3"></span>
-        <span class="h-2 w-2 rounded-full bg-border" data-wins-dot="4"></span>
+        <span class="h-1.5 w-1.5 rounded-full bg-ink" data-wins-dot="0"></span>
+        <span class="h-1.5 w-1.5 rounded-full bg-border" data-wins-dot="1"></span>
+        <span class="h-1.5 w-1.5 rounded-full bg-border" data-wins-dot="2"></span>
+        <span class="h-1.5 w-1.5 rounded-full bg-border" data-wins-dot="3"></span>
+        <span class="h-1.5 w-1.5 rounded-full bg-border" data-wins-dot="4"></span>
       </div>
       <button id="winsNext" aria-label="Next win" class="text-gold hover:text-terracotta px-4 py-4">&rarr;</button>
     </div>
@@ -479,7 +479,7 @@ var GA_MEASUREMENT_ID='G-Y9PWLV04RR';
     function go(i){
       index=(i+slides.length)%slides.length;
       slides.forEach(function(s){s.classList.toggle('on',s.getAttribute(opts.slideAttr)===String(index))});
-      dots.forEach(function(d){d.className='h-2 w-2 rounded-full '+(d.getAttribute(opts.dotAttr)===String(index)?'bg-ink':'bg-border')});
+      dots.forEach(function(d){d.className='h-1.5 w-1.5 rounded-full '+(d.getAttribute(opts.dotAttr)===String(index)?'bg-ink':'bg-border')});
     }
     var prev=document.getElementById(opts.prevId),next=document.getElementById(opts.nextId);
     if(prev)prev.onclick=function(){go(index-1)};
