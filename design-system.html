@@ -327,8 +327,14 @@ footer.doc .row{display:flex;flex-direction:column;gap:8px}
       </div>
 
       <div class="component-row">
-        <span class="caption">Carousel dot: selected is ink, unselected is border, never terracotta. Also a direct navigation control, clickable to jump straight to that slide, alongside the prev/next arrows.</span>
-        <span class="dot dot-ink"></span><span class="dot dot-border"></span><span class="dot dot-border"></span>
+        <span class="caption">Carousel arrows: text-gold, terracotta on hover, no border or fill. Set in plain body type (16px), 16px padding on every side for the same 44px+ tap target as buttons.</span>
+        <a href="#" style="font-size:16px;padding:16px;color:var(--gold)">&larr;</a>
+        <a href="#" style="font-size:16px;padding:16px;color:var(--gold)">&rarr;</a>
+      </div>
+
+      <div class="component-row">
+        <span class="caption">Carousel dot: 6px, one size step down from the 8px list bullet so it doesn't out-weigh the thin arrow glyphs beside it. Selected is ink, unselected is border, never terracotta. Also a direct navigation control, clickable to jump straight to that slide, alongside the prev/next arrows.</span>
+        <span class="dot dot-ink" style="width:6px;height:6px"></span><span class="dot dot-border" style="width:6px;height:6px"></span><span class="dot dot-border" style="width:6px;height:6px"></span>
       </div>
 
       <div class="component-row" style="display:flex;flex-direction:column;gap:16px">
