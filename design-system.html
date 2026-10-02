@@ -122,7 +122,7 @@ section.doc .intro{font-size:16px;line-height:24px;margin-top:24px}
 .link-btn{font:inherit;text-transform:inherit;color:var(--gold);text-decoration:underline;background:none;border:none;padding:0;cursor:pointer}
 .link-btn:hover{color:var(--terracotta)}
 .pill{font-size:16px;line-height:24px;padding:8px;border-radius:999px;border:1px solid var(--border);color:var(--ink)}
-.dot{width:8px;height:8px;border-radius:999px;background:var(--terracotta);display:inline-block}
+.dot{width:6px;height:6px;border-radius:999px;background:var(--terracotta);display:inline-block}
 .dot-ink{background:var(--ink)}
 .dot-border{background:var(--border)}
 .tint-demo{border:1px solid var(--border);border-radius:8px;overflow:hidden;font-size:14px}
@@ -264,7 +264,7 @@ footer.doc .row{display:flex;flex-direction:column;gap:8px}
     <p class="intro">A short scale on purpose: five values, each tied to specific components, not a long ladder of near-duplicates. New spacing reaches for the step whose job matches, not the nearest number.</p>
 
     <div class="spacing-scale">
-      <div class="spacing-row"><span class="name">Tight<span class="px">8px</span></span><div class="bar-track"><div class="bar" style="width:8.3%"></div></div><span class="role">Hairline offsets, dots, badge padding, card grid gaps</span></div>
+      <div class="spacing-row"><span class="name">Tight<span class="px">8px</span></span><div class="bar-track"><div class="bar" style="width:8.3%"></div></div><span class="role">Hairline offsets, badge padding, card grid gaps</span></div>
       <div class="spacing-row"><span class="name">Base<span class="px">16px</span></span><div class="bar-track"><div class="bar" style="width:16.7%"></div></div><span class="role">Button padding, card content gaps, standard component margins</span></div>
       <div class="spacing-row"><span class="name">Medium<span class="px">24px</span></span><div class="bar-track"><div class="bar" style="width:25%"></div></div><span class="role">Stat card internal padding, mobile page gutters, heading-to-body margin</span></div>
       <div class="spacing-row"><span class="name">Large<span class="px">32px</span></span><div class="bar-track"><div class="bar" style="width:33.3%"></div></div><span class="role">Block-to-block margin, column gaps</span></div>
@@ -322,7 +322,7 @@ footer.doc .row{display:flex;flex-direction:column;gap:8px}
       </div>
 
       <div class="component-row">
-        <span class="caption">List bullet: terracotta, 8px circle (Tight), never the browser default disc. Hanging indent: dot flush left, text indented Tight (8px), vertically nudged to align with the first line. Item spacing: Base (16px).</span>
+        <span class="caption">List bullet: terracotta, 6px circle, the one dot size used everywhere (list bullets, carousel dots, tab dots), never the browser default disc. Hanging indent: dot flush left, text indented Tight (8px), vertically nudged to align with the first line. Item spacing: Base (16px).</span>
         <span class="dot"></span>
       </div>
 
@@ -333,8 +333,8 @@ footer.doc .row{display:flex;flex-direction:column;gap:8px}
       </div>
 
       <div class="component-row">
-        <span class="caption">Carousel dot: 6px, one size step down from the 8px list bullet so it doesn't out-weigh the thin arrow glyphs beside it. Selected is ink, unselected is border, never terracotta. Also a direct navigation control, clickable to jump straight to that slide, alongside the prev/next arrows.</span>
-        <span class="dot dot-ink" style="width:6px;height:6px"></span><span class="dot dot-border" style="width:6px;height:6px"></span><span class="dot dot-border" style="width:6px;height:6px"></span>
+        <span class="caption">Carousel dot: same 6px circle as the list bullet, small enough not to out-weigh the thin arrow glyphs beside it. Selected is ink, unselected is border, never terracotta. Also a direct navigation control, clickable to jump straight to that slide, alongside the prev/next arrows.</span>
+        <span class="dot dot-ink"></span><span class="dot dot-border"></span><span class="dot dot-border"></span>
       </div>
 
       <div class="component-row" style="display:flex;flex-direction:column;gap:16px">
