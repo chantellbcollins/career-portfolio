@@ -8,7 +8,7 @@
 <link rel="canonical" href="https://chantellcollins.com/">
 <meta name="theme-color" content="#8C6121"><link rel="icon" type="image/svg+xml" href="favicon.svg"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Merriweather:wght@700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="styles.css?v=53760d2a">
+<link rel="stylesheet" href="styles.css?v=e3b8e9b8">
 </head>
 <body class="bg-bg text-ink font-sans antialiased">
 
@@ -111,7 +111,7 @@
       <li class="flex gap-2"><span class="mt-[9px] h-1.5 w-1.5 rounded-full bg-terracotta shrink-0"></span><p>Directed <span>five Product &amp; Project Managers (PMs)</span> across 30+ multi-country platform rollouts and upgrades concurrently, securing a 100% completion rate across team KPIs in Q1, 2026.</p></li>
       <li class="flex gap-2"><span class="mt-[9px] h-1.5 w-1.5 rounded-full bg-terracotta shrink-0"></span><p>Co-mentored six mentees through a six-week Residence programme, coaching them to deliver moving, impromptu talks with confidence by the final session.</p></li></ul></div>
   </div>
-  <div class="mt-4 flex items-center justify-center gap-4 sm:hidden">
+  <div class="mt-4 flex items-center justify-center gap-4">
     <button id="capabilityPrev" aria-label="Previous capability" class="text-gold hover:text-terracotta px-4 py-4">&larr;</button>
     <div class="flex gap-2" id="capabilityDots" aria-hidden="true">
       <span class="h-1.5 w-1.5 rounded-full bg-ink" data-dot="commercial"></span>
@@ -424,9 +424,10 @@ var GA_MEASUREMENT_ID='G-Y9PWLV04RR';
     if(fire)track(EVT[k]);
   }
   tabs.forEach(function(b){b.onclick=function(){select(b.dataset.tab,true)}});
+  document.querySelectorAll("[data-dot]").forEach(function(d){d.onclick=function(){select(d.dataset.dot,true)}});
   select('commercial',false);
 
-  // Mobile capability carousel: same prev/next/dot/swipe pattern used by the other
+  // Capability carousel control: same prev/next/dot/swipe pattern used by the other
   // carousels on the page, driving the same select() used by the desktop tabs.
   var capPrev=document.getElementById('capabilityPrev'),capNext=document.getElementById('capabilityNext');
   function capStep(dir){
