@@ -1,8 +1,7 @@
 name: Design system sync
 
 # Keeps design-system.html's type scale (H1/H2 size + line-height), the
-# eyebrow tier's line-height, two mirrored copy snippets (the Trajectory
-# intro used as the Type section's Body specimen, and the hero eyebrow
+# eyebrow tier's line-height, one mirrored copy snippet (the hero eyebrow
 # badges), and the Capabilities demo's tab labels in sync with index.html
 # and styles.css automatically. Also cache-busts the styles.css link on
 # index.html/privacy.html with a content hash, so a CSS change doesn't get

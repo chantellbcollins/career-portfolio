@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # Syncs a fixed set of "should always mirror index.html" values into
 # design-system.html: type scale (H1/H2 size+line-height), the eyebrow
-# tier's line-height, and two specimen copy snippets. Deliberately narrow
+# tier's line-height, and the hero eyebrow specimen. Deliberately narrow
 # scope - it does not touch spacing-scale usage or the prose captions
 # describing component behavior, both of which need human/AI judgment,
 # not mechanical extraction.
@@ -39,8 +39,6 @@ EYEBROW_LH=$(grep -oP '\.eyebrow\{[^}]*line-height:\K[0-9]+(?=px)' "$CSS" | head
 [ -n "${EYEBROW_SIZE:-}" ] || fail "could not find compiled .eyebrow font-size in $CSS"
 [ -n "${EYEBROW_LH:-}" ] || fail "could not find compiled .eyebrow line-height in $CSS"
 
-BODY_TEXT=$(perl -0777 -ne 'print $1 if /<section id="trajectory"[^>]*>.*?<h2[^>]*>Trajectory<\/h2>\s*<p[^>]*>(.*?)<\/p>/s' "$SRC")
-[ -n "${BODY_TEXT:-}" ] || fail "could not find Trajectory intro paragraph in $SRC"
 
 EYEBROW_TEXT_RAW=$(perl -0777 -ne 'print $1 if /<section><div class="max-w-5xl mx-auto px-6[^"]*text-center">\s*<div class="eyebrow[^"]*">(.*?)<\/div>/s' "$SRC")
 [ -n "${EYEBROW_TEXT_RAW:-}" ] || fail "could not find hero eyebrow div in $SRC"
@@ -61,8 +59,6 @@ perl -pi -e "s/\\.eyebrow\\{font-size:[0-9]+px;line-height:[0-9]+px;/.eyebrow{fo
 perl -pi -e "s/\\.s-eyebrow\\{font-size:[0-9]+px;line-height:[0-9]+px;/.s-eyebrow{font-size:${EYEBROW_SIZE}px;line-height:${EYEBROW_LH}px;/" "$DS"
 perl -pi -e "s/(Eyebrow &middot; captions, labels, badges<\\/span><b>Inter Medium \\(500\\) &middot; )[0-9]+px \\/ [0-9]+px(, uppercase)/\${1}${EYEBROW_SIZE}px \\/ ${EYEBROW_LH}px\${2}/" "$DS"
 
-BODY_TEXT_ESC=$(printf '%s' "$BODY_TEXT" | sed 's/[\/&]/\\&/g')
-perl -pi -e "s/<div class=\"s-body\">.*?<\\/div>/<div class=\"s-body\">${BODY_TEXT_ESC}<\\/div>/" "$DS"
 
 EYEBROW_TEXT_ESC=$(printf '%s' "$EYEBROW_TEXT" | sed 's/[\/&]/\\&/g')
 perl -pi -e "s/<div class=\"s-eyebrow\">.*?<\\/div>/<div class=\"s-eyebrow\">${EYEBROW_TEXT_ESC}<\\/div>/" "$DS"
