@@ -55,7 +55,7 @@ img,svg{max-width:100%}
 
 /* --- hero --- */
 .hero{padding-top:96px;text-align:center}
-.eyebrow{font-size:14px;line-height:20px;letter-spacing:0.06em;text-transform:uppercase;color:var(--ink);font-weight:500}
+.eyebrow{font-size:14px;line-height:20px;color:var(--ink);font-weight:500}
 .hero h1{font-size:42px;line-height:50px;margin-top:24px}
 .hero p.lede{font-size:16px;line-height:24px;margin-top:16px}
 .meta-row{display:flex;flex-wrap:wrap;justify-content:center;gap:8px;margin-top:24px}
@@ -68,12 +68,12 @@ section.doc .intro{font-size:16px;line-height:24px;margin-top:24px}
 /* --- type specimen --- */
 .specimen{margin-top:32px;border:1px solid var(--border);border-radius:8px;overflow:hidden}
 .specimen-row{padding:16px 24px}
-.specimen-row .label{display:flex;justify-content:space-between;align-items:baseline;flex-wrap:wrap;gap:8px;font-size:13px;letter-spacing:0.06em;text-transform:uppercase;font-weight:500;color:var(--ink);margin-bottom:8px}
-.specimen-row .label b{font-weight:700;text-transform:none;letter-spacing:0}
+.specimen-row .label{display:flex;justify-content:space-between;align-items:baseline;flex-wrap:wrap;gap:8px;font-size:14px;font-weight:500;color:var(--ink);margin-bottom:8px}
+.specimen-row .label b{font-weight:700}
 .s-h1{font-size:42px;line-height:50px}
 .s-h2{font-size:26px;line-height:34px}
 .s-body{font-size:16px;line-height:24px}
-.s-eyebrow{font-size:14px;line-height:20px;letter-spacing:0.06em;text-transform:uppercase;font-weight:500}
+.s-eyebrow{font-size:14px;line-height:20px;font-weight:500}
 .font-stack{margin-top:16px;font-size:14px;background:var(--border-8);border:1px solid var(--border);border-radius:8px;padding:16px;display:flex;flex-direction:column;gap:8px}
 .font-stack code{font-weight:700}
 .font-stack .s code{font-family:Merriweather,Georgia,serif}
@@ -106,7 +106,6 @@ section.doc .intro{font-size:16px;line-height:24px;margin-top:24px}
 .shape-card .cap{font-size:16px;line-height:24px;margin-top:8px;text-align:center}
 .box-square{width:64px;height:64px;border:1px solid var(--gold)}
 .box-round{width:64px;height:64px;border:1px solid var(--gold);border-radius:8px}
-.box-pill{padding:8px;border:1px solid var(--gold);border-radius:999px;font-size:16px;line-height:24px;font-weight:500}
 
 /* --- components --- */
 .component-block{margin-top:32px;display:flex;flex-direction:column;gap:24px}
@@ -121,7 +120,6 @@ section.doc .intro{font-size:16px;line-height:24px;margin-top:24px}
 .btn-outline:hover{background:var(--border-8)}
 .link-btn{font:inherit;text-transform:inherit;color:var(--gold);text-decoration:underline;background:none;border:none;padding:0;cursor:pointer}
 .link-btn:hover{color:var(--terracotta)}
-.pill{font-size:16px;line-height:24px;padding:8px;border-radius:999px;border:1px solid var(--border);color:var(--ink)}
 .dot{width:6px;height:6px;border-radius:999px;background:var(--terracotta);display:inline-block}
 .dot-ink{background:var(--ink)}
 .dot-border{background:var(--border)}
@@ -194,19 +192,19 @@ footer.doc .row{display:flex;flex-direction:column;gap:8px}
 
     <div class="specimen">
       <div class="specimen-row">
-        <div class="label"><span>H1 &middot; hero name</span><b>Merriweather Bold (700) &middot; 42px / 50px, sentence case</b></div>
+        <div class="label"><span>H1: hero name</span><b>Merriweather Bold (700), 42px / 50px, sentence case</b></div>
         <div class="s-h1 font-serif">Chantell Collins, MBA</div>
       </div>
       <div class="specimen-row">
-        <div class="label"><span>H2 &middot; section headers</span><b>Merriweather Bold (700) &middot; 26px / 34px, sentence case</b></div>
+        <div class="label"><span>H2: section headers</span><b>Merriweather Bold (700), 26px / 34px, sentence case</b></div>
         <div class="s-h2 font-serif">Capabilities</div>
       </div>
       <div class="specimen-row">
-        <div class="label"><span>Eyebrow &middot; captions, labels, badges</span><b>Inter Medium (500) &middot; 14px / 20px, uppercase, +0.06em</b></div>
-        <div class="s-eyebrow">Vienna-based &middot; Available now</div>
+        <div class="label"><span>Eyebrow: captions and labels</span><b>Inter Medium (500), 14px / 20px, sentence case</b></div>
+        <div class="s-eyebrow">Vienna-based, available now</div>
       </div>
       <div class="specimen-row">
-        <div class="label"><span>Body &middot; copy, links, nav</span><b>Inter Regular (400) &middot; 16px / 24px, sentence case with bold reserved for named phrases only</b></div>
+        <div class="label"><span>Body: copy, links, nav</span><b>Inter Regular (400), 16px / 24px, sentence case with bold reserved for named phrases only</b></div>
         <div class="s-body">Thirteen years across PMO governance, multi-country delivery, and business operations across global platforms, professional services, and fintech.</div>
       </div>
     </div>
@@ -230,7 +228,7 @@ footer.doc .row{display:flex;flex-direction:column;gap:8px}
         <div class="swatch-fill" style="background:var(--border)"></div>
         <div class="swatch-info">
           <div class="name-row"><span class="name">border</span><span class="hex">#92725C</span></div>
-          <div class="role">Borders, dividers, pill outlines, section background tints.</div>
+          <div class="role">Borders, dividers, section background tints.</div>
           <div class="contrast">4.02:1 on bg</div>
         </div>
       </div>
@@ -246,7 +244,7 @@ footer.doc .row{display:flex;flex-direction:column;gap:8px}
         <div class="swatch-fill" style="background:var(--terracotta)"></div>
         <div class="swatch-info">
           <div class="name-row"><span class="name">terracotta</span><span class="hex">#96482C</span></div>
-          <div class="role">Hover color for clickable text, the secondary button, decorative dots.</div>
+          <div class="role">Hover color for clickable text, the secondary button, list bullets.</div>
           <div class="contrast">5.89:1 on bg</div>
         </div>
       </div>
@@ -280,7 +278,7 @@ footer.doc .row{display:flex;flex-direction:column;gap:8px}
 <section class="doc" id="shape">
   <div class="wrap">
     <h2 class="font-serif">Shape and style</h2>
-    <p class="intro">No variants: border 1px, rectangle corners 8px, pills fully rounded, including on hover, so nothing resizes on touch. Full-width rules are reserved for nav and footer; elsewhere, sections separate by background tint, not a line.</p>
+    <p class="intro">No variants: border 1px, rectangle corners 8px, so nothing resizes on touch. Full-width rules are reserved for nav and footer; elsewhere, sections separate by background tint, not a line.</p>
 
     <div class="shape-grid">
       <div class="shape-card">
@@ -290,10 +288,6 @@ footer.doc .row{display:flex;flex-direction:column;gap:8px}
       <div class="shape-card">
         <div class="demo"><div class="box-round"></div></div>
         <div class="cap">Corner radius: 8px on every rectangle</div>
-      </div>
-      <div class="shape-card">
-        <div class="demo"><div class="box-pill">Available now</div></div>
-        <div class="cap">Pill: fully rounded, border only, no fill</div>
       </div>
     </div>
   </div>
@@ -321,22 +315,22 @@ footer.doc .row{display:flex;flex-direction:column;gap:8px}
       </div>
 
       <div class="component-row">
-        <span class="caption">Pill / badge: border-only stroke, never on the text. Text stays full-strength ink, set in plain Body type (16px regular), not the eyebrow tier.</span>
-        <span class="pill">PMO governance</span>
+        <span class="caption">Tags and badges: plain text in Body type (16px regular), full-strength ink, no border, no fill, no dot. Several tags sit on one wrapped line, separated by commas.</span>
+        <p style="font-size:16px;line-height:24px;color:var(--ink)">Business operations, Team leadership, PMO governance</p>
       </div>
 
       <div class="component-row">
-        <span class="caption">List bullet: terracotta, 6px circle, the one dot size used everywhere (list bullets, carousel dots, tab dots), never the browser default disc. Hanging indent: dot flush left, then a Tight (8px) gap between the dot and the text, so the text starts 14px in and wrapped lines align with it; the dot is vertically nudged to align with the first line. Item spacing: Base (16px).</span>
+        <span class="caption">List bullet: terracotta, 6px circle, the one dot size used everywhere (list bullets, carousel dots, tab dots), never the browser default disc and never inside a tag or badge. Hanging indent: dot flush left, then a Tight (8px) gap between the dot and the text, so the text starts 14px in and wrapped lines align with it; the dot is vertically nudged to align with the first line. Item spacing: Base (16px).</span>
         <span class="dot"></span>
       </div>
 
       <div class="component-row">
-        <span class="caption">Carousel control: arrow, dots, arrow, centered, with Base (16px) between the arrows and the dot group and Tight (8px) between dots. Arrows are plain body type (16px) in gold, terracotta on hover, no border or fill, with 16px padding on every side for a 44px+ tap target. Dots are the same 6px circle as the list bullet, small enough not to out-weigh the thin arrow glyphs; selected is ink, unselected is border, never terracotta. Each dot is also a direct navigation control. The Capabilities tab selector uses the same dots.</span>
-        <div class="carousel-demo"><a class="carousel-arrow" href="#" aria-label="Previous">&larr;</a><span class="carousel-dots"><span class="dot dot-ink"></span><span class="dot dot-border"></span><span class="dot dot-border"></span></span><a class="carousel-arrow" href="#" aria-label="Next">&rarr;</a></div>
+        <span class="caption">Carousel control: arrow, dots, arrow, centered, with Base (16px) between the arrows and the dot group and Tight (8px) between dots. Arrows are the same ▸ glyph the dropdown carets use (◂ for previous, ▸ for next), plain body type (16px) in gold, terracotta on hover, no border or fill, with 16px padding on every side for a 44px+ tap target. Dots are the same 6px circle as the list bullet, small enough not to out-weigh the arrow glyphs; selected is ink, unselected is border, never terracotta. Each dot is also a direct navigation control. The Capabilities tab selector uses the same dots.</span>
+        <div class="carousel-demo"><a class="carousel-arrow" href="#" aria-label="Previous">&#9666;</a><span class="carousel-dots"><span class="dot dot-ink"></span><span class="dot dot-border"></span><span class="dot dot-border"></span></span><a class="carousel-arrow" href="#" aria-label="Next">&#9656;</a></div>
       </div>
 
       <div class="component-row" style="display:flex;flex-direction:column;gap:16px">
-        <span class="caption">One separator glyph, one color (see Rule 10).</span>
+        <span class="caption">Separators are commas and colons only (see Rule 10).</span>
       </div>
 
       <div class="component-row" style="display:flex;flex-direction:column;gap:16px">
@@ -367,7 +361,7 @@ footer.doc .row{display:flex;flex-direction:column;gap:8px}
           <div class="line" style="width:40%"></div>
           <div class="line" style="width:70%"></div>
           <div class="line" style="width:55%"></div>
-          centered badges &middot; H1 &middot; credential pills &middot; stat grid &middot; CTA row
+          centered eyebrow, H1, two plain text lines, stat grid, CTA row
         </div>
       </div>
     </div>
@@ -381,14 +375,14 @@ footer.doc .row{display:flex;flex-direction:column;gap:8px}
       <div class="rule"><span class="n">01</span><span class="t"><b>Gold means an action is still available</b>, not "this is currently selected." A tab you're already viewing is dark brown ink and bold, not gold, even though selecting a different one is itself a click.</span></div>
       <div class="rule"><span class="n">02</span><span class="t"><b>Text is flat color, selective weight.</b> Ink stays full-strength everywhere, reduced opacity reads as gray even when it clears contrast on paper, so hierarchy comes from the type scale alone. Bold is reserved for job titles only, applied without changing color.</span></div>
       <div class="rule"><span class="n">03</span><span class="t"><b>Page background is plain `#F8F4F2`; cards carry the tint, not the sections around them.</b> Every section wrapper (Hero, Capability, Trajectory, Credentials/Systems, Wins) stays plain; only cards inside them (stat cells, proof cells, the capability panel) get the tint (`#F0EAE6`), for contrast against the page.</span></div>
-      <div class="rule"><span class="n">04</span><span class="t"><b>Pills carry a border, never a fill.</b> Badges and chips are outline-only tags set in plain Body type (not the eyebrow tier), so they read clearly against either a plain or a tinted section background without needing a matching fill value.</span></div>
+      <div class="rule"><span class="n">04</span><span class="t"><b>No pills, no decorative dots.</b> Tags, badges, and status labels are plain text in Body type, with no border, fill, or dot. Dots appear only as list bullets and carousel dots.</span></div>
       <div class="rule"><span class="n">05</span><span class="t"><b>Hover never resizes anything.</b> Buttons keep their border in the base state, so the fill-inversion hover swap never shifts layout.</span></div>
       <div class="rule"><span class="n">06</span><span class="t"><b>No sixth color.</b> Every decorative or informational use draws from these five tokens; a new hue is never the fix for "this needs more visual interest."</span></div>
       <div class="rule"><span class="n">07</span><span class="t"><b>No dark mode.</b> Confirmed unnecessary and dropped outright: no toggle, no <code>prefers-color-scheme</code> branch.</span></div>
       <div class="rule"><span class="n">08</span><span class="t"><b>No off-scale spacing.</b> Every margin, padding, and gap on the page maps to one of the five named steps. Adjacent sections never stack independent top/bottom padding into a doubled gap either, each visual block is one section with one symmetric padding pair.</span></div>
       <div class="rule"><span class="n">09</span><span class="t"><b>Keyboard focus always gets its own visible state.</b> Every link, button, and tab carries a 2px gold `:focus-visible` outline, distinct from mouse hover and never suppressed, so keyboard navigation never goes invisible.</span></div>
-      <div class="rule"><span class="n">10</span><span class="t"><b>One separator glyph, one color.</b> No pipes (`|`) anywhere on the page; every divider, hero eyebrow, job title to company, credential to institution, and the Languages line, is the same terracotta middot (`&amp;middot;`). Decorative and inline separators no longer get different treatment.</span></div>
-      <div class="rule"><span class="n">11</span><span class="t"><b>Sentence case, not Title Case.</b> Capitalize only the first word of a label or heading and genuine proper nouns: people (Chantell), places (Vienna), companies (IBM, LinkedIn), and named credentials (PMI-CPMAI). Applies to the hero's role pills, every H2 section header, and body copy, not just headings. "AI &amp; operational excellence" and "Global platforms, professional services, &amp; fintech" are correct; "AI &amp; Operational Excellence" and "Global Platforms, Professional Services, &amp; Fintech" are not.</span></div>
+      <div class="rule"><span class="n">10</span><span class="t"><b>Commas and colons, no glyph separators.</b> No pipes (`|`) and no middots anywhere on the page. Job title to company, credential to institution, the hero eyebrow, and the Languages line are separated by commas; a label and its value are separated by a colon.</span></div>
+      <div class="rule"><span class="n">11</span><span class="t"><b>Sentence case, not Title Case.</b> Capitalize only the first word of a label or heading and genuine proper nouns: people (Chantell), places (Vienna), companies (IBM, LinkedIn), and named credentials (PMI-CPMAI). Applies to the hero's role lines, every H2 section header, and body copy, not just headings. "AI &amp; operational excellence" and "Global platforms, professional services, &amp; fintech" are correct; "AI &amp; Operational Excellence" and "Global Platforms, Professional Services, &amp; Fintech" are not.</span></div>
     </div>
   </div>
 </section>
@@ -396,7 +390,7 @@ footer.doc .row{display:flex;flex-direction:column;gap:8px}
 <footer class="doc eyebrow wrap">
   <div class="row">
     <div class="row row-top">
-      <span>&copy; 2026 Chantell Collins<span style="color:var(--terracotta);margin:0 8px">&middot;</span><a href="design-system.html">Design system</a></span>
+      <span style="display:flex;gap:16px"><span>&copy; 2026 Chantell Collins</span><a href="design-system.html">Design system</a></span>
     </div>
     <span>This page counts a few specific clicks after you accept cookies. See <a href="privacy.html" style="display:inline-block;padding:8px 0">Privacy</a> or <button type="button" id="cookieSettingsBtn" class="link-btn" style="display:inline-block;padding:8px 0">Cookie settings</button>.</span>
   </div>
