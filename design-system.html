@@ -121,6 +121,8 @@ section.doc .intro{font-size:16px;line-height:24px;margin-top:24px}
 .dot{width:6px;height:6px;border-radius:999px;background:var(--terracotta);display:inline-block}
 .dot-ink{background:var(--ink)}
 .dot-border{background:var(--border)}
+.box-pill{padding:8px;border:1px solid var(--gold);border-radius:999px;font-size:16px;line-height:24px;font-weight:500}
+.pill{font-size:16px;line-height:24px;padding:8px;border-radius:999px;border:1px solid var(--border);color:var(--ink)}
 .carousel-demo{display:flex;align-items:center;justify-content:center;gap:16px}
 .carousel-dots{display:flex;gap:8px}
 .carousel-arrow{font-size:16px;padding:16px;color:var(--gold);text-decoration:none}
@@ -222,7 +224,7 @@ footer.doc .row{display:flex;flex-direction:column;gap:8px}
         <div class="swatch-fill" style="background:var(--border)"></div>
         <div class="swatch-info">
           <div class="name-row"><span class="name">border</span><span class="hex">#92725C</span></div>
-          <div class="role">Borders, dividers, section background tints.</div>
+          <div class="role">Borders, dividers, pill outlines, section background tints.</div>
           <div class="contrast">4.02:1 on bg</div>
         </div>
       </div>
@@ -272,7 +274,7 @@ footer.doc .row{display:flex;flex-direction:column;gap:8px}
 <section class="doc" id="shape">
   <div class="wrap">
     <h2 class="font-serif">Shape and style</h2>
-    <p class="intro">No variants: border 1px, rectangle corners 8px, so nothing resizes on touch. Full-width rules are reserved for nav and footer; elsewhere, sections separate by background tint, not a line.</p>
+    <p class="intro">No variants: border 1px, rectangle corners 8px, pills fully rounded, including on hover, so nothing resizes on touch. Full-width rules are reserved for nav and footer; elsewhere, sections separate by background tint, not a line.</p>
 
     <div class="shape-grid">
       <div class="shape-card">
@@ -281,7 +283,10 @@ footer.doc .row{display:flex;flex-direction:column;gap:8px}
       </div>
       <div class="shape-card">
         <div class="demo"><div class="box-round"></div></div>
-        <div class="cap"><b>Corner radius:</b> 8px on every rectangle</div>
+        $1
+      <div class="shape-card">
+        <div class="demo"><div class="box-pill">Available now</div></div>
+        <div class="cap"><b>Pill:</b> fully rounded, border only, no fill, no dot</div>
       </div>
     </div>
   </div>
@@ -309,8 +314,8 @@ footer.doc .row{display:flex;flex-direction:column;gap:8px}
       </div>
 
       <div class="component-row">
-        <span class="caption"><b>Tags and badges:</b> plain text in Body type (16px regular), full-strength ink, no border, no fill, no dot. Several tags sit on one wrapped line, separated by commas.</span>
-        <p style="font-size:16px;line-height:24px;color:var(--ink)">Business operations, Team leadership, PMO governance</p>
+        <span class="caption"><b>Pill / badge:</b> border-only stroke, never on the text, and never a dot inside it. Text stays full-strength ink, set in plain Body type (16px regular).</span>
+        <span class="pill">PMO governance</span>
       </div>
 
       <div class="component-row">
@@ -355,7 +360,7 @@ footer.doc .row{display:flex;flex-direction:column;gap:8px}
           <div class="line" style="width:40%"></div>
           <div class="line" style="width:70%"></div>
           <div class="line" style="width:55%"></div>
-          centered intro line, H1, two plain text lines, stat grid, CTA row
+          centered intro line, H1, two pills, stat grid, CTA row
         </div>
       </div>
     </div>
@@ -369,7 +374,7 @@ footer.doc .row{display:flex;flex-direction:column;gap:8px}
       <div class="rule"><span class="n">01</span><span class="t"><b>Gold means an action is still available</b>, not "this is currently selected." A tab you're already viewing is dark brown ink and bold, not gold, even though selecting a different one is itself a click.</span></div>
       <div class="rule"><span class="n">02</span><span class="t"><b>Text is flat color, selective weight.</b> Ink stays full-strength everywhere, reduced opacity reads as gray even when it clears contrast on paper, so hierarchy comes from the type scale alone. Bold is reserved for job titles and for a label with its colon (see Rule 10), applied without changing color.</span></div>
       <div class="rule"><span class="n">03</span><span class="t"><b>Page background is plain `#F8F4F2`; cards carry the tint, not the sections around them.</b> Every section wrapper (Hero, Capability, Trajectory, Credentials/Systems, Wins) stays plain; only cards inside them (stat cells, proof cells, the capability panel) get the tint (`#F0EAE6`), for contrast against the page.</span></div>
-      <div class="rule"><span class="n">04</span><span class="t"><b>No pills, no decorative dots.</b> Tags, badges, and status labels are plain text in Body type, with no border, fill, or dot. Dots appear only as list bullets and carousel dots.</span></div>
+      <div class="rule"><span class="n">04</span><span class="t"><b>Pills carry a border, never a fill, and never a dot.</b> Badges and chips are outline-only tags set in plain Body type, so they read clearly against either a plain or a tinted section background without needing a matching fill value. Dots appear only as list bullets and carousel dots.</span></div>
       <div class="rule"><span class="n">05</span><span class="t"><b>Hover never resizes anything.</b> Buttons keep their border in the base state, so the fill-inversion hover swap never shifts layout.</span></div>
       <div class="rule"><span class="n">06</span><span class="t"><b>No sixth color.</b> Every decorative or informational use draws from these five tokens; a new hue is never the fix for "this needs more visual interest."</span></div>
       <div class="rule"><span class="n">07</span><span class="t"><b>No dark mode.</b> Confirmed unnecessary and dropped outright, with no toggle and no <code>prefers-color-scheme</code> branch.</span></div>
