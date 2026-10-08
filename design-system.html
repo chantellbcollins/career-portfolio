@@ -67,12 +67,12 @@ section.doc .intro{font-size:16px;line-height:24px;margin-top:24px}
 /* --- type specimen --- */
 .specimen{margin-top:32px;border:1px solid var(--border);border-radius:8px;overflow:hidden}
 .specimen-row{padding:16px 24px}
-.specimen-row .label{display:flex;justify-content:space-between;align-items:baseline;flex-wrap:wrap;gap:8px;font-size:14px;font-weight:500;color:var(--ink);margin-bottom:8px}
+.specimen-row .label{display:flex;justify-content:space-between;align-items:baseline;flex-wrap:wrap;gap:8px;font-size:16px;line-height:24px;color:var(--ink);margin-bottom:8px}
 .specimen-row .label b{font-weight:700}
 .s-h1{font-size:42px;line-height:50px}
 .s-h2{font-size:26px;line-height:34px}
 .s-body{font-size:16px;line-height:24px}
-.font-stack{margin-top:16px;font-size:14px;background:var(--border-8);border:1px solid var(--border);border-radius:8px;padding:16px;display:flex;flex-direction:column;gap:8px}
+.font-stack{margin-top:16px;font-size:16px;line-height:24px;background:var(--border-8);border:1px solid var(--border);border-radius:8px;padding:16px;display:flex;flex-direction:column;gap:8px}
 .font-stack code{font-weight:700}
 .font-stack .s code{font-family:Merriweather,Georgia,serif}
 .font-stack .b code{font-family:Inter,sans-serif}
@@ -84,15 +84,15 @@ section.doc .intro{font-size:16px;line-height:24px;margin-top:24px}
 .swatch-info{padding:16px}
 .swatch-info .name-row{display:flex;align-items:baseline;gap:8px}
 .swatch-info .name{font-size:16px}
-.swatch-info .hex{font-size:14px;color:var(--ink)}
+.swatch-info .hex{font-size:16px;line-height:24px;color:var(--ink)}
 .swatch-info .role{font-size:16px;line-height:24px;margin-top:8px}
-.swatch-info .contrast{font-size:14px;margin-top:8px}
+.swatch-info .contrast{font-size:16px;line-height:24px;margin-top:8px}
 
 /* --- spacing scale --- */
 .spacing-scale{margin-top:32px;display:flex;flex-direction:column;gap:8px}
 .spacing-row{display:grid;grid-template-columns:110px 1fr 1fr;align-items:center;gap:16px}
 .spacing-row .name{font-size:16px}
-.spacing-row .name .px{display:block;font-size:13px;color:var(--terracotta);font-variant-numeric:tabular-nums}
+.spacing-row .name .px{display:block;font-size:16px;line-height:24px;color:var(--terracotta);font-variant-numeric:tabular-nums}
 .spacing-row .bar-track{background:var(--border-8);border-radius:4px;height:16px}
 .spacing-row .bar{background:var(--gold);height:16px;border-radius:4px}
 .spacing-row .role{font-size:16px;line-height:24px}
@@ -106,7 +106,7 @@ section.doc .intro{font-size:16px;line-height:24px;margin-top:24px}
 .box-round{width:64px;height:64px;border:1px solid var(--gold);border-radius:8px}
 
 /* --- components --- */
-.component-block{margin-top:32px;display:flex;flex-direction:column;gap:24px}
+.component-block{margin-top:32px;display:flex;flex-direction:column;gap:32px}
 .component-row{display:flex;flex-wrap:wrap;align-items:center;gap:16px}
 .component-row .caption{width:100%;font-size:16px}
 .btn{display:inline-flex;align-items:center;gap:8px;font-size:16px;line-height:24px;padding:16px;border-radius:8px;border:1px solid;text-decoration:none;transition:background .15s,color .15s;cursor:pointer}
@@ -125,19 +125,19 @@ section.doc .intro{font-size:16px;line-height:24px;margin-top:24px}
 .pill{font-size:16px;line-height:24px;padding:8px;border-radius:999px;border:1px solid var(--border);color:var(--ink)}
 .carousel-demo{display:flex;align-items:center;justify-content:center;gap:16px}
 .carousel-dots{display:flex;gap:8px}
-.carousel-arrow{font-size:16px;padding:16px;color:var(--gold);text-decoration:none}
+.carousel-arrow{font-size:20px;line-height:24px;padding:16px;color:var(--gold);text-decoration:none}
 .carousel-arrow:hover{color:var(--terracotta)}
-.tint-demo{border:1px solid var(--border);border-radius:8px;overflow:hidden;font-size:14px}
+.tint-demo{border:1px solid var(--border);border-radius:8px;overflow:hidden;font-size:16px;line-height:24px}
 .tint-demo .half{padding:16px}
 .tint-demo .a{background:var(--bg)}
 .tint-demo .b{background:var(--border-8)}
-.center-demo{border:1px solid var(--border);border-radius:8px;padding:24px;text-align:center;font-size:14px}
+.center-demo{border:1px solid var(--border);border-radius:8px;padding:24px;text-align:center;font-size:16px;line-height:24px}
 .center-demo .line{height:8px;background:var(--border-8);border-radius:4px;margin:0 auto 8px}
 
 /* --- rules list --- */
 .rules{margin-top:32px;display:flex;flex-direction:column;gap:16px}
 .rule{display:grid;grid-template-columns:28px 1fr;gap:16px}
-.rule .n{font-size:14px;color:var(--terracotta);font-weight:700;padding-top:8px}
+.rule .n{font-size:16px;line-height:24px;color:var(--terracotta);font-weight:700;padding-top:8px}
 .rule .t{font-size:16px}
 .rule .t b{font-weight:700}
 
@@ -232,7 +232,7 @@ footer.doc .row{display:flex;flex-direction:column;gap:8px}
         <div class="swatch-fill" style="background:var(--gold)"></div>
         <div class="swatch-info">
           <div class="name-row"><span class="name">gold</span><span class="hex">#8C6121</span></div>
-          <div class="role"><b>Clickable elements only:</b> links, the primary CTA, unselected tabs.</div>
+          <div class="role">Clickable elements color for links, the primary CTA, and unselected tabs.</div>
           <div class="contrast">4.99:1 on bg</div>
         </div>
       </div>
@@ -283,7 +283,8 @@ footer.doc .row{display:flex;flex-direction:column;gap:8px}
       </div>
       <div class="shape-card">
         <div class="demo"><div class="box-round"></div></div>
-        $1
+        <div class="cap"><b>Corner radius:</b> 8px on every rectangle</div>
+      </div>
       <div class="shape-card">
         <div class="demo"><div class="box-pill">Available now</div></div>
         <div class="cap"><b>Pill:</b> fully rounded, border only, no fill, no dot</div>
@@ -324,12 +325,8 @@ footer.doc .row{display:flex;flex-direction:column;gap:8px}
       </div>
 
       <div class="component-row">
-        <span class="caption"><b>Carousel control:</b> arrow, dots, arrow, centered, with Base (16px) between the arrows and the dot group and Tight (8px) between dots. Arrows are the same ▸ glyph the dropdown carets use (◂ for previous, ▸ for next), plain body type (16px) in gold, terracotta on hover, no border or fill, with 16px padding on every side for a 44px+ tap target. Dots are the same 6px circle as the list bullet, small enough not to out-weigh the arrow glyphs; selected is ink, unselected is border, never terracotta. Each dot is also a direct navigation control. The Capabilities tab selector uses the same dots.</span>
+        <span class="caption"><b>Carousel control:</b> arrow, dots, arrow, centered, with Base (16px) between the arrows and the dot group and Tight (8px) between dots. Arrows are the ▸ glyph the dropdown carets use (◂ previous, ▸ next), set at 20px so the triangle matches the 6px bullet, in gold, terracotta on hover, no border or fill, with 16px padding for a 44px+ tap target. Dots are the same 6px circle as the list bullet, ink when selected and border when not, each a direct navigation control. The Capabilities tab selector uses the same dots.</span>
         <div class="carousel-demo"><a class="carousel-arrow" href="#" aria-label="Previous">&#9666;</a><span class="carousel-dots"><span class="dot dot-ink"></span><span class="dot dot-border"></span><span class="dot dot-border"></span></span><a class="carousel-arrow" href="#" aria-label="Next">&#9656;</a></div>
-      </div>
-
-      <div class="component-row" style="display:flex;flex-direction:column;gap:16px">
-        <span class="caption">Separators are commas and colons only (see Rule 10).</span>
       </div>
 
       <div class="component-row" style="display:flex;flex-direction:column;gap:16px">
