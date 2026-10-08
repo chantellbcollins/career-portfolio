@@ -42,22 +42,21 @@ EYEBROW_LH=$(grep -oP '\.eyebrow\{[^}]*line-height:\K[0-9]+(?=px)' "$CSS" | head
 
 EYEBROW_TEXT_RAW=$(perl -0777 -ne 'print $1 if /<section><div class="max-w-5xl mx-auto px-6[^"]*text-center">\s*<div class="eyebrow[^"]*">(.*?)<\/div>/s' "$SRC")
 [ -n "${EYEBROW_TEXT_RAW:-}" ] || fail "could not find hero eyebrow div in $SRC"
-# design-system's specimen writes the middot as plain text, not wrapped in a span
-EYEBROW_TEXT=$(printf '%s' "$EYEBROW_TEXT_RAW" | perl -pe 's/<span class="text-terracotta">(&middot;)<\/span>/$1/g')
+EYEBROW_TEXT="$EYEBROW_TEXT_RAW"
 
 # --- 2. Patch design-system.html -------------------------------------------
 
 perl -pi -e "s/\\.s-h1\\{font-size:[0-9]+px;line-height:[0-9]+px\\}/.s-h1{font-size:${H1_SIZE}px;line-height:${H1_LH}px}/" "$DS"
 perl -pi -e "s/\\.hero h1\\{font-size:[0-9]+px;line-height:[0-9]+px;margin-top:8px\\}/.hero h1{font-size:${H1_SIZE}px;line-height:${H1_LH}px;margin-top:8px}/" "$DS"
-perl -pi -e "s/(H1 &middot; hero name<\\/span><b>Merriweather Bold \\(700\\) &middot; )[0-9]+px \\/ [0-9]+px/\${1}${H1_SIZE}px \\/ ${H1_LH}px/" "$DS"
+perl -pi -e "s/(H1: hero name<\\/span><b>Merriweather Bold \\(700\\), )[0-9]+px \\/ [0-9]+px/\${1}${H1_SIZE}px \\/ ${H1_LH}px/" "$DS"
 
 perl -pi -e "s/\\.s-h2\\{font-size:[0-9]+px;line-height:[0-9]+px\\}/.s-h2{font-size:${H2_SIZE}px;line-height:${H2_LH}px}/" "$DS"
 perl -pi -e "s/section\\.doc h2\\{font-size:[0-9]+px;line-height:[0-9]+px\\}/section.doc h2{font-size:${H2_SIZE}px;line-height:${H2_LH}px}/" "$DS"
-perl -pi -e "s/(H2 &middot; section headers<\\/span><b>Merriweather Bold \\(700\\) &middot; )[0-9]+px \\/ [0-9]+px/\${1}${H2_SIZE}px \\/ ${H2_LH}px/" "$DS"
+perl -pi -e "s/(H2: section headers<\\/span><b>Merriweather Bold \\(700\\), )[0-9]+px \\/ [0-9]+px/\${1}${H2_SIZE}px \\/ ${H2_LH}px/" "$DS"
 
 perl -pi -e "s/\\.eyebrow\\{font-size:[0-9]+px;line-height:[0-9]+px;/.eyebrow{font-size:${EYEBROW_SIZE}px;line-height:${EYEBROW_LH}px;/" "$DS"
 perl -pi -e "s/\\.s-eyebrow\\{font-size:[0-9]+px;line-height:[0-9]+px;/.s-eyebrow{font-size:${EYEBROW_SIZE}px;line-height:${EYEBROW_LH}px;/" "$DS"
-perl -pi -e "s/(Eyebrow &middot; captions, labels, badges<\\/span><b>Inter Medium \\(500\\) &middot; )[0-9]+px \\/ [0-9]+px(, uppercase)/\${1}${EYEBROW_SIZE}px \\/ ${EYEBROW_LH}px\${2}/" "$DS"
+perl -pi -e "s/(Eyebrow: captions and labels<\\/span><b>Inter Medium \\(500\\), )[0-9]+px \\/ [0-9]+px(, sentence case)/\${1}${EYEBROW_SIZE}px \\/ ${EYEBROW_LH}px\${2}/" "$DS"
 
 
 EYEBROW_TEXT_ESC=$(printf '%s' "$EYEBROW_TEXT" | sed 's/[\/&]/\\&/g')
