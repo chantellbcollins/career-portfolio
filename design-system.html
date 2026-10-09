@@ -125,7 +125,8 @@ section.doc .intro{font-size:16px;line-height:24px;margin-top:24px}
 .pill{font-size:16px;line-height:24px;padding:8px;border-radius:999px;border:1px solid var(--border);color:var(--ink)}
 .carousel-demo{display:flex;align-items:center;justify-content:center;gap:16px}
 .carousel-dots{display:flex;gap:8px}
-.carousel-arrow{font-size:20px;line-height:24px;padding:16px;color:var(--gold);text-decoration:none}
+.tri{background:currentColor;display:block;width:16px;height:16px}.tri-r{clip-path:polygon(4px 0,12px 8px,4px 16px)}.tri-l{clip-path:polygon(12px 0,4px 8px,12px 16px)}.tri-d{clip-path:polygon(0 4px,16px 4px,8px 12px)}
+.carousel-arrow{display:block;padding:16px;color:var(--gold);text-decoration:none}
 .carousel-arrow:hover{color:var(--terracotta)}
 .tint-demo{border:1px solid var(--border);border-radius:8px;overflow:hidden;font-size:16px;line-height:24px}
 .tint-demo .half{padding:16px}
@@ -325,8 +326,13 @@ footer.doc .row{display:flex;flex-direction:column;gap:8px}
       </div>
 
       <div class="component-row">
-        <span class="caption"><b>Carousel control:</b> arrow, dots, arrow, centered, with Base (16px) between the arrows and the dot group and Tight (8px) between dots. Arrows are the ▸ glyph the dropdown carets use (◂ previous, ▸ next), set at 20px so the triangle matches the 6px bullet, in gold, terracotta on hover, no border or fill, with 16px padding for a 44px+ tap target. Dots are the same 6px circle as the list bullet, ink when selected and border when not, each a direct navigation control. The Capabilities tab selector uses the same dots.</span>
-        <div class="carousel-demo"><a class="carousel-arrow" href="#" aria-label="Previous">&#9666;</a><span class="carousel-dots"><span class="dot dot-ink"></span><span class="dot dot-border"></span><span class="dot dot-border"></span></span><a class="carousel-arrow" href="#" aria-label="Next">&#9656;</a></div>
+        <span class="caption"><b>Carousel control:</b> arrow, dots, arrow, centered, with Base (16px) between the arrows and the dot group and Tight (8px) between dots. Arrows are the one system triangle (16px base, 8px tall, the same shape as the dropdown carets and the funnel connectors), pointing left or right, in gold, terracotta on hover, no border or fill, with 16px padding for a 44px+ tap target. Dots are the same 6px circle as the list bullet, ink when selected and border when not, each a direct navigation control. The Capabilities tab selector uses the same dots.</span>
+        <div class="carousel-demo"><a class="carousel-arrow" href="#" aria-label="Previous"><span class="tri tri-l"></span></a><span class="carousel-dots"><span class="dot dot-ink"></span><span class="dot dot-border"></span><span class="dot dot-border"></span></span><a class="carousel-arrow" href="#" aria-label="Next"><span class="tri tri-r"></span></a></div>
+      </div>
+
+      <div class="component-row">
+        <span class="caption"><b>Arrow:</b> one triangle everywhere, 16px base by 8px tall. Right means closed or next, left means previous, down means open or the next step in a flow. Gold when clickable, border color when it only connects steps.</span>
+        <div class="carousel-demo"><span class="tri tri-r" style="color:var(--gold)"></span><span class="tri tri-l" style="color:var(--gold)"></span><span class="tri tri-d" style="color:var(--gold)"></span><span class="tri tri-d" style="color:var(--border)"></span></div>
       </div>
 
       <div class="component-row" style="display:flex;flex-direction:column;gap:16px">
