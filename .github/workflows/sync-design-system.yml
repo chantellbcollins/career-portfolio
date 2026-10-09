@@ -1,7 +1,8 @@
 name: Design system sync
 
 # Keeps design-system.html's type scale (H1/H2 size + line-height) and the
-# Capabilities demo's tab labels in sync with index.html
+# Capabilities demo's tab labels in sync with index.html (and keeps index.html's
+# <title> and meta description matching the hero)
 # and styles.css automatically. Also cache-busts the styles.css link on
 # index.html/privacy.html with a content hash, so a CSS change doesn't get
 # silently ignored by returning visitors' cached copies. Deliberately
