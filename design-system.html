@@ -69,30 +69,30 @@ section.doc .intro{font-size:16px;line-height:24px;margin-top:24px}
 .specimen-row{padding:16px 24px}
 .specimen-row .label{display:flex;justify-content:space-between;align-items:baseline;flex-wrap:wrap;gap:8px;font-size:16px;line-height:24px;color:var(--ink);margin-bottom:8px}
 .specimen-row .label b{font-weight:700}
-.s-h1{font-size:42px;line-height:50px;text-align:center}
-.s-h2{font-size:26px;line-height:34px;text-align:center}
-.s-body{font-size:16px;line-height:24px;text-align:center}
+.s-h1{font-size:42px;line-height:50px}
+.s-h2{font-size:26px;line-height:34px}
+.s-body{font-size:16px;line-height:24px}
 .font-stack{margin-top:16px;font-size:16px;line-height:24px;background:var(--border-8);border:1px solid var(--border);border-radius:8px;padding:16px;display:flex;flex-direction:column;gap:8px}
-.font-stack code{font-weight:700}
+.font-stack code{font-weight:400}
 .font-stack .s code{font-family:Merriweather,Georgia,serif}
 .font-stack .b code{font-family:Inter,sans-serif}
 
 /* --- color grid --- */
 .color-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:16px;margin-top:32px}
-.swatch{border:1px solid var(--border);border-radius:8px;overflow:hidden}
+.swatch{border:1px solid var(--border);border-radius:8px;overflow:hidden;display:flex;flex-direction:column}
 .swatch-fill{height:96px}
-.swatch-info{padding:16px}
+.swatch-info{padding:16px;flex:1;display:flex;flex-direction:column}
 .swatch-info .name-row{display:flex;align-items:baseline;gap:8px}
 .swatch-info .name{font-size:16px}
 .swatch-info .hex{font-size:16px;line-height:24px;color:var(--ink)}
 .swatch-info .role{font-size:16px;line-height:24px;margin-top:8px}
-.swatch-info .contrast{font-size:16px;line-height:24px;margin-top:8px}
+.swatch-info .contrast{font-size:16px;line-height:24px;margin-top:auto;padding-top:8px}
 
 /* --- spacing scale --- */
 .spacing-scale{margin-top:32px;display:flex;flex-direction:column;gap:8px}
 .spacing-row{display:grid;grid-template-columns:110px 1fr 1fr;align-items:center;gap:16px}
 .spacing-row .name{font-size:16px}
-.spacing-row .name .px{display:block;font-size:16px;line-height:24px;color:var(--terracotta);font-variant-numeric:tabular-nums}
+.spacing-row .name .px{display:block;font-size:16px;line-height:24px;color:var(--ink);font-variant-numeric:tabular-nums}
 .spacing-row .bar-track{background:var(--border-8);border-radius:4px;height:16px}
 .spacing-row .bar{background:var(--gold);height:16px;border-radius:4px}
 .spacing-row .role{font-size:16px;line-height:24px}
@@ -138,7 +138,7 @@ section.doc .intro{font-size:16px;line-height:24px;margin-top:24px}
 /* --- rules list --- */
 .rules{margin-top:32px;display:flex;flex-direction:column;gap:16px}
 .rule{display:grid;grid-template-columns:28px 1fr;gap:16px}
-.rule .n{font-size:16px;line-height:24px;color:var(--terracotta);font-weight:700;padding-top:8px}
+.rule .n{font-size:16px;line-height:24px;color:var(--ink)}
 .rule .t{font-size:16px}
 .rule .t b{font-weight:700}
 
@@ -193,15 +193,15 @@ footer.doc .row{display:flex;flex-direction:column;gap:8px}
 
     <div class="specimen">
       <div class="specimen-row">
-        <div class="label"><span><b>H1:</b> hero name</span><b>Merriweather Bold (700), 42px / 50px, sentence case</b></div>
+        <div class="label"><span><b>H1:</b> hero name</span><span>Merriweather Bold (700), 42px / 50px, sentence case</span></div>
         <div class="s-h1 font-serif">Chantell Collins, MBA</div>
       </div>
       <div class="specimen-row">
-        <div class="label"><span><b>H2:</b> section headers</span><b>Merriweather Bold (700), 26px / 34px, sentence case</b></div>
+        <div class="label"><span><b>H2:</b> section headers</span><span>Merriweather Bold (700), 26px / 34px, sentence case</span></div>
         <div class="s-h2 font-serif">Capabilities</div>
       </div>
       <div class="specimen-row">
-        <div class="label"><span><b>Body:</b> copy, links, nav, captions, labels</span><b>Inter Regular (400), 16px / 24px, sentence case with bold reserved for named phrases and label introductions</b></div>
+        <div class="label"><span><b>Body:</b> copy, links, nav, captions, labels</span><span>Inter Regular (400), 16px / 24px, sentence case with bold reserved for named phrases and label introductions</span></div>
         <div class="s-body">Thirteen years across PMO governance, multi-country delivery, and business operations across global platforms, professional services, and fintech.</div>
       </div>
     </div>
