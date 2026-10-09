@@ -260,7 +260,7 @@ footer.doc .row{display:flex;flex-direction:column;gap:8px}
 <section class="doc" id="spacing">
   <div class="wrap">
     <h2 class="font-serif">Spacing scale</h2>
-    <p class="intro">A short scale on purpose, with five values, each tied to specific components, not a long ladder of near-duplicates. New spacing reaches for the step whose job matches, not the nearest number.</p>
+    <p class="intro">Five values, each tied to specific components. Use the step whose job matches, not the nearest number.</p>
 
     <div class="spacing-scale">
       <div class="spacing-row"><span class="name">Tight<span class="px">8px</span></span><div class="bar-track"><div class="bar" style="width:8.3%"></div></div><span class="role">Hairline offsets, badge padding, card grid gaps</span></div>
@@ -275,7 +275,7 @@ footer.doc .row{display:flex;flex-direction:column;gap:8px}
 <section class="doc" id="shape">
   <div class="wrap">
     <h2 class="font-serif">Shape and style</h2>
-    <p class="intro">No variants: border 1px, rectangle corners 8px, pills fully rounded, including on hover, so nothing resizes on touch. Full-width rules are reserved for nav and footer; elsewhere, sections separate by background tint, not a line.</p>
+    <p class="intro">Border 1px, rectangle corners 8px, pills fully rounded, none changing on hover. Full-width rules only on nav and footer; sections separate by tint.</p>
 
     <div class="shape-grid">
       <div class="shape-card">
@@ -288,7 +288,7 @@ footer.doc .row{display:flex;flex-direction:column;gap:8px}
       </div>
       <div class="shape-card">
         <div class="demo"><div class="box-pill">Available now</div></div>
-        <div class="cap"><b>Pill:</b> fully rounded, border only, no fill, no dot</div>
+        <div class="cap"><b>Pill:</b> fully rounded, border only</div>
       </div>
     </div>
   </div>
@@ -297,11 +297,11 @@ footer.doc .row{display:flex;flex-direction:column;gap:8px}
 <section class="doc" id="components">
   <div class="wrap">
     <h2 class="font-serif">Components and hover states</h2>
-    <p class="intro">Hover the elements below. These are the actual CSS rules from the site, not a static picture of them.</p>
+    <p class="intro">These are the live CSS rules from the site.</p>
 
     <div class="component-block">
       <div class="component-row">
-        <span class="caption"><b>Buttons:</b> fill inverts on hover, border unchanged, nothing resizes. <b>Padding:</b> 16px on every side (Base), well clear of a 44px tap target. Focus gets its own 2px gold outline, separate from hover.</span>
+        <span class="caption"><b>Buttons:</b> fill inverts on hover, border unchanged. <b>Padding:</b> 16px (Base). <b>Focus:</b> 2px gold outline.</span>
         <a class="btn btn-primary" href="#">Book 15-min intro</a>
         <a class="btn btn-secondary" href="#"><span>Connect on</span><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05a3.74 3.74 0 013.37-1.85c3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.07 2.07 0 110-4.13 2.07 2.07 0 010 4.13zM7.12 20.45H3.55V9h3.57v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.72v20.56C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.72V1.72C24 .77 23.2 0 22.22 0z"/></svg></a>
       </div>
@@ -316,17 +316,17 @@ footer.doc .row{display:flex;flex-direction:column;gap:8px}
       </div>
 
       <div class="component-row">
-        <span class="caption"><b>Pill / badge:</b> border-only stroke, never on the text, and never a dot inside it. Text stays full-strength ink, set in plain Body type (16px regular).</span>
+        <span class="caption"><b>Pill:</b> border only, plain Body type, full-strength ink.</span>
         <span class="pill">PMO governance</span>
       </div>
 
       <div class="component-row">
-        <span class="caption"><b>List bullet:</b> terracotta, 6px circle, the one dot size used everywhere (list bullets, carousel dots, tab dots), never the browser default disc and never inside a tag or badge. <b>Hanging indent:</b> dot flush left, then a Tight (8px) gap between the dot and the text, so the text starts 14px in and wrapped lines align with it; the dot is vertically nudged to align with the first line. <b>Item spacing:</b> Base (16px).</span>
+        <span class="caption"><b>List bullet:</b> terracotta, 6px, the one dot size everywhere (bullets, carousel dots, tab dots). <b>Hanging indent:</b> 8px gap, text starts 14px in. <b>Item spacing:</b> 16px.</span>
         <span class="dot"></span>
       </div>
 
       <div class="component-row">
-        <span class="caption"><b>Carousel control:</b> arrow, dots, arrow, centered, with Base (16px) between the arrows and the dot group and Tight (8px) between dots. Arrows are the one system triangle (16px base, 8px tall, the same shape as the dropdown carets and the funnel connectors), pointing left or right, in gold, terracotta on hover, no border or fill, with 16px padding for a 44px+ tap target. Dots are the same 6px circle as the list bullet, ink when selected and border when not, each a direct navigation control. The Capabilities tab selector uses the same dots.</span>
+        <span class="caption"><b>Carousel control:</b> arrow, dots, arrow, centered, 16px (Base) between arrows and dots, 8px (Tight) between dots. Arrows use the system triangle in gold, terracotta on hover, with 16px padding. Dots are 6px: ink selected, border unselected, each a direct control, shared with the Capabilities tabs.</span>
         <div class="carousel-demo"><a class="carousel-arrow" href="#" aria-label="Previous"><span class="tri tri-l"></span></a><span class="carousel-dots"><span class="dot dot-ink"></span><span class="dot dot-border"></span><span class="dot dot-border"></span></span><a class="carousel-arrow" href="#" aria-label="Next"><span class="tri tri-r"></span></a></div>
       </div>
 
@@ -336,7 +336,6 @@ footer.doc .row{display:flex;flex-direction:column;gap:8px}
       </div>
 
       <div class="component-row" style="display:flex;flex-direction:column;gap:16px">
-        <span class="caption"><b>Card fill:</b> opaque `#F0EAE6`, cards only (see Rule 03).</span>
         <div class="tint-demo">
           <div class="half a"><b>Plain `#F8F4F2`:</b> every section wrapper</div>
           <div class="half b"><b>Tinted `#F0EAE6`:</b> cards only</div>
@@ -344,7 +343,7 @@ footer.doc .row{display:flex;flex-direction:column;gap:8px}
       </div>
 
       <div class="component-row" style="display:flex;flex-direction:column;gap:16px">
-        <span class="caption"><b>Proof/stat grids:</b> each cell is its own individually-rounded card. No icons or logo marks, company names are plain bold body text. Every card is a 1:1 square at any width, so short and long captions still line up. Padding is Medium (24px) on every side, with a 1px border, and the caption is Body type (16px).</span>
+        <span class="caption"><b>Proof/stat grids:</b> each cell is its own rounded 1:1 card with 24px padding and a 1px border, caption in Body type. No icons or logos; company names are plain bold text.</span>
         <div class="tint-demo" style="display:flex;flex-wrap:wrap;gap:8px;text-align:center;border:none;overflow:visible">
           <div class="half b" style="flex:0 0 238px;aspect-ratio:1/1;box-sizing:border-box;padding:24px;border:1px solid var(--border);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;border-radius:8px">
             <div style="font-size:16px;font-weight:700;color:var(--ink)">&euro;5M+ portfolio</div>
@@ -358,7 +357,7 @@ footer.doc .row{display:flex;flex-direction:column;gap:8px}
       </div>
 
       <div class="component-row" style="display:flex;flex-direction:column;gap:16px">
-        <span class="caption"><b>Hero layout:</b> everything above the first CTA is centered, matching the Wins section's already-centered treatment.</span>
+        <span class="caption"><b>Hero layout:</b> everything above the first CTA is centered.</span>
         <div class="center-demo">
           <div class="line" style="width:40%"></div>
           <div class="line" style="width:70%"></div>
@@ -374,17 +373,17 @@ footer.doc .row{display:flex;flex-direction:column;gap:8px}
   <div class="wrap">
     <h2 class="font-serif">System rules</h2>
     <div class="rules">
-      <div class="rule"><span class="n">01</span><span class="t"><b>Gold means an action is still available</b>, not "this is currently selected." A tab you're already viewing is dark brown ink and bold, not gold, even though selecting a different one is itself a click.</span></div>
-      <div class="rule"><span class="n">02</span><span class="t"><b>Text is flat color, selective weight.</b> Ink stays full-strength everywhere, reduced opacity reads as gray even when it clears contrast on paper, so hierarchy comes from the type scale alone. Bold is reserved for job titles and for a label with its colon (see Rule 10), applied without changing color.</span></div>
-      <div class="rule"><span class="n">03</span><span class="t"><b>Page background is plain `#F8F4F2`; cards carry the tint, not the sections around them.</b> Every section wrapper (Hero, Capability, Trajectory, Credentials/Systems, Wins) stays plain; only cards inside them (stat cells, proof cells, the capability panel) get the tint (`#F0EAE6`), for contrast against the page.</span></div>
-      <div class="rule"><span class="n">04</span><span class="t"><b>Pills carry a border, never a fill, and never a dot.</b> Badges and chips are outline-only tags set in plain Body type, so they read clearly against either a plain or a tinted section background without needing a matching fill value. Dots appear only as list bullets and carousel dots.</span></div>
-      <div class="rule"><span class="n">05</span><span class="t"><b>Hover never resizes anything.</b> Buttons keep their border in the base state, so the fill-inversion hover swap never shifts layout.</span></div>
-      <div class="rule"><span class="n">06</span><span class="t"><b>No sixth color.</b> Every decorative or informational use draws from these five tokens; a new hue is never the fix for "this needs more visual interest."</span></div>
-      <div class="rule"><span class="n">07</span><span class="t"><b>No dark mode.</b> Confirmed unnecessary and dropped outright, with no toggle and no <code>prefers-color-scheme</code> branch.</span></div>
-      <div class="rule"><span class="n">08</span><span class="t"><b>No off-scale spacing.</b> Every margin, padding, and gap on the page maps to one of the five named steps. Adjacent sections never stack independent top/bottom padding into a doubled gap either, each visual block is one section with one symmetric padding pair.</span></div>
-      <div class="rule"><span class="n">09</span><span class="t"><b>Keyboard focus always gets its own visible state.</b> Every link, button, and tab carries a 2px gold `:focus-visible` outline, distinct from mouse hover and never suppressed, so keyboard navigation never goes invisible.</span></div>
-      <div class="rule"><span class="n">10</span><span class="t"><b>Commas separate; a colon only introduces.</b> No pipes (`|`) and no middots anywhere on the page. Job title to company, credential to institution, the hero line, and the Languages line are separated by commas. A colon is used only to introduce something or to give a status, for example <b>Status:</b> Applied, and the word and the colon are both bold. A colon never sits mid-sentence.</span></div>
-      <div class="rule"><span class="n">11</span><span class="t"><b>Sentence case, not Title Case.</b> Capitalize only the first word of a label or heading and genuine proper nouns such as people (Chantell), places (Vienna), companies (IBM, LinkedIn), and named credentials (PMI-CPMAI). Applies to the hero's role lines, every H2 section header, and body copy, not just headings. "AI &amp; operational excellence" and "Global platforms, professional services, &amp; fintech" are correct; "AI &amp; Operational Excellence" and "Global Platforms, Professional Services, &amp; Fintech" are not.</span></div>
+      <div class="rule"><span class="n">01</span><span class="t"><b>Gold means an action is still available.</b> A tab you're already viewing is bold ink, not gold.</span></div>
+      <div class="rule"><span class="n">02</span><span class="t"><b>Text is flat color.</b> Ink stays full-strength, with no opacity variants, so hierarchy comes from the type scale. Bold is for job titles and label colons (Rule 10).</span></div>
+      <div class="rule"><span class="n">03</span><span class="t"><b>Cards carry the tint, not the sections.</b> Section wrappers stay plain `#F8F4F2`; only cards (stat, proof, capability panel) use `#F0EAE6`.</span></div>
+      <div class="rule"><span class="n">04</span><span class="t"><b>Pills carry a border, never a fill or a dot.</b> Dots appear only as list bullets and carousel dots.</span></div>
+      <div class="rule"><span class="n">05</span><span class="t"><b>Hover never resizes anything.</b> Buttons keep their border in the base state.</span></div>
+      <div class="rule"><span class="n">06</span><span class="t"><b>No sixth color.</b> Everything draws from the five tokens.</span></div>
+      <div class="rule"><span class="n">07</span><span class="t"><b>No dark mode.</b></span></div>
+      <div class="rule"><span class="n">08</span><span class="t"><b>No off-scale spacing.</b> Every margin, padding, and gap uses one of the five steps. Each visual block is one section with one symmetric padding pair.</span></div>
+      <div class="rule"><span class="n">09</span><span class="t"><b>Keyboard focus always gets its own visible state.</b> Every link, button, and tab has a 2px gold <code>:focus-visible</code> outline, never suppressed.</span></div>
+      <div class="rule"><span class="n">10</span><span class="t"><b>Commas separate; a colon only introduces.</b> No pipes or middots. Use a colon only to introduce or give a status, with the word and colon bold: <b>Status:</b> Applied. Never mid-sentence.</span></div>
+      <div class="rule"><span class="n">11</span><span class="t"><b>Sentence case.</b> Capitalize the first word and genuine proper nouns (Chantell, Vienna, IBM, PMI-CPMAI), in the hero lines, headers, and body copy. "AI &amp; operational excellence" is correct; "AI &amp; Operational Excellence" is not.</span></div>
     </div>
   </div>
 </section>
