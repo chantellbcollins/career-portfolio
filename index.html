@@ -8,7 +8,7 @@
 <link rel="canonical" href="https://chantellcollins.com/">
 <meta name="theme-color" content="#8C6121"><link rel="icon" type="image/svg+xml" href="favicon.svg"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Merriweather:wght@700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="styles.css?v=e739fb7b">
+<link rel="stylesheet" href="styles.css?v=e598aff2">
 </head>
 <body class="bg-bg text-ink font-sans antialiased">
 
@@ -275,15 +275,33 @@
 
 <section id="praise" class="scroll-mt-[86px]"><div class="max-w-5xl mx-auto px-6 pt-24">
   <h2 class="font-serif font-bold text-[26px] leading-[34px] text-ink">Praise</h2>
-  <div class="mt-8 tint-bg border border-border rounded-lg p-6 sm:p-8">
+  <div class="mt-8 grid" id="praisePanel">
+    <div data-praise-slide="0" class="on tint-bg border border-border rounded-lg p-6 sm:p-8">
     <p class="text-base leading-relaxed text-ink">&ldquo;Beyond managing resourcing and the team, she took ownership of our internal processes and structures, improving how the team works and helping to build it, including playing an active part in hiring and onboarding new project managers. She excels at incorporating feedback and anticipating challenges before they arise, proposing thoughtful solutions that have strengthened both our delivery and our ways of working.&rdquo;</p>
     <p class="mt-4 text-base text-ink"><a href="https://www.linkedin.com/in/mment/" target="_blank" rel="noopener" class="text-gold underline hover:text-terracotta">Matthias Mentasti</a>, Managing Partner, wild</p>
+    </div>
+    <div data-praise-slide="1" class="tint-bg border border-border rounded-lg p-6 sm:p-8">
+      <div class="">
+        <p class="text-base leading-relaxed text-ink">&ldquo;Will really miss the best project manager I ever had.&rdquo;</p>
+        <p class="mt-4 text-base text-ink">AI Engineer, wild</p>
+      </div>
+      <div class="mt-8">
+        <p class="text-base leading-relaxed text-ink">&ldquo;One of the greatest leads and mentors I&rsquo;ve ever had.&rdquo;</p>
+        <p class="mt-4 text-base text-ink">Project Manager, wild</p>
+      </div>
+      <div class="mt-8">
+        <p class="text-base leading-relaxed text-ink">&ldquo;One of the best bosses I&rsquo;ve had so far in my career.&rdquo;</p>
+        <p class="mt-4 text-base text-ink">Product Manager, wild</p>
+      </div>
+    </div>
   </div>
-  <div class="mt-2 tint-bg border border-border rounded-lg p-6 sm:p-8">
-    <p class="text-base leading-relaxed text-ink">&ldquo;Will really miss the best project manager I ever had.&rdquo;</p>
-    <p class="mt-4 text-base leading-relaxed text-ink">&ldquo;One of the greatest leads and mentors I&rsquo;ve ever had.&rdquo;</p>
-    <p class="mt-4 text-base leading-relaxed text-ink">&ldquo;One of the best bosses I&rsquo;ve had so far in my career.&rdquo;</p>
-    <p class="mt-4 text-base text-ink">Team member, wild</p>
+  <div class="mt-4 flex items-center justify-center gap-4">
+    <button id="praisePrev" aria-label="Previous praise" class="text-gold hover:text-terracotta px-4 py-4"><span class="tri tri-l" aria-hidden="true"></span></button>
+    <div class="flex gap-2" id="praiseDots">
+      <span class="h-1.5 w-1.5 rounded-full bg-ink" data-praise-dot="0"></span>
+      <span class="h-1.5 w-1.5 rounded-full bg-border" data-praise-dot="1"></span>
+    </div>
+    <button id="praiseNext" aria-label="Next praise" class="text-gold hover:text-terracotta px-4 py-4"><span class="tri tri-r" aria-hidden="true"></span></button>
   </div>
 </div></section>
 
@@ -608,8 +626,8 @@ var GA_MEASUREMENT_ID='G-Y9PWLV04RR';
   }
 
   // Generic single-slide carousel (mobile stat cards, mobile wins cards): same
-  // prev/next/dot/swipe interaction pattern as the capability tabs above. Praise is a
-  // single static testimonial now, not a carousel, so it no longer needs this pattern.
+  // prev/next/dot/swipe interaction pattern as the capability tabs above. Used by the
+  // stat cards, wins cards and praise cards.
   function makeCarousel(opts){
     var slides=[].slice.call(document.querySelectorAll('['+opts.slideAttr+']'));
     if(!slides.length)return;
@@ -641,6 +659,7 @@ var GA_MEASUREMENT_ID='G-Y9PWLV04RR';
   makeCarousel({slideAttr:'data-stat-slide',dotAttr:'data-stat-dot',prevId:'statPrev',nextId:'statNext',panelId:'statPanel'});
   makeCarousel({slideAttr:'data-stat-page',dotAttr:'data-statd-dot',prevId:'statDesktopPrev',nextId:'statDesktopNext',panelId:'statDesktopPanel'});
   makeCarousel({slideAttr:'data-wins-slide',dotAttr:'data-wins-dot',prevId:'winsPrev',nextId:'winsNext',panelId:'winsPanel'});
+  makeCarousel({slideAttr:'data-praise-slide',dotAttr:'data-praise-dot',prevId:'praisePrev',nextId:'praiseNext',panelId:'praisePanel'});
   makeCarousel({slideAttr:'data-wins-page',dotAttr:'data-winsd-dot',prevId:'winsDesktopPrev',nextId:'winsDesktopNext',panelId:'winsDesktopPanel'});
 
 
