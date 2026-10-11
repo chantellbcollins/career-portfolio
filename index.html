@@ -8,7 +8,7 @@
 <link rel="canonical" href="https://chantellcollins.com/">
 <meta name="theme-color" content="#8C6121"><link rel="icon" type="image/svg+xml" href="favicon.svg"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Merriweather:wght@700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="styles.css?v=1e68eab8">
+<link rel="stylesheet" href="styles.css?v=63414ca5">
 </head>
 <body class="bg-bg text-ink font-sans antialiased">
 
@@ -265,7 +265,11 @@
   <h2 class="font-serif font-bold text-[26px] leading-[34px] text-ink">AI-native builds</h2>
   <div class="mt-6 grid lg:grid-cols-3 gap-2">
     <article class="tint-bg border border-border rounded-lg flex flex-col">
-      <img src="assets/build-career-leap.jpg" alt="The Career Leap Dashboard: application tracking stats, with the figures redacted" width="1000" height="625" loading="lazy" class="w-full rounded-t-lg">
+      <button type="button" data-video-open aria-haspopup="dialog" aria-label="Play the Career Leap Dashboard video, 44 seconds, silent with captions" aria-describedby="careerLeapVideoDesc" class="relative block w-full overflow-hidden rounded-t-lg">
+        <img src="assets/career-leap-poster.png" alt="" width="1000" height="625" loading="lazy" class="w-full">
+        <span class="absolute inset-0 flex items-center justify-center"><span class="flex h-14 w-14 items-center justify-center rounded-full bg-gold text-white"><span class="tri tri-r" aria-hidden="true"></span></span></span>
+        <span id="careerLeapVideoDesc" class="sr-only">The poster shows six outlined persona cards on a warm off-white page: Business Operations, Customer Implementation, Delivery Portfolio, AI Transformation, Product Leadership and Industry Operations, with the top three raised in terracotta and labelled with the hiring problem each lead needs solved. The 44.4-second silent video walks through the Career Leap Dashboard: a weekly scheduled run screens job listings against five gates, a funnel shows where the pipeline leaks, every run re-reads its sources of truth, the user makes the go or no-go call on each recommended role, personas built from hiring data guide outreach, and a monthly retro turns findings into approved INVEST user stories in ClickUp, built with Claude Cowork, Claude Projects and ClickUp.</span>
+      </button>
       <div class="p-6 text-center">
         <h3 class="text-base font-bold text-ink">Career Leap Dashboard</h3>
         <p class="mt-2 text-base leading-relaxed text-ink">Architected the Career Leap Dashboard in Claude Cowork and ClickUp based on PMI&rsquo;s Practical AI for Agile Workflows, with INVEST user stories, six personas built on hiring data, assumptions verified before decisions, and human-reviewed monthly retrospectives.</p>
@@ -458,6 +462,12 @@
 <footer class="max-w-5xl mx-auto px-6 py-24 text-base text-ink">
   <p><span class="font-bold">&copy; 2026 Chantell Collins, <a href="design-system.html" class="text-gold underline hover:text-terracotta">design system</a> included.</span> A few clicks get tracked here once you accept cookies. See <a href="privacy.html" class="text-gold underline hover:text-terracotta">privacy policy</a> or <button type="button" id="cookieSettingsBtn" class="text-gold underline hover:text-terracotta">cookie settings</button>.</p>
 </footer>
+
+<dialog id="videoLightbox" class="lightbox" aria-label="Career Leap Dashboard video">
+  <div class="lb-bar"><button type="button" data-video-close class="text-bg border border-bg rounded-lg px-4 py-4 text-base">Close</button></div>
+  <video controls playsinline preload="none" poster="assets/career-leap-poster.png"><track kind="captions" src="assets/career-leap-captions.vtt" srclang="en" label="English" default></video>
+  <p class="lb-foot text-base text-bg"><a href="assets/career-leap-transcript.txt" class="underline" target="_blank" rel="noopener">Read the transcript</a></p>
+</dialog>
 
 <div id="consentBanner" class="fixed inset-x-0 bottom-0 z-50 hidden border-t border-border tint-bg">
   <div class="max-w-5xl mx-auto px-6 py-4 flex flex-col sm:flex-row sm:items-center gap-4 sm:gap-6" id="consentMain">
@@ -691,5 +701,20 @@ var GA_MEASUREMENT_ID='G-Y9PWLV04RR';
   window.ccSession=summary;
 })();
 </script>
-</body>
+<script>
+(function(){
+  var d=document.getElementById('videoLightbox'),openBtn=document.querySelector('[data-video-open]');
+  if(!d||!openBtn||!d.showModal)return;
+  var v=d.querySelector('video');
+  openBtn.addEventListener('click',function(){
+    if(!v.getAttribute('src'))v.src='assets/career-leap-video.mp4';
+    d.showModal();
+  });
+  function stop(){v.pause()}
+  d.querySelector('[data-video-close]').addEventListener('click',function(){stop();d.close()});
+  d.addEventListener('keydown',function(e){if(e.key==='Escape')stop()});
+  d.addEventListener('cancel',stop);
+  d.addEventListener('close',function(){v.pause()});
+})();
+</script></body>
 </html>
