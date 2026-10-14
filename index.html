@@ -8,7 +8,7 @@
 <link rel="canonical" href="https://chantellcollins.com/">
 <meta name="theme-color" content="#8C6121"><link rel="icon" type="image/svg+xml" href="favicon.svg"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Merriweather:wght@700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="styles.css?v=bcc86b03">
+<link rel="stylesheet" href="styles.css?v=62a557d3">
 </head>
 <body class="bg-bg text-ink font-sans antialiased">
 
@@ -572,12 +572,15 @@ var GA_MEASUREMENT_ID='G-Y9PWLV04RR';
   var TAB_ORDER=['governance','commercial','ai','platforms','remote','people','risk'];
   var EVT={governance:'portfolio_governance_viewed',commercial:'commercial_systems_viewed',ai:'ai_product_delivery_viewed',platforms:'global_platform_launches_viewed',remote:'remote_team_leadership_viewed',people:'people_development_viewed',risk:'governance_risk_viewed'};
   var activeTab='governance';
-  // Show only the tabs that fit on one row; the arrows and dots move the window.
+  // From 640px up, show only the tabs that fit on one row; the arrows and dots move the window.
   var tabStart=0;
+  var phoneTabs=window.matchMedia('(max-width:639px)'),reduceMotion=window.matchMedia('(prefers-reduced-motion:reduce)');
   function layoutTabs(){
     var list=document.querySelector('[role=tablist]');if(!list)return;
     var gap=8,avail=list.clientWidth,idx=TAB_ORDER.indexOf(activeTab);
     tabs.forEach(function(b){b.classList.remove('hidden')});
+    // Phones: every tab stays in a swipeable strip; the active tab sits at the left edge and the next one peeks out.
+    if(phoneTabs.matches){var cur=tabs[idx];if(cur)list.scrollTo({left:cur.offsetLeft,behavior:reduceMotion.matches?'auto':'smooth'});return}
     var w=tabs.map(function(b){var bold=b.classList.contains('font-bold');b.classList.add('font-bold');var x=b.offsetWidth;if(!bold)b.classList.remove('font-bold');return x});
     function fitEnd(s){var sum=0,e=s;for(var i=s;i<tabs.length;i++){var add=w[i]+(i>s?gap:0);if(sum+add>avail)break;sum+=add;e=i}return e}
     if(idx<tabStart)tabStart=idx;
