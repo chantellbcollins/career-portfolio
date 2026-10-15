@@ -43,8 +43,9 @@ img,svg{max-width:100%}
 
 .wrap{max-width:var(--max);margin:0 auto;padding:0 24px}
 
-/* --- top nav: hidden at page load, slides in and stays fixed once the page has
-   scrolled 100px, same behavior as index.html and privacy.html --- */
+/* --- top nav: from 640px up, hidden at page load, slides in and stays fixed once the
+   page has scrolled 100px. On phones it is a full-width Book button, fixed from load,
+   same behavior as index.html and privacy.html --- */
 .topnav{position:fixed;top:0;left:0;right:0;z-index:40;background:rgba(248,244,242,0.85);backdrop-filter:blur(8px);border-bottom:1px solid var(--border);transform:translateY(-100%);transition:transform .3s}
 .topnav.show{transform:translateY(0)}
 .topnav .wrap{display:flex;align-items:center;justify-content:space-between;padding-top:16px;padding-bottom:16px;gap:16px}
@@ -52,6 +53,7 @@ img,svg{max-width:100%}
 .topnav .name a{display:inline-block;padding:16px 0;color:var(--gold);text-decoration:none}
 .topnav .name a:hover{color:var(--terracotta)}
 .topnav .btn{font-size:16px;line-height:24px;padding-top:16px;padding-bottom:16px}
+@media (max-width:640px){.topnav{transform:none}.topnav .name{display:none}.topnav .btn{flex:1;text-align:center}}
 
 /* --- hero --- */
 .hero{padding-top:96px;text-align:center}
@@ -310,7 +312,7 @@ footer.doc a{text-decoration-thickness:auto;text-underline-offset:auto}
       </div>
 
       <div class="component-row" style="display:flex;flex-direction:column;gap:16px">
-        <span class="caption"><b>Nav:</b> hidden at page load, slides in and stays fixed once the page has scrolled 100px.</span>
+        <span class="caption"><b>Nav:</b> on phones, a full-width Book button fixed at the top from page load, so the call to action is always in reach. From 640px up, hidden at page load, then slides in with the name on the left and stays fixed once the page has scrolled 100px.</span>
       </div>
 
       <div class="component-row">
