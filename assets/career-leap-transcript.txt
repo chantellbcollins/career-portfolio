@@ -1,33 +1,100 @@
 Career Leap Dashboard explainer video transcript (44.4 seconds, silent, captions only)
 
-0 to 3.2s
-On screen: the title "Career Leap Dashboard" over a thin rule, with three dashboard screenshots, figures blurred, fanning out below: funnel, personas, sprints.
+Beat 1, 0.0 to 3.2s
+On-screen text:
+  Career Leap Dashboard
+  (plus the three dashboard screenshots, with their own interface text; the figures listed in the brief are blurred)
 Caption: One system, from job ad to monthly retro.
+Visuals: Title over a thin rule; the funnel, personas and sprints screenshots fan out below, left to right.
 
-3.2 to 8.8s
-On screen: a weekly calendar with Monday outlined, redacted job listings sliding into a list, then five gates ticked in order: Salary, Language, Location, Level, Working model.
+Beat 2, 3.2 to 8.8s
+On-screen text:
+  Mon
+  Tue
+  Wed
+  Thu
+  Fri
+  Sat
+  Sun
+  Salary
+  Language
+  Location
+  Level
+  Working model
 Caption: Runs weekly on a schedule. Same five gates every run.
+Visuals: Weekly calendar with Monday outlined; redacted job listings slide into a list; the five gates tick in order.
 
-8.8 to 16.7s
-On screen: a funnel builds with bars for Source, Gates, Experience score, Apply and Outcomes, and a terracotta Go / No-go marker between Gates and Experience score; beside it, a "Sources of truth" list (Project instructions, Master CV, Brand and Communication Guide, Job application details) where each line refreshes and then shows a tick.
-Caption: Every run re-reads its sources. Assumptions are verified before decisions.
+Beat 3, 8.8 to 12.5s
+On-screen text:
+  Source
+  Gates
+  Experience score
+  Apply
+  Outcomes
+Caption: Gates first, then experience. See where the pipeline leaks.
+Visuals: Funnel bars rise with no numerals; a terracotta decision marker line sits between Gates and Experience score.
 
-16.7 to 22.7s
-On screen: in a chat window the system posts a redacted role card labelled Sample, with ticked scan results and a score bar crossing a threshold, then asks "Which roles go to Stage 3?"; a reply follows, a terracotta "Decision: Go" label appears and the card moves to the next stage.
-Caption: Users own the go or no-go call on every role. The system recommends.
+Beat 4, 12.5 to 16.7s
+On-screen text:
+  Sources of truth
+  Project instructions
+  Master CV
+  Personal Brand and Communication Guide
+  Job application details
+Caption: Every run re-reads its sources. It checks assumptions before any decision.
+Visuals: Each source line shows a refresh spinner, then a tick.
 
-22.7 to 28.0s
-On screen: six persona cards; Business Operations, Delivery Portfolio and Customer Implementation lift with a terracotta outline and show their hiring problems: "Make the business run and scale", "Run the delivery portfolio", "Get customers live".
-Caption: Personas built from hiring data show what each hiring lead needs.
+Beat 5, 16.7 to 22.7s
+On-screen text:
+  Sample
+  Reserve: salary not published
+  Salary
+  Language
+  Location
+  Level
+  Working model
+  Which roles go to Stage 3?
+  Decision
+Caption: The system recommends Pursue, Reserve, or Fail. A human makes every call.
+Visuals: In a chat window the system posts a redacted role card with ticked scan results and asks the question; a redacted reply bubble follows; a terracotta Decision label appears and the card moves to the next stage.
 
-28.0 to 34.4s
-On screen: a monthly retro card holding a finding (connection requests lean to talent contacts), an experiment (message the function head, don't just connect) and a sample INVEST user story with three acceptance criteria, stamped Approved in terracotta.
-Caption: Approved by a human before anything is saved.
+Beat 6, 22.7 to 28.0s
+On-screen text:
+  Delivery Portfolio
+  Run the delivery portfolio
+  Product Leadership
+  Own a product line
+  Business Operations
+  Make the business run and scale
+Caption: Personas built on hiring data show what each hiring manager needs.
+Visuals: A grid of persona cards runs past both edges of the frame; the three named cards lift with a terracotta outline; the other cards hold redacted bars only.
 
-34.4 to 39.4s
-On screen: a technical stack card: Claude Cowork: scheduled routines. Claude Projects: instructions and gates. ClickUp: sprints and outreach. One HTML file: the dashboard. Master CV and brand guide: sources of truth.
-Caption: Next month's experiments become INVEST user stories in ClickUp.
+Beat 7, 28.0 to 34.4s
+On-screen text:
+  Finding: connection requests lean to talent contacts
+  Experiment: message the function head, don't just connect
+  As a job seeker, I want to message the function head so my outreach reaches the hiring decision maker.
+  Function head named for every Pursue role
+  Message sent within two days
+  Reply rate reviewed at next retro
+  Approved
+Caption: Each month, findings become experiments and INVEST user stories. A human approves before anything is saved.
+Visuals: A monthly retro card holds the finding and experiment cards and a sample INVEST user story with three ticked acceptance criteria, stamped Approved in terracotta.
 
-39.4 to 44.4s
-On screen: end card with the same three screenshots, figures blurred, fanned left to right: personas, funnel in the middle, sprints; below them "Chantell Collins, MBA, PMI-CPMAI™" and chantellcollins.com.
+Beat 8, 34.4 to 39.4s
+On-screen text:
+  Claude Cowork: scheduled routines.
+  Claude Projects: instructions and gates.
+  ClickUp: sprints and outreach.
+  One HTML file: the dashboard.
+  Master CV and brand guide: sources of truth.
+Caption: Cowork schedules the runs, Projects hold the rules, and ClickUp tracks the work.
+Visuals: A technical stack card; the five lines appear one after another.
+
+Beat 9, 39.4 to 44.4s
+On-screen text:
+  Chantell Collins, MBA, PMI-CPMAI™
+  chantellcollins.com
+  (plus the three dashboard screenshots, figures blurred)
 Caption: Built in Claude Cowork and ClickUp, based on PMI's Practical AI for Agile Workflows.
+Visuals: End card: the personas, funnel and sprints screenshots fan out left to right, with the name and URL centered below.

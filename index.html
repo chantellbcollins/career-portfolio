@@ -411,10 +411,10 @@
   <h2 class="font-serif font-bold text-[26px] leading-[34px] text-ink">AI-native builds</h2>
   <div class="mt-6 grid lg:grid-cols-3 gap-2">
     <article class="tint-bg border border-border rounded-lg flex flex-col">
-      <button type="button" data-video-open aria-haspopup="dialog" aria-label="Play the Career Leap Dashboard video, 44 seconds, silent with captions" aria-describedby="careerLeapVideoDesc" class="relative block w-full overflow-hidden rounded-t-lg">
+      <button type="button" data-video-open data-t="build_video_play_clicked" aria-haspopup="dialog" aria-label="Play the Career Leap Dashboard video, 44 seconds, silent with captions" aria-describedby="careerLeapVideoDesc" class="relative block w-full overflow-hidden rounded-t-lg">
         <img src="assets/career-leap-poster.png" alt="" width="1000" height="625" loading="lazy" class="w-full">
         <span class="absolute inset-0 flex items-center justify-center"><span class="flex h-14 w-14 items-center justify-center rounded-full bg-gold text-white"><span class="tri tri-r" aria-hidden="true"></span></span></span>
-        <span id="careerLeapVideoDesc" class="sr-only">The poster shows six outlined persona cards on a warm off-white page: Business Operations, Customer Implementation, Delivery Portfolio, AI Transformation, Product Leadership and Industry Operations, with the top three raised in terracotta and labelled with the hiring problem each lead needs solved. The 44.4-second silent video walks through the Career Leap Dashboard: a weekly scheduled run screens job listings against five gates, a funnel shows where the pipeline leaks, every run re-reads its sources of truth, the user makes the go or no-go call on each recommended role, personas built from hiring data guide outreach, and a monthly retro turns findings into approved INVEST user stories in ClickUp, built with Claude Cowork, Claude Projects and ClickUp.</span>
+        <span id="careerLeapVideoDesc" class="sr-only">The poster shows outlined hiring persona cards on a warm off-white page: Delivery Portfolio, Product Leadership, and Business Operations raised in terracotta, each labeled with the hiring problem its lead needs solved, with more cards continuing past the edge. The 44.4-second silent video walks through the Career Leap Dashboard: a weekly scheduled run screens job listings against five gates, then experience scores; a funnel shows where the pipeline leaks; every run re-reads its sources of truth and checks assumptions before any decision; the system recommends Pursue, Reserve, or Fail, and a human makes every call; hiring personas built on hiring data show what each hiring manager needs; and a monthly retro turns findings into approved INVEST user stories in ClickUp. It was built with Claude Cowork, Claude Projects, and ClickUp.</span>
       </button>
       <div class="p-6 text-center">
         <h3 class="text-base font-bold text-ink">Career Leap Dashboard</h3>
@@ -425,7 +425,7 @@
       <img src="assets/build-wealth-builder.jpg" alt="The Wealth Builder Dashboard: income, savings and net worth overview, with the figures redacted" width="1000" height="625" loading="lazy" class="w-full rounded-t-lg">
       <div class="p-6 text-center">
         <h3 class="text-base font-bold text-ink">Wealth Builder Dashboard</h3>
-        <p class="mt-2 text-base leading-relaxed text-ink">Built the Wealth Builder Dashboard in Claude Cowork aligned to PMI-CPMAI&trade;, selecting deterministic logic over probabilistic AI for exact reconciliation, engineering data preparation for 2,300+ transactions across formats, and adding evals and drift monitoring.</p>
+        <p class="mt-2 text-base leading-relaxed text-ink">Built a Python and pandas pipeline on flat files (CSV, JSON, xlsx, PDF), merging 2,300+ transactions into one deduplicated ledger, applying PMI-CPMAI&trade; data practices, with a read-only evaluation script and hand-checked fixture.</p>
       </div>
     </article>
     <article class="tint-bg border border-border rounded-lg flex flex-col">
@@ -487,7 +487,7 @@
 
 <dialog id="videoLightbox" class="lightbox" aria-label="Career Leap Dashboard video">
   <div class="lb-bar"><button type="button" data-video-close class="text-bg border border-bg rounded-lg px-4 py-4 text-base">Close</button></div>
-  <video controls playsinline preload="none" poster="assets/career-leap-poster.png"><track kind="captions" src="assets/career-leap-captions.vtt" srclang="en" label="English" default></video>
+  <video controls playsinline preload="none" poster="assets/career-leap-poster.png"><track kind="captions" src="assets/career-leap-captions.vtt" srclang="en" label="English"></video>
   <p class="lb-foot text-base text-bg"><a href="assets/career-leap-transcript.txt" class="underline" target="_blank" rel="noopener">Read the transcript</a></p>
 </dialog>
 
