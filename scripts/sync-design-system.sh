@@ -36,12 +36,12 @@ H2_LH=$(grep -oP '<h2 class="font-serif font-bold text-\[[0-9]+px\] leading-\[\K
 # --- 2. Patch design-system.html -------------------------------------------
 
 perl -pi -e "s/\\.s-h1\\{font-size:[0-9]+px;line-height:[0-9]+px\\}/.s-h1{font-size:${H1_SIZE}px;line-height:${H1_LH}px}/" "$DS"
-perl -pi -e "s/\\.hero h1\\{font-size:[0-9]+px;line-height:[0-9]+px;margin-top:8px\\}/.hero h1{font-size:${H1_SIZE}px;line-height:${H1_LH}px;margin-top:8px}/" "$DS"
-perl -pi -e "s/(<b>H1:<\\/b> hero name<\\/span><b>Merriweather Bold \\(700\\), )[0-9]+px \\/ [0-9]+px/\${1}${H1_SIZE}px \\/ ${H1_LH}px/" "$DS"
+perl -pi -e "s/\\.hero h1\\{font-size:[0-9]+px;line-height:[0-9]+px;margin-top:([0-9]+)px\\}/.hero h1{font-size:${H1_SIZE}px;line-height:${H1_LH}px;margin-top:\${1}px}/" "$DS"
+perl -pi -e "s/(<b>H1:<\\/b> hero name<\\/span><span>Merriweather Bold \\(700\\), )[0-9]+px \\/ [0-9]+px/\${1}${H1_SIZE}px \\/ ${H1_LH}px/" "$DS"
 
 perl -pi -e "s/\\.s-h2\\{font-size:[0-9]+px;line-height:[0-9]+px\\}/.s-h2{font-size:${H2_SIZE}px;line-height:${H2_LH}px}/" "$DS"
 perl -pi -e "s/section\\.doc h2\\{font-size:[0-9]+px;line-height:[0-9]+px\\}/section.doc h2{font-size:${H2_SIZE}px;line-height:${H2_LH}px}/" "$DS"
-perl -pi -e "s/(<b>H2:<\\/b> section headers<\\/span><b>Merriweather Bold \\(700\\), )[0-9]+px \\/ [0-9]+px/\${1}${H2_SIZE}px \\/ ${H2_LH}px/" "$DS"
+perl -pi -e "s/(<b>H2:<\\/b> section headers<\\/span><span>Merriweather Bold \\(700\\), )[0-9]+px \\/ [0-9]+px/\${1}${H2_SIZE}px \\/ ${H2_LH}px/" "$DS"
 
 # --- 2b. Keep index.html <title> and meta description in step with the hero ----
 # Title is "<H1 text>: <first hero pill>"; description is the two hero pills.
