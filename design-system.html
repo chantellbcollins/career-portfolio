@@ -116,7 +116,7 @@ section.doc .intro{font-size:16px;line-height:24px;margin-top:24px}
 .btn-secondary{background:var(--terracotta);border-color:var(--terracotta);color:#fff}
 .btn-secondary:hover{background:var(--bg);color:var(--terracotta)}
 .btn-outline{background:transparent;border-color:var(--border);color:var(--ink)}
-.btn-outline:hover{background:var(--border-8)}
+.btn-outline:hover{background:rgba(146,114,92,0.4)}
 .link-btn{font:inherit;text-transform:inherit;color:var(--gold);text-decoration:underline;background:none;border:none;padding:0;cursor:pointer}
 .link-btn:hover{color:var(--terracotta)}
 .dot{width:6px;height:6px;border-radius:999px;background:var(--terracotta);display:inline-block}
@@ -200,7 +200,7 @@ footer.doc a{text-decoration-thickness:auto;text-underline-offset:auto}
         <div class="s-h2 font-serif">Capabilities</div>
       </div>
       <div class="specimen-row">
-        <div class="label"><span><b>Body:</b> copy, links, nav, captions, labels</span><span>Inter Regular (400), 16px / 24px, sentence case with bold reserved for named phrases and label introductions</span></div>
+        <div class="label"><span><b>Body:</b> copy, links, nav, captions, labels</span><span>Inter Regular (400), 16px / 24px, sentence case with bold reserved for card titles, the selected tab, and the footer line (Rule 02)</span></div>
         <div class="s-body">Known as the calm in the (board)room, I build the operational scaffolding that scales organizations without burning profit or people.</div>
       </div>
     </div>
@@ -217,14 +217,14 @@ footer.doc a{text-decoration-thickness:auto;text-underline-offset:auto}
         <div class="swatch-fill" style="background:var(--bg)"></div>
         <div class="swatch-info">
           <div class="name-row"><span class="name">bg</span><span class="hex">#F8F4F2</span></div>
-          <div class="role">Page background and card fill. Every surface, no second fill color.</div>
+          <div class="role">Page background, and the fill a button inverts to on hover. Cards sit on the <code>#F0EAE6</code> tint (Rule 03).</div>
         </div>
       </div>
       <div class="swatch">
         <div class="swatch-fill" style="background:var(--border)"></div>
         <div class="swatch-info">
           <div class="name-row"><span class="name">border</span><span class="hex">#92725C</span></div>
-          <div class="role">Borders, dividers, pill outlines, section background tints.</div>
+          <div class="role">Borders, dividers, pill outlines, unselected carousel and tab dots.</div>
           <div class="contrast">4.02:1 on bg</div>
         </div>
       </div>
@@ -274,7 +274,7 @@ footer.doc a{text-decoration-thickness:auto;text-underline-offset:auto}
 <section class="doc" id="shape">
   <div class="wrap">
     <h2 class="font-serif">Shape and style</h2>
-    <p class="intro">Border 1px, rectangle corners 8px, pills fully rounded, none changing on hover. Full-width rules only on nav and footer; sections separate by tint.</p>
+    <p class="intro">Border 1px, rectangle corners 8px, pills fully rounded, none changing on hover. Full-width rule only on the nav; sections separate by 96px of whitespace, and only cards carry the tint.</p>
 
     <div class="shape-grid">
       <div class="shape-card">
@@ -307,7 +307,7 @@ footer.doc a{text-decoration-thickness:auto;text-underline-offset:auto}
 
       <div class="component-row">
         <span class="caption"><b>Text link:</b> permanent gold and underline, terracotta on hover.</span>
-        <a href="https://www.awwwards.com/sites/serve-robotics" target="_blank" rel="noopener">Won the Awwwards site of the day.</a>
+        <a href="https://www.awwwards.com/sites/serve-robotics" target="_blank" rel="noopener">Serve Robotics won the Awwwards site of the day.</a>
       </div>
 
       <div class="component-row" style="display:flex;flex-direction:column;gap:16px">
@@ -350,7 +350,7 @@ footer.doc a{text-decoration-thickness:auto;text-underline-offset:auto}
         <div class="tint-demo" style="display:flex;flex-wrap:wrap;justify-content:center;gap:8px;text-align:center;border:none;overflow:visible">
           <div class="half b" style="flex:0 0 238px;aspect-ratio:1/1;box-sizing:border-box;padding:24px;border:1px solid var(--border);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;border-radius:8px">
             <div style="font-size:16px;font-weight:700;color:var(--ink)">&euro;5M+ portfolio</div>
-            <div style="font-size:16px;color:var(--ink)">H1 2026 portfolio owned, across five PMs and 30+ platform rollouts and upgrades concurrently.</div>
+            <div style="font-size:16px;color:var(--ink)">H1 2026 portfolio owned, across five PMs and 30+ multi-country platform rollouts and upgrades concurrently.</div>
           </div>
           <div class="half b" style="flex:0 0 238px;aspect-ratio:1/1;box-sizing:border-box;padding:24px;border:1px solid var(--border);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;border-radius:8px">
             <div style="font-size:16px"><a href="#">Serve Robotics won the Awwwards site of the day.</a></div>
@@ -380,11 +380,11 @@ footer.doc a{text-decoration-thickness:auto;text-underline-offset:auto}
       <div class="rule"><span class="n">03</span><span class="t"><b>Cards carry the tint, not the sections:</b> Section wrappers stay plain `#F8F4F2`; only cards (stat, proof, capability panel) use `#F0EAE6`.</span></div>
       <div class="rule"><span class="n">04</span><span class="t"><b>Pills carry a border, never a fill or a dot:</b> Dots appear only as list bullets and carousel dots.</span></div>
       <div class="rule"><span class="n">05</span><span class="t"><b>Hover never resizes anything:</b> Buttons keep their border in the base state.</span></div>
-      <div class="rule"><span class="n">06</span><span class="t"><b>No sixth color:</b> Everything draws from the five tokens.</span></div>
+      <div class="rule"><span class="n">06</span><span class="t"><b>No seventh color:</b> Everything draws from the five tokens plus the <code>#F0EAE6</code> card tint (Rule 03).</span></div>
       <div class="rule"><span class="n">07</span><span class="t"><b>No dark mode.</b></span></div>
       <div class="rule"><span class="n">08</span><span class="t"><b>No off-scale spacing:</b> Every margin, padding, and gap uses one of the five steps, except two deliberate values: the 9px list bullet nudge and the Meet portrait&rsquo;s reserved padding. Each visual block is one section with one symmetric padding pair.</span></div>
       <div class="rule"><span class="n">09</span><span class="t"><b>Keyboard focus always gets its own visible state:</b> Every link, button, and tab has a 2px gold <code>:focus-visible</code> outline, never suppressed.</span></div>
-      <div class="rule"><span class="n">10</span><span class="t"><b>Commas separate; a colon only introduces:</b> No pipes or middots. Use a colon only to introduce or give a status, with the word and colon bold: <b>Status:</b> Applied. Never mid-sentence.</span></div>
+      <div class="rule"><span class="n">10</span><span class="t"><b>Commas separate; a colon only introduces:</b> No pipes or middots. Use a colon only to introduce or give a status, with the word and colon bold: <b>Status:</b> Applied. Never mid-sentence. Names that contain a colon, like a course title, are exempt.</span></div>
       <div class="rule"><span class="n">11</span><span class="t"><b>Sentence case:</b> Capitalize the first word and genuine proper nouns (Chantell, Serve Robotics, IBM, PMI-CPMAI), in the hero lines, headers, and body copy. "AI &amp; operational excellence" is correct; "AI &amp; Operational Excellence" is not.</span></div>
       <div class="rule"><span class="n">12</span><span class="t"><b>Touch targets:</b> every standalone link and button has a tap area of at least 44px; links inside sentences are exempt. Dots keep their 6px size and 8px spacing, so each has a 14px by 44px tap area and the arrows are the primary control.</span></div>
     </div>
