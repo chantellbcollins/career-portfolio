@@ -5,6 +5,7 @@ On-screen text:
   Career Leap Dashboard
   (plus three dashboard screenshots with their own interface text: funnel and sprints with the listed figures blurred, and the persona insights heading with its first three rows)
 Caption: One system, from job ad to monthly retro.
+Voiceover: One system, from job ad to monthly retro.
 Visuals: Title over a thin rule; the funnel, persona insights and sprints screenshots fan out below, left to right.
 
 Beat 2, 3.9 to 7.4s
@@ -22,6 +23,7 @@ On-screen text:
   Level
   Working model
 Caption: Runs weekly on a schedule. Same five gates every run.
+Voiceover: Every week it runs the same five gates.
 Visuals: Weekly calendar with Monday outlined; redacted job listings slide into a list; the five gates tick at 4.4, 4.9, 5.4, 5.9 and 6.4s.
 
 Beat 3, 7.4 to 12.6s
@@ -32,6 +34,7 @@ On-screen text:
   Apply
   Outcomes
 Caption: Gates first, then experience. See where the pipeline leaks.
+Voiceover: Gates first, then experience. See where the pipeline leaks.
 Visuals: Funnel bars rise from 7.8s with no numerals; a terracotta decision marker line lands between Gates and Experience score at 9.0s; the bars narrow toward Outcomes from 10.3s.
 
 Beat 4, 12.6 to 17.9s
@@ -49,6 +52,7 @@ On-screen text:
   Which roles go to Stage 3?
   Decision
 Caption: The system recommends Pursue, Reserve, or Fail. A human makes every call.
+Voiceover: The system recommends. A human makes every call.
 Visuals: In a chat window the system posts a redacted role card; Pursue, Reserve and Fail chips appear at 13.2s with Reserve marked; a redacted reply bubble appears at 15.0s; the terracotta Decision label appears at 16.0s and the card moves to the next stage at 16.8s.
 
 Beat 5, 17.9 to 24.7s
@@ -60,6 +64,7 @@ On-screen text:
   Customer Implementation
   Get customers live
 Caption: Hiring personas built on hiring data show what each hiring manager needs.
+Voiceover: Hiring personas, built on hiring data, show what each hiring manager needs.
 Visuals: A grid of persona cards runs past both edges of the frame; the three named cards lift with a terracotta outline at 18.5, 19.6 and 20.7s and settle at 24.0s; the other cards hold redacted bars only.
 
 Beat 6, 24.7 to 29.9s
@@ -72,6 +77,7 @@ On-screen text:
   Reply rate reviewed at next retro
   Approved
 Caption: Each month, findings become experiments and INVEST user stories. A human approves before anything is saved.
+Voiceover: Monthly, findings become experiments. A human approves.
 Visuals: A monthly retro card: the finding card appears at 25.0s, the experiment card at 26.3s, the sample INVEST user story with three ticked acceptance criteria at 27.2s, and the terracotta Approved stamp lands at 28.3s.
 
 Beat 7, 29.9 to 34.9s
@@ -81,4 +87,5 @@ On-screen text:
   Built in Claude Cowork and ClickUp, based on PMI's Practical AI for Agile Workflows.
   (plus the three dashboard screenshots, as in beat 1)
 Caption: None
+Voiceover: Chantell Collins. Built in Claude Cowork and ClickUp.
 Visuals: End card: the persona insights, funnel and sprints screenshots fan out left to right, funnel in the middle; the name and URL fade in at 30.1s and the built line at 31.9s; hold to 34.9s.
