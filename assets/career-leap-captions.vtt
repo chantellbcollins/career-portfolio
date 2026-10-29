@@ -1,37 +1,25 @@
 WEBVTT
 
 1
-00:00:00.000 --> 00:00:03.200
+00:00:00.000 --> 00:00:03.900
 One system, from job ad to monthly retro.
 
 2
-00:00:03.200 --> 00:00:08.800
+00:00:03.900 --> 00:00:07.400
 Runs weekly on a schedule. Same five gates every run.
 
 3
-00:00:08.800 --> 00:00:12.500
+00:00:07.400 --> 00:00:12.600
 Gates first, then experience. See where the pipeline leaks.
 
 4
-00:00:12.500 --> 00:00:16.700
-Every run re-reads its sources. It checks assumptions before any decision.
-
-5
-00:00:16.700 --> 00:00:22.700
+00:00:12.600 --> 00:00:17.900
 The system recommends Pursue, Reserve, or Fail. A human makes every call.
 
+5
+00:00:17.900 --> 00:00:24.700
+Hiring personas built on hiring data show what each hiring manager needs.
+
 6
-00:00:22.700 --> 00:00:28.000
-Personas built on hiring data show what each hiring manager needs.
-
-7
-00:00:28.000 --> 00:00:34.400
+00:00:24.700 --> 00:00:29.900
 Each month, findings become experiments and INVEST user stories. A human approves before anything is saved.
-
-8
-00:00:34.400 --> 00:00:39.400
-Cowork schedules the runs, Projects hold the rules, and ClickUp tracks the work.
-
-9
-00:00:39.400 --> 00:00:44.400
-Built in Claude Cowork and ClickUp, based on PMI's Practical AI for Agile Workflows.
