@@ -1,14 +1,16 @@
-Career Leap Dashboard explainer video transcript (34.9 seconds, with voiceover and on-screen captions)
+Career Leap Dashboard explainer video transcript (51.04 seconds, captions match the voiceover)
 
-Beat 1, 0.0 to 3.9s
+Beat 1, 0.00 to 7.07s
 On-screen text:
   Career Leap Dashboard
   (plus three dashboard screenshots with their own interface text: funnel and sprints with the listed figures blurred, and the persona insights heading with its first three rows)
-Caption: One system, from job ad to monthly retro.
-Voiceover: One system, from job ad to monthly retro.
+Captions (spoken):
+  0.09 to 1.60s: The Career Leap Dashboard.
+  2.04 to 3.56s: Job search on a schedule.
+  3.80 to 6.67s: One system, from job ad to monthly retro.
 Visuals: Title over a thin rule; the funnel, persona insights and sprints screenshots fan out below, left to right.
 
-Beat 2, 3.9 to 7.4s
+Beat 2, 7.07 to 15.21s
 On-screen text:
   Mon
   Tue
@@ -22,22 +24,13 @@ On-screen text:
   Location
   Level
   Working model
-Caption: Runs weekly on a schedule. Same five gates every run.
-Voiceover: Every week it runs the same five gates.
-Visuals: Weekly calendar with Monday outlined; redacted job listings slide into a list; the five gates tick at 4.4, 4.9, 5.4, 5.9 and 6.4s.
-
-Beat 3, 7.4 to 12.6s
-On-screen text:
-  Source
-  Gates
   Experience score
-  Apply
-  Outcomes
-Caption: Gates first, then experience. See where the pipeline leaks.
-Voiceover: Gates first, then experience. See where the pipeline leaks.
-Visuals: Funnel bars rise from 7.8s with no numerals; a terracotta decision marker line lands between Gates and Experience score at 9.0s; the bars narrow toward Outcomes from 10.3s.
+Captions (spoken):
+  7.46 to 11.77s: Every week, AI screens new roles against the same five must-haves,
+  12.16 to 14.61s: then scores survivors against the CV.
+Visuals: Weekly calendar with Monday outlined; redacted job listings slide into a list; the five gates tick at 8.3, 9.0, 9.7, 10.4 and 11.1s; an Experience score pill appears at 12.3s.
 
-Beat 4, 12.6 to 17.9s
+Beat 3, 15.21 to 22.08s
 On-screen text:
   Sample
   Reserve: salary not published
@@ -51,11 +44,12 @@ On-screen text:
   Working model
   Which roles go to Stage 3?
   Decision
-Caption: The system recommends Pursue, Reserve, or Fail. A human makes every call.
-Voiceover: The system recommends. A human makes every call.
-Visuals: In a chat window the system posts a redacted role card; Pursue, Reserve and Fail chips appear at 13.2s with Reserve marked; a redacted reply bubble appears at 15.0s; the terracotta Decision label appears at 16.0s and the card moves to the next stage at 16.8s.
+Captions (spoken):
+  15.81 to 19.40s: The system recommends Pursue, Reserve, or Fail.
+  19.91 to 21.57s: A human makes the final call.
+Visuals: A redacted role card in a chat window with ticked scan results; Pursue, Reserve and Fail chips appear at 17.2, 17.95 and 18.8s; Reserve is marked as the recommendation at 19.5s; a redacted reply bubble appears at 19.95s; the terracotta Decision label lands at 20.9s and the card moves to the next stage at 21.7s.
 
-Beat 5, 17.9 to 24.7s
+Beat 4, 22.08 to 30.24s
 On-screen text:
   Chief of Staff
   Give a leader back their time and operating cadence
@@ -63,11 +57,23 @@ On-screen text:
   Make the business run and scale
   Customer Implementation
   Get customers live
-Caption: Hiring personas built on hiring data show what each hiring manager needs.
-Voiceover: Hiring personas, built on hiring data, show what each hiring manager needs.
-Visuals: A grid of persona cards runs past both edges of the frame; the three named cards lift with a terracotta outline at 18.5, 19.6 and 20.7s and settle at 24.0s; the other cards hold redacted bars only.
+Captions (spoken):
+  22.59 to 26.96s: Hiring personas, built on data, show what each manager needs.
+  27.38 to 29.63s: So applications speak to their problem.
+Visuals: A grid of persona cards runs past both edges of the frame; the three named cards lift with a terracotta outline at 24.0, 25.1 and 26.2s and stay lifted; the other cards hold redacted bars only.
 
-Beat 6, 24.7 to 29.9s
+Beat 5, 30.24 to 34.46s
+On-screen text:
+  Source
+  Gates
+  Experience score
+  Apply
+  Outcomes
+Captions (spoken):
+  30.84 to 33.85s: The funnel shows which stage loses roles.
+Visuals: Funnel bars rise from 30.84s with no numerals; a terracotta decision marker line lands between Gates and Experience score at 32.0s; the bars narrow toward Outcomes from 32.6 to 33.85s.
+
+Beat 6, 34.46 to 43.99s
 On-screen text:
   Finding: connection requests lean to talent contacts
   Experiment: message the function head, don't just connect
@@ -76,16 +82,19 @@ On-screen text:
   Message sent within two days
   Reply rate reviewed at next retro
   Approved
-Caption: Each month, findings become experiments and INVEST user stories. A human approves before anything is saved.
-Voiceover: Monthly, findings become experiments. A human approves.
-Visuals: A monthly retro card: the finding card appears at 25.0s, the experiment card at 26.3s, the sample INVEST user story with three ticked acceptance criteria at 27.2s, and the terracotta Approved stamp lands at 28.3s.
+Captions (spoken):
+  35.07 to 37.64s: Each month, findings become experiments.
+  38.04 to 40.10s: Weekly audits catch mismatches.
+  40.52 to 43.36s: A human approves before the dashboard changes.
+Visuals: A monthly retro card: the finding card appears at 35.1s, the experiment card at 36.4s, the sample INVEST user story at 38.0s with its three acceptance criteria ticking at 38.5, 39.1 and 39.7s; the terracotta Approved stamp lands at 41.4s. The weekly audits line is voice only.
 
-Beat 7, 29.9 to 34.9s
+Beat 7, 43.99 to 51.04s
 On-screen text:
   Chantell Collins, MBA, PMI-CPMAI™
   chantellcollins.com
-  Built in Claude Cowork and ClickUp, based on PMI's Practical AI for Agile Workflows.
+  Based on PMI's Practical AI for Agile Workflows.
   (plus the three dashboard screenshots, as in beat 1)
-Caption: None
-Voiceover: Chantell Collins. Built in Claude Cowork and ClickUp.
-Visuals: End card: the persona insights, funnel and sprints screenshots fan out left to right, funnel in the middle; the name and URL fade in at 30.1s and the built line at 31.9s; hold to 34.9s.
+Captions (spoken):
+  44.61 to 47.47s: The Career Leap Dashboard by Chantell Collins.
+  48.04 to 50.38s: Built in Claude Cowork and ClickUp.
+Visuals: End card: the persona insights, funnel and sprints screenshots fan out left to right, funnel in the middle; the name and URL fade in at 44.7s and the PMI line at 48.1s; hold to 51.04s.
