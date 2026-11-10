@@ -15,6 +15,9 @@
 // meant to be publicly indexed), and Lighthouse correctly penalizes a
 // noindex page's SEO score for that.
 //
+// Latest run (2026-11-10, 3 runs per page): index.html perf 98, privacy.html perf 100,
+// design-system.html perf 94 to 100; accessibility 100 on all three; every gate passed.
+//
 // Performance thresholds sit below the worst individual run observed so
 // far (79), not just the median, since a median-of-3 assertion can still
 // fail if two of three runs land low on a noisy day. accessibility/
