@@ -494,7 +494,7 @@
 </footer>
 
 <dialog id="videoLightbox" class="lightbox" aria-label="Career Leap Dashboard video">
-  <div class="lb-bar"><button type="button" data-video-close class="text-bg border rounded-lg px-4 py-4 text-base">Close</button></div>
+  <div class="lb-bar"><button type="button" data-video-close class="text-bg border border-border rounded-lg px-4 py-4 text-base">Close</button></div>
   <video controls playsinline preload="none" poster="assets/career-leap-poster.png"><track kind="captions" src="assets/career-leap-captions.vtt" srclang="en" label="English"></video>
   <p class="lb-foot text-base text-bg"><a href="assets/career-leap-transcript.txt" class="underline" target="_blank" rel="noopener">Read the transcript</a></p>
 </dialog>
@@ -713,7 +713,7 @@ var GA_MEASUREMENT_ID='G-Y9PWLV04RR';
     [30,60,120].forEach(function(m){if(S.active===m){S.milestones.push('dwell_'+m+'s');console.info('[engagement] dwell_'+m+'s')}})},1000);
   addEventListener('scroll',function(){var h=document.body.scrollHeight-innerHeight;
     var p=h>0?Math.round(scrollY/h*100):100;if(p>S.depth)S.depth=Math.min(p,100)},{passive:true});
-  var GA_MAP={cta_email_clicked:'click_email',cta_schedule_call_clicked:'click_book_calendar',cta_linkedin_clicked:'click_linkedin_profile'};
+  var GA_MAP={cta_schedule_call_clicked:'click_book_calendar',cta_linkedin_clicked:'click_linkedin_profile'};
   function track(n){
     var isPillar=false;for(var k in EVT){if(EVT[k]===n)isPillar=true}
     if(isPillar){if(S.pillars.indexOf(n)<0)S.pillars.push(n)}
@@ -729,7 +729,7 @@ var GA_MEASUREMENT_ID='G-Y9PWLV04RR';
       console.table(summary());var d=document.getElementById('dbg');
       if(d){d.remove();return}
       d=document.createElement('pre');d.id='dbg';
-      d.className='fixed bottom-4 right-4 z-50 max-w-sm p-4 rounded-lg bg-ink text-bg text-xs overflow-auto shadow-xl border border-border';
+      d.className='fixed bottom-4 right-4 z-50 max-w-sm p-4 rounded-lg bg-ink text-bg text-base overflow-auto border border-border';
       d.textContent=JSON.stringify(summary(),null,2);document.body.appendChild(d)}});
   window.ccSession=summary;
 })();
