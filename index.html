@@ -22,7 +22,7 @@
 <section><div class="max-w-5xl mx-auto px-6 pt-24 text-center">
   <h1 class="font-serif font-bold text-[42px] leading-[50px] text-ink">Chantell Collins<span class="text-ink">, MBA, PMI-CPMAI&trade;</span></h1>
 
-  <p class="mt-6 mx-auto max-w-2xl text-base sm:text-lg leading-relaxed text-ink">Building the operational scaffolding that scales organizations without burning profit or people.</p>
+  <p class="mt-6 mx-auto max-w-2xl text-base leading-relaxed text-ink">Building the operational scaffolding that scales organizations without burning profit or people.</p>
 
   <div class="mt-8 hidden sm:block relative" id="statDesktop">
     <div id="statDesktopPanel">
@@ -713,7 +713,7 @@ var GA_MEASUREMENT_ID='G-Y9PWLV04RR';
     [30,60,120].forEach(function(m){if(S.active===m){S.milestones.push('dwell_'+m+'s');console.info('[engagement] dwell_'+m+'s')}})},1000);
   addEventListener('scroll',function(){var h=document.body.scrollHeight-innerHeight;
     var p=h>0?Math.round(scrollY/h*100):100;if(p>S.depth)S.depth=Math.min(p,100)},{passive:true});
-  var GA_MAP={cta_email_clicked:'click_email',cta_schedule_call_clicked:'click_book_calendar',cta_linkedin_clicked:'click_linkedin_profile'};
+  var GA_MAP={cta_schedule_call_clicked:'click_book_calendar',cta_linkedin_clicked:'click_linkedin_profile'};
   function track(n){
     var isPillar=false;for(var k in EVT){if(EVT[k]===n)isPillar=true}
     if(isPillar){if(S.pillars.indexOf(n)<0)S.pillars.push(n)}
