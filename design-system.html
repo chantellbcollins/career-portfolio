@@ -262,10 +262,10 @@ footer.doc a{text-decoration-thickness:auto;text-underline-offset:auto}
     <p class="intro">Five values, each tied to specific components. Use the step whose job matches, not the nearest number.</p>
 
     <div class="spacing-scale">
-      <div class="spacing-row"><span class="name">Tight<span class="px">8px</span></span><div class="bar-track"><div class="bar" style="width:8.3%"></div></div><span class="role">Hairline offsets, badge padding, card grid gaps</span></div>
-      <div class="spacing-row"><span class="name">Base<span class="px">16px</span></span><div class="bar-track"><div class="bar" style="width:16.7%"></div></div><span class="role">Button padding, stat card internal padding from sm up, card content gaps, standard component margins</span></div>
-      <div class="spacing-row"><span class="name">Medium<span class="px">24px</span></span><div class="bar-track"><div class="bar" style="width:25%"></div></div><span class="role">Mobile page gutters, heading-to-body margin, stat card padding on phones, proof card padding</span></div>
-      <div class="spacing-row"><span class="name">Large<span class="px">32px</span></span><div class="bar-track"><div class="bar" style="width:33.3%"></div></div><span class="role">Block-to-block margin, column gaps</span></div>
+      <div class="spacing-row"><span class="name">Tight<span class="px">8px</span></span><div class="bar-track"><div class="bar" style="width:8.3%"></div></div><span class="role">Hairline offsets, pill padding, card grid gaps, gap between a card title and its text</span></div>
+      <div class="spacing-row"><span class="name">Base<span class="px">16px</span></span><div class="bar-track"><div class="bar" style="width:16.7%"></div></div><span class="role">Button padding, stat card padding from sm up, list item spacing, gaps between stacked quotes, standard component margins</span></div>
+      <div class="spacing-row"><span class="name">Medium<span class="px">24px</span></span><div class="bar-track"><div class="bar" style="width:25%"></div></div><span class="role">Mobile page gutters, heading-to-body margin, stat card padding on phones, proof and build card padding, praise and capability panel padding on phones</span></div>
+      <div class="spacing-row"><span class="name">Large<span class="px">32px</span></span><div class="bar-track"><div class="bar" style="width:33.3%"></div></div><span class="role">Block-to-block margin, column gaps, praise and capability panel padding from sm up</span></div>
       <div class="spacing-row"><span class="name">Section<span class="px">96px</span></span><div class="bar-track"><div class="bar" style="width:100%"></div></div><span class="role">Section top padding and footer padding, all screen sizes</span></div>
     </div>
   </div>
@@ -274,7 +274,7 @@ footer.doc a{text-decoration-thickness:auto;text-underline-offset:auto}
 <section class="doc" id="shape">
   <div class="wrap">
     <h2 class="font-serif">Shape and style</h2>
-    <p class="intro">Border 1px, rectangle corners 8px, pills fully rounded, none changing on hover. Full-width rule only on the nav; sections separate by 96px of whitespace, and only cards carry the tint.</p>
+    <p class="intro">Border 1px, rectangle corners 8px, pills fully rounded, none changing on hover. Full-width rule only on the nav and the fixed cookie banner; sections separate by 96px of whitespace, and only cards carry the tint.</p>
 
     <div class="shape-grid">
       <div class="shape-card">
@@ -330,7 +330,7 @@ footer.doc a{text-decoration-thickness:auto;text-underline-offset:auto}
       </div>
 
       <div class="component-row" style="display:flex;flex-direction:column;gap:16px">
-        <span class="caption"><b>Capabilities tabs on phones:</b> a swipeable strip. Each tab is the row width minus 40px, so the active tab shows in full and 32px (Large) of the next one peeks out. Tapping a tab, the arrows, the dots, or swiping the panel brings the active tab to the left edge; swiping the strip itself only browses. From 640px up, the tabs that fit show on one row and the arrows and dots move the window.</span>
+        <span class="caption"><b>Capabilities tabs on phones:</b> a swipeable strip. Each tab is the row width minus 40px, so the active tab shows in full and 32px (Large) of the next one peeks out. Unselected tabs fill with gold at 10% on hover, and the border and size never change. Tapping a tab, the arrows, the dots, or swiping the panel brings the active tab to the left edge; swiping the strip itself only browses. From 640px up, the tabs that fit show on one row and the arrows and dots move the window.</span>
       </div>
 
       <div class="component-row">
@@ -380,7 +380,7 @@ footer.doc a{text-decoration-thickness:auto;text-underline-offset:auto}
       <div class="rule"><span class="n">03</span><span class="t"><b>Cards carry the tint, not the sections:</b> Section wrappers stay plain `#F8F4F2`; only cards (stat, proof, praise, build, capability panel), the selected capability tab, and the cookie banner use `#F0EAE6`.</span></div>
       <div class="rule"><span class="n">04</span><span class="t"><b>Pills carry a border, never a fill or a dot:</b> Dots appear only as list bullets and carousel dots.</span></div>
       <div class="rule"><span class="n">05</span><span class="t"><b>Hover never resizes anything:</b> Buttons keep their border in the base state.</span></div>
-      <div class="rule"><span class="n">06</span><span class="t"><b>No seventh color:</b> Everything draws from the five tokens plus the <code>#F0EAE6</code> card tint (Rule 03).</span></div>
+      <div class="rule"><span class="n">06</span><span class="t"><b>No seventh color:</b> Everything draws from the five tokens plus the <code>#F0EAE6</code> card tint (Rule 03). Two exceptions: white (<code>#fff</code>) for text and icons set on a solid gold or terracotta fill (buttons, the video play button), and gold at 10% as the hover fill on unselected tabs.</span></div>
       <div class="rule"><span class="n">07</span><span class="t"><b>No dark mode.</b></span></div>
       <div class="rule"><span class="n">08</span><span class="t"><b>No off-scale spacing:</b> Every margin, padding, and gap uses one of the five steps, except three deliberate values: the 9px list bullet nudge, the Meet portrait&rsquo;s reserved padding, and the 12px padding on the lightbox transcript link, plus the 1px tab border overlap and the 4px side insets that widen each dot&rsquo;s tap area (Rule 12), which are structural, not rhythm. Each visual block is one section with one symmetric padding pair.</span></div>
       <div class="rule"><span class="n">09</span><span class="t"><b>Keyboard focus always gets its own visible state:</b> Every link, button, and tab has a 2px gold <code>:focus-visible</code> outline, never suppressed.</span></div>
