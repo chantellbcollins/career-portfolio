@@ -200,7 +200,7 @@ footer.doc a{text-decoration-thickness:auto;text-underline-offset:auto}
         <div class="s-h2 font-serif">Capabilities</div>
       </div>
       <div class="specimen-row">
-        <div class="label"><span><b>Body:</b> copy, links, nav, captions, labels</span><span>Inter Regular (400), 16px / 24px, sentence case with bold reserved for card titles, the selected tab, and the footer line (Rule 02)</span></div>
+        <div class="label"><span><b>Body:</b> copy, links, nav, captions, labels</span><span>Inter Regular (400), 16px / 24px, sentence case with bold reserved for card titles, the selected capability card, and the footer line (Rule 02)</span></div>
         <div class="s-body">Known as the calm in the (board)room, I build the operational scaffolding that scales organizations without burning profit or people.</div>
       </div>
     </div>
@@ -224,7 +224,7 @@ footer.doc a{text-decoration-thickness:auto;text-underline-offset:auto}
         <div class="swatch-fill" style="background:var(--border)"></div>
         <div class="swatch-info">
           <div class="name-row"><span class="name">border</span><span class="hex">#92725C</span></div>
-          <div class="role">Borders, dividers, pill outlines, unselected carousel and tab dots.</div>
+          <div class="role">Borders, dividers, card and pill outlines.</div>
           <div class="contrast">4.02:1 on bg</div>
         </div>
       </div>
@@ -232,7 +232,7 @@ footer.doc a{text-decoration-thickness:auto;text-underline-offset:auto}
         <div class="swatch-fill" style="background:var(--gold)"></div>
         <div class="swatch-info">
           <div class="name-row"><span class="name">gold</span><span class="hex">#8C6121</span></div>
-          <div class="role">Clickable elements color for links, the primary CTA, and unselected tabs.</div>
+          <div class="role">Clickable elements color for links, the primary CTA, and unselected capability card titles.</div>
           <div class="contrast">4.99:1 on bg</div>
         </div>
       </div>
@@ -320,17 +320,12 @@ footer.doc a{text-decoration-thickness:auto;text-underline-offset:auto}
       </div>
 
       <div class="component-row">
-        <span class="caption"><b>List bullet:</b> terracotta, 6px, the one dot size everywhere (bullets, carousel dots, tab dots). <b>Hanging indent:</b> 8px gap, text starts 14px in. <b>Item spacing:</b> 16px.</span>
+        <span class="caption"><b>List bullet:</b> terracotta, 6px, the one dot size everywhere. <b>Hanging indent:</b> 8px gap, text starts 14px in. <b>Item spacing:</b> 16px.</span>
         <span class="dot"></span>
       </div>
 
-      <div class="component-row">
-        <span class="caption"><b>Carousel control:</b> arrow, dots, arrow, centered, 16px (Base) between arrows and dots, 8px (Tight) between dots. Arrows use the system triangle in gold, terracotta on hover, with 16px padding. Dots are 6px: ink selected, border unselected, each a direct control, shared with the Capabilities tabs.</span>
-        <div class="carousel-demo"><a class="carousel-arrow" href="#" aria-label="Previous"><span class="tri tri-l"></span></a><span class="carousel-dots"><span class="dot dot-ink"></span><span class="dot dot-border"></span><span class="dot dot-border"></span></span><a class="carousel-arrow" href="#" aria-label="Next"><span class="tri tri-r"></span></a></div>
-      </div>
-
       <div class="component-row" style="display:flex;flex-direction:column;gap:16px">
-        <span class="caption"><b>Capabilities tabs on phones:</b> a swipeable strip. Each tab is the row width minus 40px, so the active tab shows in full and 32px (Large) of the next one peeks out. Unselected tabs fill with gold at 10% on hover, and the border and size never change. Tapping a tab, the arrows, the dots, or swiping the panel brings the active tab to the left edge; swiping the strip itself only browses. From 640px up, the tabs that fit show on one row and the arrows and dots move the window.</span>
+        <span class="caption"><b>Capabilities cards:</b> all seven show at once, one card per row on phones, two from 640px, four from 1024px, with 8px (Tight) gaps. Each card is a button with 16px (Base) padding: the title in Body type, then a one-line summary 8px below. The open card is tinted with a bold ink title; the others have a gold title and fill with gold at 10% on hover, and the border and size never change. From 640px up one card is always open and its bullets show in the capability panel 8px below the grid. On phones no card is open at first; a tap opens the panel under that card and a second tap closes it.</span>
       </div>
 
       <div class="component-row">
@@ -375,18 +370,18 @@ footer.doc a{text-decoration-thickness:auto;text-underline-offset:auto}
   <div class="wrap">
     <h2 class="font-serif">System rules</h2>
     <div class="rules">
-      <div class="rule"><span class="n">01</span><span class="t"><b>Gold means an action is still available:</b> A tab you're already viewing is bold ink, not gold. Exception: on the dark video lightbox, the transcript link and Close button use the page background color, because gold fails contrast on ink.</span></div>
-      <div class="rule"><span class="n">02</span><span class="t"><b>Text is flat color:</b> Ink stays full-strength, with no opacity variants, so hierarchy comes from the type scale. Bold is for headings, card titles, the selected tab, the footer copyright line, and label colons (Rule 10). Italic is for quotations only.</span></div>
-      <div class="rule"><span class="n">03</span><span class="t"><b>Cards carry the tint, not the sections:</b> Section wrappers stay plain `#F8F4F2`; only cards (stat, proof, praise, build, capability panel), the selected capability tab, and the cookie banner use `#F0EAE6`.</span></div>
-      <div class="rule"><span class="n">04</span><span class="t"><b>Pills carry a border, never a fill or a dot:</b> Dots appear only as list bullets and carousel dots.</span></div>
+      <div class="rule"><span class="n">01</span><span class="t"><b>Gold means an action is still available:</b> A capability card you're already viewing has a bold ink title, not gold. Exception: on the dark video lightbox, the transcript link and Close button use the page background color, because gold fails contrast on ink.</span></div>
+      <div class="rule"><span class="n">02</span><span class="t"><b>Text is flat color:</b> Ink stays full-strength, with no opacity variants, so hierarchy comes from the type scale. Bold is for headings, card titles, the selected capability card, the footer copyright line, and label colons (Rule 10). Italic is for quotations only.</span></div>
+      <div class="rule"><span class="n">03</span><span class="t"><b>Cards carry the tint, not the sections:</b> Section wrappers stay plain `#F8F4F2`; only cards (stat, proof, praise, build, capability panel), the selected capability card, and the cookie banner use `#F0EAE6`.</span></div>
+      <div class="rule"><span class="n">04</span><span class="t"><b>Pills carry a border, never a fill or a dot:</b> Dots appear only as list bullets.</span></div>
       <div class="rule"><span class="n">05</span><span class="t"><b>Hover never resizes anything:</b> Buttons keep their border in the base state.</span></div>
-      <div class="rule"><span class="n">06</span><span class="t"><b>No seventh color:</b> Everything draws from the five tokens plus the <code>#F0EAE6</code> card tint (Rule 03). Two exceptions: white (<code>#fff</code>) for text and icons set on a solid gold or terracotta fill (buttons, the video play button), and gold at 10% as the hover fill on unselected tabs.</span></div>
+      <div class="rule"><span class="n">06</span><span class="t"><b>No seventh color:</b> Everything draws from the five tokens plus the <code>#F0EAE6</code> card tint (Rule 03). Two exceptions: white (<code>#fff</code>) for text and icons set on a solid gold or terracotta fill (buttons, the video play button), and gold at 10% as the hover fill on unselected capability cards.</span></div>
       <div class="rule"><span class="n">07</span><span class="t"><b>No dark mode.</b></span></div>
-      <div class="rule"><span class="n">08</span><span class="t"><b>No off-scale spacing:</b> Every margin, padding, and gap uses one of the five steps, except three deliberate values: the 9px list bullet nudge, the Meet portrait&rsquo;s reserved padding, and the 12px padding on the lightbox transcript link, plus the 1px tab border overlap and the 4px side insets that widen each dot&rsquo;s tap area (Rule 12), which are structural, not rhythm. Each section takes 96px of top padding (Section step); the footer takes 96px top and bottom.</span></div>
-      <div class="rule"><span class="n">09</span><span class="t"><b>Keyboard focus always gets its own visible state:</b> Every link, button, and tab has a 2px gold <code>:focus-visible</code> outline, never suppressed.</span></div>
+      <div class="rule"><span class="n">08</span><span class="t"><b>No off-scale spacing:</b> Every margin, padding, and gap uses one of the five steps, except three deliberate values: the 9px list bullet nudge, the Meet portrait&rsquo;s reserved padding, and the 12px padding on the lightbox transcript link. Each section takes 96px of top padding (Section step); the footer takes 96px top and bottom.</span></div>
+      <div class="rule"><span class="n">09</span><span class="t"><b>Keyboard focus always gets its own visible state:</b> Every link, button, and card has a 2px gold <code>:focus-visible</code> outline, never suppressed.</span></div>
       <div class="rule"><span class="n">10</span><span class="t"><b>Commas separate; a colon only introduces:</b> No pipes or middots. Use a colon only to introduce or give a status, with the word and colon bold: <b>Status:</b> Applied. Never mid-sentence, except a colon that introduces a list. Names that contain a colon, like a course title, are exempt.</span></div>
       <div class="rule"><span class="n">11</span><span class="t"><b>Sentence case:</b> Capitalize the first word and genuine proper nouns (Chantell, Serve Robotics, IBM, PMI-CPMAI), in the hero lines, headers, and body copy. "AI &amp; operational excellence" is correct; "AI &amp; Operational Excellence" is not. Job titles in the Trajectory list and capitalized role names in body copy are exempt.</span></div>
-      <div class="rule"><span class="n">12</span><span class="t"><b>Touch targets:</b> every standalone link and button has a tap area of at least 44px; links inside sentences are exempt. Dots keep their 6px size and 8px spacing, so each has a 14px by 44px tap area and the arrows are the primary control.</span></div>
+      <div class="rule"><span class="n">12</span><span class="t"><b>Touch targets:</b> every standalone link and button has a tap area of at least 44px; links inside sentences are exempt.</span></div>
   <div class="rule"><span class="n">13</span><span class="t"><b>Compiled classes only:</b> the page uses only classes that already have a rule in <code>styles.css</code>. A class with no rule does nothing today and would change the page after a Tailwind rebuild.</span></div>
     </div>
   </div>
