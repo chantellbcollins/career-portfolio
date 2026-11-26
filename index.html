@@ -415,22 +415,22 @@
 
 <section id="builds" class="scroll-mt-24"><div class="max-w-5xl mx-auto px-6 pt-24">
   <h2 class="font-serif font-bold text-[26px] leading-[34px] text-ink">AI-native builds</h2>
-  <ul class="mt-6 border-t border-border">
-    <li class="flex gap-4 items-start py-4 border-b border-border">
-      <div class="hidden sm:block shrink-0 sm:w-[180px] rounded-lg overflow-hidden border border-border">
-        <button type="button" data-video-open data-t="build_video_play_clicked" aria-haspopup="dialog" aria-label="Play the Career Leap Dashboard video, 51 seconds, with voiceover and captions" aria-describedby="careerLeapVideoDesc" class="relative block w-full overflow-hidden">
-        <img src="assets/career-leap-poster.png" alt="" width="1000" height="625" loading="lazy" class="w-full">
-        <span class="absolute inset-0 flex items-center justify-center"><span class="flex h-14 w-14 items-center justify-center rounded-full bg-gold text-white"><span class="tri tri-r" aria-hidden="true"></span></span></span>
-        <span id="careerLeapVideoDesc" class="sr-only">The poster shows outlined hiring persona cards on a warm off-white page: Chief of Staff, Business Operations, and Customer Implementation raised in terracotta, each labeled with the hiring problem its manager needs solved, with more cards continuing past the edge. The 51-second video, narrated with matching captions, walks through the Career Leap Dashboard: every week, AI screens new roles against the same five must-haves, then scores survivors against the CV; the system recommends Pursue, Reserve, or Fail, and a human makes the final call; hiring personas built on data show what each manager needs; a funnel shows which stage loses roles; and each month findings become experiments and INVEST user stories that a human approves before the dashboard changes. It was built in Claude Cowork and ClickUp, based on PMI's Practical AI for Agile Workflows.</span>
-        </button>
-      </div>
-      <div class="flex-1">
-        <h3 class="text-base font-bold text-ink">Career Leap Dashboard</h3>
-        <p class="mt-2 text-base leading-relaxed text-ink">Hiring personas built on hiring data, with human-reviewed monthly retrospectives. <button type="button" data-video-open data-t="build_video_play_clicked" aria-haspopup="dialog" class="text-gold underline hover:text-terracotta">Watch the 51-second video.</button></p>
-        <div class="mt-4 flex flex-wrap gap-2"><span class="text-base px-2 py-2 rounded-full border border-border text-ink">Claude Cowork</span><span class="text-base px-2 py-2 rounded-full border border-border text-ink">ClickUp</span></div>
-      </div>
-    </li>
-    <li class="flex gap-4 items-start py-4 border-b border-border">
+  <article class="mt-6 tint-bg border border-border rounded-lg overflow-hidden grid lg:grid-cols-2">
+    <div>
+      <button type="button" data-video-open data-t="build_video_play_clicked" aria-haspopup="dialog" aria-label="Play the Career Leap Dashboard video, 51 seconds, with voiceover and captions" aria-describedby="careerLeapVideoDesc" class="relative block w-full overflow-hidden">
+      <img src="assets/career-leap-poster.png" alt="" width="1000" height="625" loading="lazy" class="w-full">
+      <span class="absolute inset-0 flex items-center justify-center"><span class="flex h-14 w-14 items-center justify-center rounded-full bg-gold text-white"><span class="tri tri-r" aria-hidden="true"></span></span></span>
+      <span id="careerLeapVideoDesc" class="sr-only">The poster shows outlined hiring persona cards on a warm off-white page: Chief of Staff, Business Operations, and Customer Implementation raised in terracotta, each labeled with the hiring problem its manager needs solved, with more cards continuing past the edge. The 51-second video, narrated with matching captions, walks through the Career Leap Dashboard: every week, AI screens new roles against the same five must-haves, then scores survivors against the CV; the system recommends Pursue, Reserve, or Fail, and a human makes the final call; hiring personas built on data show what each manager needs; a funnel shows which stage loses roles; and each month findings become experiments and INVEST user stories that a human approves before the dashboard changes. It was built in Claude Cowork and ClickUp, based on PMI's Practical AI for Agile Workflows.</span>
+      </button>
+    </div>
+    <div class="p-6 flex flex-col justify-center">
+      <h3 class="text-base font-bold text-ink">Career Leap Dashboard</h3>
+      <p class="mt-2 text-base leading-relaxed text-ink">Hiring personas built on hiring data, with human-reviewed monthly retrospectives. <button type="button" data-video-open data-t="build_video_play_clicked" aria-haspopup="dialog" class="text-gold underline hover:text-terracotta">Watch the 51-second video.</button></p>
+      <div class="mt-4 flex flex-wrap gap-2"><span class="text-base px-2 py-2 rounded-full border border-border text-ink">Claude Cowork</span><span class="text-base px-2 py-2 rounded-full border border-border text-ink">ClickUp</span></div>
+    </div>
+  </article>
+  <ul class="mt-2">
+    <li class="flex gap-4 items-start py-4">
       <div class="hidden sm:block shrink-0 sm:w-[180px] rounded-lg overflow-hidden border border-border">
         <img src="assets/build-wealth-builder.jpg" alt="The Wealth Builder Dashboard: income, savings and net worth overview, with the figures redacted" width="1000" height="625" loading="lazy" class="w-full">
       </div>
@@ -440,7 +440,7 @@
         <div class="mt-4 flex flex-wrap gap-2"><span class="text-base px-2 py-2 rounded-full border border-border text-ink">Python</span><span class="text-base px-2 py-2 rounded-full border border-border text-ink">pandas</span></div>
       </div>
     </li>
-    <li class="flex gap-4 items-start py-4 border-b border-border">
+    <li class="flex gap-4 items-start py-4">
       <div class="hidden sm:block shrink-0 sm:w-[180px] rounded-lg overflow-hidden border border-border">
         <img src="assets/build-design-system.jpg" alt="The chantellcollins.com design system page, with its type rules and passing accessibility, Lighthouse and sync badges" width="1000" height="625" loading="lazy" class="w-full">
       </div>
@@ -450,7 +450,7 @@
         <div class="mt-4 flex flex-wrap gap-2"><span class="text-base px-2 py-2 rounded-full border border-border text-ink">Claude Code</span><span class="text-base px-2 py-2 rounded-full border border-border text-ink">GitHub Actions</span></div>
       </div>
     </li>
-    <li class="flex gap-4 items-start py-4 border-b border-border">
+    <li class="flex gap-4 items-start py-4">
       <div class="hidden sm:block shrink-0 sm:w-[180px] rounded-lg overflow-hidden border border-border">
         <img src="assets/build-ai-harness.jpg" alt="The AI harness as five stacked layers: Context (CLAUDE.md, Project instructions, Master CV), Memory (memory files, TASKS.md, the dashboards), Tools (ClickUp, GitHub, Python scripts), Verification (read-only validators, CI checks), and Permissions (a human approves before anything ships)" width="1000" height="625" loading="lazy" class="w-full">
       </div>
